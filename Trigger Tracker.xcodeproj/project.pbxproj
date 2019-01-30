@@ -85,8 +85,8 @@
 		3F6B873521FEDAE800E71A32 /* Trigger Tracker */ = {
 			isa = PBXGroup;
 			children = (
+				3F77CFB222016A6700A75F21 /* Model */,
 				3F799D9621FEE09A00E17922 /* Controller */,
-				3F799D9521FEE09900E17922 /* Model */,
 				3F799D9921FEE09A00E17922 /* View */,
 				3FE72A0921FEDBF000FBB737 /* Assets.xcassets */,
 				3F6B873621FEDAE800E71A32 /* AppDelegate.swift */,
@@ -99,7 +99,7 @@
 			path = "Trigger Tracker";
 			sourceTree = "<group>";
 		};
-		3F799D9521FEE09900E17922 /* Model */ = {
+		3F77CFB222016A6700A75F21 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 			);
