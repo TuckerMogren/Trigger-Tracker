@@ -1,10 +1,9 @@
-//
-//  ViewLoggedInDashboard.swift
-//  Trigger Tracker
-//
-//  Created by Tucker Mogren on 1/29/19.
-//  Copyright © 2019 TuckerMogren. All rights reserved.
-//
+/*
+ * Name: ViewLoggedInDashboard
+ * Description: Code for storyboard interactions
+ * Author/Date: Tucker J. Mogren/ 2/3/19
+ * References:
+ */
 
 import UIKit
 import Firebase
