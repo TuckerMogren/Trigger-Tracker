@@ -25,8 +25,9 @@ class ViewLoggedInDashboard: UIViewController {
         }catch let signOutError as NSError {
             print("ERROR: Singout \(signOutError)")
         }
+        let storyboard = UIStoryboard(name: "AppHomeDashboard", bundle: nil)
+        let newVC = storyboard.instantiateViewController(withIdentifier: "Welcome Screen")
+        self.present(newVC, animated: true, completion: nil)
         
-        
-        performSegue(withIdentifier: "goToWelcomeScreenAfterLogOut", sender: self)
     }
 }

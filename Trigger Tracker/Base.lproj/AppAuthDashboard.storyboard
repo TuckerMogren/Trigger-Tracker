@@ -51,21 +51,10 @@
                     <navigationItem key="navigationItem" id="WK6-Sg-LPK">
                         <barButtonItem key="backBarButtonItem" title="Back" id="kP1-bZ-urj"/>
                     </navigationItem>
-                    <connections>
-                        <segue destination="oNp-3f-Ctx" kind="modal" identifier="goToWelcomeScreenAfterLogOut" id="3HL-FP-T0o"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8hB-Ux-ftI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4294" y="575"/>
-        </scene>
-        <!--Welcome Screen-->
-        <scene sceneID="Vgb-Vw-6qn">
-            <objects>
-                <viewControllerPlaceholder storyboardName="AppHomeDashboard" referencedIdentifier="Welcome Screen" id="oNp-3f-Ctx" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Amm-DA-fcM" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5009" y="830"/>
         </scene>
     </scenes>
 </document>
