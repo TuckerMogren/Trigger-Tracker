@@ -10,46 +10,42 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Side View Controller-->
-        <scene sceneID="3SR-AK-tb2">
-            <objects>
-                <viewController storyboardIdentifier="SideBarView" id="M3a-rn-ea8" customClass="SideViewController" customModule="Trigger_Tracker" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="rvI-AI-gV9">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fq2-A5-Esd">
-                                <rect key="frame" x="16" y="44" width="343" height="734"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="FrA-nC-XDz"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Bgr-Hn-olJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4968.8000000000002" y="-115.27093596059113"/>
-        </scene>
-        <!--View Logged In Dashboard-->
+        <!--Trigger Tracker-->
         <scene sceneID="YHf-e8-QhZ">
             <objects>
-                <viewController id="vY4-oc-AiP" customClass="ViewLoggedInDashboard" customModule="Trigger_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Home" id="vY4-oc-AiP" customClass="ViewLoggedInDashboard" customModule="Trigger_Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TPj-UW-kQy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Logged in!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eKr-7J-RBe">
-                                <rect key="frame" x="119.66666666666669" y="413" width="136" height="40"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sR3-Wr-CuU" colorLabel="IBBuiltInLabel-Green">
+                                <rect key="frame" x="164.66666666666666" y="361" width="46" height="90"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="lah-Kp-P8x"/>
+                                    <constraint firstAttribute="height" constant="90" id="uQ3-Ed-zaz"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QQ2-Lx-KKL">
-                                <rect key="frame" x="304" y="88" width="55" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" red="0.91764705879999997" green="0.66274509800000003" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Sgb-ge-rWM" kind="push" identifier="goToLogger" id="xj0-p0-f9T"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.10196078431372549" green="0.45882352941176469" blue="0.81960784313725488" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="sR3-Wr-CuU" firstAttribute="centerX" secondItem="TPj-UW-kQy" secondAttribute="centerX" id="4pA-rR-gAc"/>
+                            <constraint firstItem="sR3-Wr-CuU" firstAttribute="centerY" secondItem="TPj-UW-kQy" secondAttribute="centerY" id="a7B-es-V6f"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="zAL-VD-Wb8"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Trigger Tracker" id="WK6-Sg-LPK">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="kP1-bZ-urj"/>
+                        <barButtonItem key="rightBarButtonItem" id="BQZ-bV-ANa">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="QQ2-Lx-KKL">
+                                <rect key="frame" x="304" y="7" width="55" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="55" id="Icu-z7-Tbd"/>
                                 </constraints>
@@ -58,24 +54,29 @@
                                     <action selector="logInButtonLogOutAction:" destination="vY4-oc-AiP" eventType="touchUpInside" id="CKp-75-IQD"/>
                                 </connections>
                             </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="zAL-VD-Wb8" firstAttribute="trailing" secondItem="QQ2-Lx-KKL" secondAttribute="trailing" constant="16" id="68D-eA-r5O"/>
-                            <constraint firstItem="eKr-7J-RBe" firstAttribute="centerY" secondItem="zAL-VD-Wb8" secondAttribute="centerY" id="RD1-Za-Lsg"/>
-                            <constraint firstItem="QQ2-Lx-KKL" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="zAL-VD-Wb8" secondAttribute="leading" symbolic="YES" id="TM3-ss-Yp2"/>
-                            <constraint firstItem="eKr-7J-RBe" firstAttribute="centerX" secondItem="zAL-VD-Wb8" secondAttribute="centerX" id="UOp-d5-5oJ"/>
-                            <constraint firstItem="QQ2-Lx-KKL" firstAttribute="top" secondItem="zAL-VD-Wb8" secondAttribute="top" id="yTm-7J-Jf1"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="zAL-VD-Wb8"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="WK6-Sg-LPK">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="kP1-bZ-urj"/>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8hB-Ux-ftI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4983.1999999999998" y="574.8768472906404"/>
+            <point key="canvasLocation" x="4877.6000000000004" y="574.8768472906404"/>
+        </scene>
+        <!--Logger-->
+        <scene sceneID="uba-l8-8s2">
+            <objects>
+                <viewController storyboardIdentifier="Logger" id="Sgb-ge-rWM" customClass="ViewLoggedInDashboard" customModule="Trigger_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HGa-Hk-c7Y">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.10196078431372549" green="0.45882352941176469" blue="0.81960784313725488" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="udn-Mr-T2l"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Logger" id="0Yh-AA-Pjb"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fyr-f2-gyK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5670" y="575"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="79W-fX-JAc">

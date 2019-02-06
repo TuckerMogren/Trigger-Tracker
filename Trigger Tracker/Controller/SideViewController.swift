@@ -8,12 +8,21 @@
 
 import UIKit
 
+protocol SideBarMenuDelegate {
+    func sideBarMenuSelected(_ index: Int32)
+}
+
 class SideViewController: UIViewController {
 
+    var buttonMenu: UIButton!
+    var delegate: SideBarMenuDelegate?
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+
     }
     
 

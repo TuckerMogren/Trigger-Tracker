@@ -8,7 +8,16 @@
 import UIKit
 import Firebase
 
-class ViewLoggedInDashboard: UIViewController {
+class ViewLoggedInDashboard: UIViewController{
+    
+    /*
+     * Function Name: viewDidLoad()
+     * Will terminate Func runs after the view controller is loaded.
+     * Tucker Mogren; 2/5/19
+     */
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
     
     /*
      * Function Name: logInButtonLogOutAction()
