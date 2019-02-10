@@ -136,20 +136,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food Trigger" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ot3-ST-pHi">
-                                <rect key="frame" x="158" y="437.5" width="98" height="21"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Den-K2-6OT" customClass="CustomShapeButtonLogFood" customModule="Trigger_Tracker" customModuleProvider="target">
+                                <rect key="frame" x="92" y="424" width="230" height="48"/>
+                                <color key="backgroundColor" red="0.1019607843" green="0.45882352939999999" blue="0.81960784310000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="98" id="fw8-Gc-mjq"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="230" id="fYY-aU-YoI"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Take Photos">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Ot3-ST-pHi" firstAttribute="centerX" secondItem="Vz1-4j-lKK" secondAttribute="centerX" id="Ccn-6G-LfQ"/>
-                            <constraint firstItem="Ot3-ST-pHi" firstAttribute="centerY" secondItem="Vz1-4j-lKK" secondAttribute="centerY" id="XS7-UU-4CA"/>
+                            <constraint firstItem="Den-K2-6OT" firstAttribute="centerY" secondItem="Vz1-4j-lKK" secondAttribute="centerY" id="jmn-uz-g3q"/>
+                            <constraint firstItem="Den-K2-6OT" firstAttribute="centerX" secondItem="Vz1-4j-lKK" secondAttribute="centerX" id="lUh-zO-BA8"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="rbl-vt-VdG">
@@ -163,7 +166,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U5d-6U-elP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1700" y="2385"/>
+            <point key="canvasLocation" x="-1700.0000000000002" y="2384.5982142857142"/>
         </scene>
         <!--View Logged In-->
         <scene sceneID="dm1-UA-qZh">

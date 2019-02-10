@@ -24,6 +24,7 @@
 		3FAC35C4220FDB11004261DB /* ViewFoodTrigger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAC35C1220FDB11004261DB /* ViewFoodTrigger.swift */; };
 		3FAC35C5220FDB11004261DB /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FAC35C2220FDB11004261DB /* SWRevealViewController.m */; };
 		3FAC35C8220FDB26004261DB /* SlideMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FAC35C7220FDB26004261DB /* SlideMenu.storyboard */; };
+		3FE029D82210C0D900AB2D87 /* CustomShapeButtonLogFood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE029D72210C0D900AB2D87 /* CustomShapeButtonLogFood.swift */; };
 		3FE72A0521FEDBD300FBB737 /* AppHomeDashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FE72A0121FEDBD300FBB737 /* AppHomeDashboard.storyboard */; };
 		577DBE6DE5E532043CAD1355 /* Pods_Trigger_Tracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13E32F5C3DFEBCF365E7F127 /* Pods_Trigger_Tracker.framework */; };
 /* End PBXBuildFile section */
@@ -49,6 +50,7 @@
 		3FAC35C2220FDB11004261DB /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		3FAC35C6220FDB1B004261DB /* SideMenuTutorial-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SideMenuTutorial-Bridging-Header.h"; sourceTree = "<group>"; };
 		3FAC35C7220FDB26004261DB /* SlideMenu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SlideMenu.storyboard; sourceTree = "<group>"; };
+		3FE029D72210C0D900AB2D87 /* CustomShapeButtonLogFood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomShapeButtonLogFood.swift; sourceTree = "<group>"; };
 		3FE72A0221FEDBD300FBB737 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/AppHomeDashboard.storyboard; sourceTree = "<group>"; };
 		3FE72A0921FEDBF000FBB737 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7CD01810414B60C3B2003188 /* Pods-Trigger Tracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Trigger Tracker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Trigger Tracker/Pods-Trigger Tracker.debug.xcconfig"; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 				3F799D9A21FEE09A00E17922 /* Alerts.swift */,
 				3F799DA021FEE09A00E17922 /* CustomShapeButtonWelcome.swift */,
 				3F799DA121FEE09A00E17922 /* CustomShapeButtonLogIn.swift */,
+				3FE029D72210C0D900AB2D87 /* CustomShapeButtonLogFood.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -291,6 +294,7 @@
 				3FA37274220FEBE0008A3DC4 /* SWRevealViewController.h in Sources */,
 				3FA37273220FEBC2008A3DC4 /* SideMenuTutorial-Bridging-Header.h in Sources */,
 				3F799DA521FEE09A00E17922 /* ViewWelcomeDashboard.swift in Sources */,
+				3FE029D82210C0D900AB2D87 /* CustomShapeButtonLogFood.swift in Sources */,
 				3F799DA721FEE09A00E17922 /* ViewLogInPageController.swift in Sources */,
 				3F794C87220FE93E00F09A69 /* ViewSettings.swift in Sources */,
 				3FAC35C3220FDB11004261DB /* ViewLoggedIn.swift in Sources */,

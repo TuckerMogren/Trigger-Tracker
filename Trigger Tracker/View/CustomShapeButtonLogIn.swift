@@ -26,7 +26,7 @@ class CustomShapeButtonLogIn: UIButton
     }
 
     /*
-     * Function Name: awakeFromNib()
+     * Function Name: prepareForInterfaceBuilder()
      * Loads the customizeView after the objects have been updated - Guaranteed that all the outlets and actions are connected
      * Tucker Mogren; 1/23/19
      */

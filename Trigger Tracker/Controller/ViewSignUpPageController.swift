@@ -45,7 +45,7 @@ class ViewSignUpPageController: UIViewController {
         
         print("Email is: \(e_mailEntrySignUp), 1x Passowrd is: \(password1XSignUp), and 2x passowrd is: \(password2XSignUp). ")
         
-        if ((password1XSignUp == password2XSignUp) && password1XSignUp.count > 8)
+        if ((password1XSignUp == password2XSignUp) && password1XSignUp.count >= 8)
         {
             
             print("TWO STRINGS MATCH: \(password1XSignUp) and \(password2XSignUp)")
