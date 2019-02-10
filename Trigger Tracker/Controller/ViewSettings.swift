@@ -45,7 +45,7 @@ class ViewSettings: UIViewController {
     func customizeNavBar() {
         
         
-        navigationController?.navigationBar.tintColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
+        navigationController?.navigationBar.tintColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0)
         navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.1019607843, green: 0.4588235294, blue: 0.8196078431, alpha: 1)
         
         navigationController?.navigationBar.titleTextAttributes = convertToOptionalNSAttributedStringKeyDictionary([NSAttributedString.Key.foregroundColor.rawValue: UIColor.white])

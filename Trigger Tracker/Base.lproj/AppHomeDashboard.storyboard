@@ -71,6 +71,7 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.1019607843" green="0.45882352939999999" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="EwY-VP-ioL" firstAttribute="top" secondItem="tEm-yX-h6w" secondAttribute="bottom" constant="52" id="32S-hX-gGa"/>
                             <constraint firstItem="yKf-eP-Rwt" firstAttribute="leading" secondItem="RrJ-1h-zpr" secondAttribute="leading" constant="38" id="5op-J8-5Y9"/>
@@ -158,6 +159,7 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.1019607843" green="0.45882352939999999" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="slM-bi-TMI" firstAttribute="top" secondItem="N2G-hJ-9Kk" secondAttribute="bottom" constant="20" id="BJs-xt-cmV"/>
                             <constraint firstItem="slM-bi-TMI" firstAttribute="centerX" secondItem="RbS-23-aOc" secondAttribute="centerX" id="CHD-zz-5BX"/>
@@ -251,6 +253,7 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.10196078431372549" green="0.45882352941176469" blue="0.81960784313725488" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="NUN-Z2-Ld1" firstAttribute="top" secondItem="okf-Y0-yIL" secondAttribute="bottom" constant="13" id="9tm-DQ-5Fv"/>
                             <constraint firstItem="okf-Y0-yIL" firstAttribute="centerX" secondItem="C6G-em-dO1" secondAttribute="centerX" id="Alz-SG-eep"/>

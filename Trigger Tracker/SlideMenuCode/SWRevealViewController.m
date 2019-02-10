@@ -1633,6 +1633,8 @@ const int FrontViewPositionNone = 0xff;
     controllerView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     controllerView.frame = frame;
     
+    //Commented out because of swift error with using version higher then IOS 11 with automaticallyAdjustsScrollViewInsets;
+    /*
     if ( [controllerView isKindOfClass:[UIScrollView class]] )
     {
         BOOL adjust = controller.automaticallyAdjustsScrollViewInsets;
@@ -1642,7 +1644,7 @@ const int FrontViewPositionNone = 0xff;
             [(id)controllerView setContentInset:UIEdgeInsetsMake(statusBarAdjustment(_contentView), 0, 0, 0)];
         }
     }
-    
+    */
     [view addSubview:controllerView];
     
     void (^completionBlock)(void) = ^(void)
