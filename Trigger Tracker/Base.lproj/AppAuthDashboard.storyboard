@@ -27,9 +27,6 @@
                                 <state key="normal" title="Button">
                                     <color key="titleShadowColor" red="0.91764705879999997" green="0.66274509800000003" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
-                                <connections>
-                                    <segue destination="Sgb-ge-rWM" kind="push" identifier="goToLogger" id="xj0-p0-f9T"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.10196078431372549" green="0.45882352941176469" blue="0.81960784313725488" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -56,27 +53,21 @@
                             </button>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="B3M-vk-IIO" kind="custom" identifier="goToSlideMenu" customClass="SWRevealViewControllerSegueSetController" id="bfZ-Qf-qXg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8hB-Ux-ftI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4877.6000000000004" y="574.8768472906404"/>
         </scene>
-        <!--Logger-->
-        <scene sceneID="uba-l8-8s2">
+        <!--SlideMenu-->
+        <scene sceneID="0fg-kr-iuW">
             <objects>
-                <viewController storyboardIdentifier="Logger" id="Sgb-ge-rWM" customClass="ViewLoggedInDashboard" customModule="Trigger_Tracker" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="HGa-Hk-c7Y">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.10196078431372549" green="0.45882352941176469" blue="0.81960784313725488" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="udn-Mr-T2l"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Logger" id="0Yh-AA-Pjb"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Fyr-f2-gyK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="SlideMenu" id="B3M-vk-IIO" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jfC-Zc-ueT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5670" y="575"/>
+            <point key="canvasLocation" x="5578" y="575"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="79W-fX-JAc">

@@ -279,10 +279,10 @@
             </objects>
             <point key="canvasLocation" x="2775" y="552"/>
         </scene>
-        <!--AppAuthDashboard-->
+        <!--SlideMenu-->
         <scene sceneID="fkx-YP-Dpa">
             <objects>
-                <viewControllerPlaceholder storyboardName="AppAuthDashboard" id="Fe0-vb-34Y" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="SlideMenu" id="Fe0-vb-34Y" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="LNv-W5-hBY"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q2t-1v-pmb" userLabel="First Responder" sceneMemberID="firstResponder"/>
