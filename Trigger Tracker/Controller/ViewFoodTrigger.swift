@@ -6,9 +6,12 @@
  */
 import UIKit
 
-class ViewFoodTrigger: UIViewController {
 
+class ViewFoodTrigger: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+
+    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var menuButton: UIBarButtonItem!
+    var imagePickerController: UIImagePickerController!
     
     /*
      * Function Name: viewDidLoad()
@@ -52,6 +55,36 @@ class ViewFoodTrigger: UIViewController {
         
         
     }
+    /*
+     * Function: takePhotoActionButton()
+     * Will use PhotoKit to take a photo and display it in imageView
+     * Reference: https://appsandbiscuits.com/take-save-and-retrieve-a-photo-ios-13-4312f96793ff
+     * Tucker Mogren; 2/10/19
+     */
+    @IBAction func takePhotoActionButton(_ sender: Any)
+    {
+        imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self;
+        imagePickerController.sourceType = .camera
+        
+        present(imagePickerController, animated: true, completion: nil)
+        
+    }
+    
+    /*
+     * Function: imagePickerController()
+     * Executes after the photo is taken
+     * Reference: https://appsandbiscuits.com/take-save-and-retrieve-a-photo-ios-13-4312f96793ff
+     * Tucker Mogren; 2/10/19
+     */
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        imagePickerController.dismiss(animated: true, completion: nil)
+        imageView.image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
+    }
+    
+    
+    
+    
 }
     
 /*
