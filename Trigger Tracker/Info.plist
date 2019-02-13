@@ -44,6 +44,6 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>NSCameraUsageDescription</key>
-	<string>To  log meals. </string>
+	<string>To log meals. </string>
 </dict>
 </plist>
