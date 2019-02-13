@@ -23,6 +23,19 @@ class ViewFoodTrigger: UIViewController, UINavigationControllerDelegate, UIImage
         sideMenus()
         customizeNavBar()
     }
+    /*
+     * Function Name: showAlertCameraWillNotOpenSimulator()
+     * Wil throw alert if the camera can not open because testing on xcode simulator. Will avoid crash.
+     * Tucker Mogren; 2/12/19
+     * Referenced: https://stackoverflow.com/questions/24022479/how-would-i-create-a-uialertview-in-swift/33340757#33340757
+     */
+    func showAlertCameraWillNotOpenSimulator()
+    {
+        let alert = UIAlertController(title: "Error: Using Simulator", message: "Camera will not open in the xcode simulator.", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Close", style: UIAlertAction.Style.default, handler: nil))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
 
     /*
      * Function Name: sideMenus()
@@ -65,8 +78,15 @@ class ViewFoodTrigger: UIViewController, UINavigationControllerDelegate, UIImage
     {
         imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self;
-        imagePickerController.sourceType = .camera
         
+        if(!UIImagePickerController.isSourceTypeAvailable(.camera))
+        {
+            showAlertCameraWillNotOpenSimulator()
+            
+        }else{
+            imagePickerController.sourceType = .camera
+        }
+
         present(imagePickerController, animated: true, completion: nil)
         
     }
