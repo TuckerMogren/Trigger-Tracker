@@ -85,6 +85,8 @@ class ViewFoodTrigger: UIViewController, UINavigationControllerDelegate, UIImage
             
         }else{
             imagePickerController.sourceType = .camera
+            
+            
         }
 
         present(imagePickerController, animated: true, completion: nil)

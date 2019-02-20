@@ -25,7 +25,7 @@ class ViewSignUpPageController: UIViewController {
 
     func showAlertPasswordDoesntMatch()
     {
-        let alert = UIAlertController(title: "Invalid Login", message: "Passwords do not match, Please try again.", preferredStyle: UIAlertController.Style.alert)
+        let alert = UIAlertController(title: "Invalid Login", message: "Passwords do not match or password is less then 8 charaters, Please try again.", preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "Try Again", style: UIAlertAction.Style.default, handler: nil))
         
         self.present(alert, animated: true, completion: nil)
@@ -47,6 +47,10 @@ class ViewSignUpPageController: UIViewController {
         
         if ((password1XSignUp == password2XSignUp) && password1XSignUp.count >= 8)
         {
+            //first check if less then 8 charaters.
+            //then check if the passwords match.
+            
+            //change alerts.
             
             print("TWO STRINGS MATCH: \(password1XSignUp) and \(password2XSignUp)")
             
