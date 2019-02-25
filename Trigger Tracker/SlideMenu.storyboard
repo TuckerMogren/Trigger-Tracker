@@ -158,13 +158,30 @@
                                     <constraint firstAttribute="width" constant="414" id="j6H-B0-QBE"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yrI-DV-B1z" customClass="CustomShapeButtonLogFood" customModule="Trigger_Tracker" customModuleProvider="target">
+                                <rect key="frame" x="92" y="711" width="230" height="48"/>
+                                <color key="backgroundColor" red="0.1019607843" green="0.45882352939999999" blue="0.81960784310000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="230" id="zIi-1x-11E"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Upload Photo">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="uploadPhotoButtonAction:" destination="WMM-ZD-AH0" eventType="touchUpInside" id="0ng-rb-Tb5"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ig7-6q-7ed" firstAttribute="centerX" secondItem="Den-K2-6OT" secondAttribute="centerX" id="DG3-Nc-lU8"/>
                             <constraint firstItem="Den-K2-6OT" firstAttribute="centerX" secondItem="Vz1-4j-lKK" secondAttribute="centerX" id="HuJ-Pc-T6g"/>
                             <constraint firstItem="ig7-6q-7ed" firstAttribute="top" secondItem="ZVX-ae-DTk" secondAttribute="bottom" id="QpK-RT-tXC"/>
+                            <constraint firstItem="yrI-DV-B1z" firstAttribute="top" secondItem="Den-K2-6OT" secondAttribute="bottom" constant="49" id="ef4-gG-u1b"/>
                             <constraint firstItem="D6q-2D-Nn5" firstAttribute="top" secondItem="Den-K2-6OT" secondAttribute="bottom" constant="200" id="kum-h5-PVK"/>
+                            <constraint firstItem="yrI-DV-B1z" firstAttribute="leading" secondItem="Vz1-4j-lKK" secondAttribute="leadingMargin" constant="72" id="nyC-wd-NDP"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="rbl-vt-VdG">
@@ -175,6 +192,7 @@
                     <connections>
                         <outlet property="imageView" destination="ig7-6q-7ed" id="Xka-FB-DFu"/>
                         <outlet property="menuButton" destination="qcD-Lz-rPe" id="bfw-m1-J2z"/>
+                        <outlet property="uploadPhotoButton" destination="yrI-DV-B1z" id="FLU-KX-jEf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U5d-6U-elP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -242,6 +260,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0gf-I3-awf" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="G5k-TN-IoI">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

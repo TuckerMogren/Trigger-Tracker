@@ -8,5 +8,6 @@ target 'Trigger Tracker' do
   # Pods for Trigger Tracker
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
+  pod 'Firebase/Storage'
 
 end

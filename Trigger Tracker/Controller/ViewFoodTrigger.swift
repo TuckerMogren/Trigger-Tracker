@@ -5,13 +5,23 @@
  * Tucker Mogren; 2/9/19
  */
 import UIKit
-
+import FirebaseAuth
+import FirebaseStorage
 
 class ViewFoodTrigger: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var menuButton: UIBarButtonItem!
     var imagePickerController: UIImagePickerController!
+    
+    var imageReference: StorageReference {
+        return Storage.storage().reference().child("images")
+    }
+    @IBOutlet weak var uploadPhotoButton: CustomShapeButtonLogFood!
+    
+    
+    
+    
     
     /*
      * Function Name: viewDidLoad()
@@ -23,6 +33,39 @@ class ViewFoodTrigger: UIViewController, UINavigationControllerDelegate, UIImage
         sideMenus()
         customizeNavBar()
     }
+    /*
+     * Function Name: uploadPhotoButtonAction()
+     * Will upload the photo to Firebases Storage Servier
+     * Tucker Mogren; 2/24/19
+     * Referenced: https://www.youtube.com/watch?v=MyeqhFGnJ_0
+     */
+    @IBAction func uploadPhotoButtonAction(_ sender: Any)
+    {
+        guard let imageUpload = imageView.image else {return}
+        guard let imageData = imageUpload.jpegData(compressionQuality: 1) else {return};
+        
+        let userUID = Auth.auth().currentUser?.uid;
+        let date = NSDate.description();
+        let fileName: String = userUID! + date;
+        
+        let uploadImageReference = imageReference.child(fileName)
+        
+        let uploadJob = uploadImageReference.putData(imageData, metadata: nil) { (metadata, error) in
+            print(metadata ?? "No Data.")
+            print(error ?? "No Error.")
+        }
+        uploadJob.observe(.progress) { (snapShot) in
+            print(snapShot.progress ?? "Completed.")
+            
+            //ended at 21:50 in video.
+        }
+        uploadJob.resume()
+        
+        
+        
+        
+    }
+    
     /*
      * Function Name: showAlertCameraWillNotOpenSimulator()
      * Wil throw alert if the camera can not open because testing on xcode simulator. Will avoid crash.
