@@ -10,7 +10,9 @@ import FirebaseStorage
 
 class ViewFoodTrigger: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
-    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var imageViewDownload: UIImageView!
+    @IBOutlet weak var imageViewUpload: UIImageView!
+    //menuButton: Allows the user to be brought back to the slidebar for navigation.
     @IBOutlet weak var menuButton: UIBarButtonItem!
     var imagePickerController: UIImagePickerController!
     
@@ -18,10 +20,6 @@ class ViewFoodTrigger: UIViewController, UINavigationControllerDelegate, UIImage
         return Storage.storage().reference().child("images")
     }
     @IBOutlet weak var uploadPhotoButton: CustomShapeButtonLogFood!
-    
-    
-    
-    
     
     /*
      * Function Name: viewDidLoad()
@@ -32,38 +30,6 @@ class ViewFoodTrigger: UIViewController, UINavigationControllerDelegate, UIImage
         super.viewDidLoad()
         sideMenus()
         customizeNavBar()
-    }
-    /*
-     * Function Name: uploadPhotoButtonAction()
-     * Will upload the photo to Firebases Storage Servier
-     * Tucker Mogren; 2/24/19
-     * Referenced: https://www.youtube.com/watch?v=MyeqhFGnJ_0
-     */
-    @IBAction func uploadPhotoButtonAction(_ sender: Any)
-    {
-        guard let imageUpload = imageView.image else {return}
-        guard let imageData = imageUpload.jpegData(compressionQuality: 1) else {return};
-        
-        let userUID = Auth.auth().currentUser?.uid;
-        let date = NSDate.description();
-        let fileName: String = userUID! + date;
-        
-        let uploadImageReference = imageReference.child(fileName)
-        
-        let uploadJob = uploadImageReference.putData(imageData, metadata: nil) { (metadata, error) in
-            print(metadata ?? "No Data.")
-            print(error ?? "No Error.")
-        }
-        uploadJob.observe(.progress) { (snapShot) in
-            print(snapShot.progress ?? "Completed.")
-            
-            //ended at 21:50 in video.
-        }
-        uploadJob.resume()
-        
-        
-        
-        
     }
     
     /*
@@ -144,11 +110,65 @@ class ViewFoodTrigger: UIViewController, UINavigationControllerDelegate, UIImage
      */
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         imagePickerController.dismiss(animated: true, completion: nil)
-        imageView.image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
+        imageViewUpload.image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
     }
     
+    /*
+     * Function Name: uploadPhotoButtonAction()
+     * Will upload the photo to Firebases Storage Servier
+     * Tucker Mogren; 2/24/19
+     * Referenced: https://www.youtube.com/watch?v=MyeqhFGnJ_0
+     */
+    @IBAction func uploadPhotoButtonAction(_ sender: Any)
+    {
+        guard let imageUpload = imageViewUpload.image else {return}
+        guard let imageData = imageUpload.jpegData(compressionQuality: 1) else {return};
+        
+        let userUID = Auth.auth().currentUser?.uid;
+        let date = NSDate.description();
+        let fileName: String = "UPLOAD: " + userUID! + "_" + date;
+        
+        let uploadImageReference = imageReference.child(fileName)
+        
+        let uploadJob = uploadImageReference.putData(imageData, metadata: nil) { (metadata, error) in
+            print("Upload Task Finished")
+            print(metadata ?? "No Data.")
+            print(error ?? "No Error.")
+        }
+        uploadJob.observe(.progress) { (snapShot) in
+            print(snapShot.progress ?? "Completed.")
+            
+        }
+        uploadJob.resume()
+    }
     
-    
+    /*
+     * Function: downloadPhotoButtonAction
+     * Will allow the user to download photos from Firebase Storage.
+     * Tucker Mogren; 2/26/19
+     * NOTE: Function does not allow for photos to be viewed,
+     * will be reviewing firebase storage documentation.
+      * Also concerns about security.
+     */
+    @IBAction func downloadPhotoButtonAction(_ sender: Any)
+    {
+        let userUID = Auth.auth().currentUser?.uid;
+        let date = NSDate.description();
+        let fileName: String = "DOWNLOAD: " + userUID! + "_" + date;
+        let downloadImageRef = imageReference.child(fileName);
+        let downloadTask = downloadImageRef.getData(maxSize: 1024 * 1024 * 15) { (data, error) in
+            if let data = data {
+                let image = UIImage(data: data)
+                self.imageViewUpload.image = image
+            }
+            print(error ?? "NO ERROR");
+        }
+        downloadTask.observe(.progress) { (snapshot) in
+            print(snapshot.progress ?? "NO MORE PROGRESS");
+        }
+        downloadTask.resume()
+        
+    }
     
 }
     
