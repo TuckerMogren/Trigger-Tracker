@@ -25,12 +25,27 @@ class ViewSignUpPageController: UIViewController {
 
     func showAlertPasswordDoesntMatch()
     {
-        let alert = UIAlertController(title: "Invalid Login", message: "Passwords do not match or password is less then 8 charaters, Please try again.", preferredStyle: UIAlertController.Style.alert)
+        let alert = UIAlertController(title: "Invalid Login", message: "Passwords do not match, Please try again.", preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "Try Again", style: UIAlertAction.Style.default, handler: nil))
         
         self.present(alert, animated: true, completion: nil)
     }
-
+    
+    /*
+     * Function Name: showAlertPasswordToShort()
+     * Will be called when a password is less then 8 digits long.
+     * Tucker Mogren; 2/26/19
+     * Referenced: https://stackoverflow.com/questions/24022479/how-would-i-create-a-uialertview-in-swift/33340757#33340757
+     */
+    func showAlertPasswordToShort()
+    {
+        let alert = UIAlertController(title: "Invalid Login", message: "Password is less then 8 charaters, Please try again.", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Try Again", style: UIAlertAction.Style.default, handler: nil))
+        
+        self.present(alert, animated: true, completion: nil)
+        
+    }
+    
     /*
      * Function: createAccountButton()
      * Will sent data to firebase in order to create account
@@ -45,43 +60,32 @@ class ViewSignUpPageController: UIViewController {
         
         print("Email is: \(e_mailEntrySignUp), 1x Passowrd is: \(password1XSignUp), and 2x passowrd is: \(password2XSignUp). ")
         
-        if ((password1XSignUp == password2XSignUp) && password1XSignUp.count >= 8)
+        if(password1XSignUp.count >= 8)
         {
-            //first check if less then 8 charaters.
-            //then check if the passwords match.
-            
-            //change alerts.
-            
-            print("TWO STRINGS MATCH: \(password1XSignUp) and \(password2XSignUp)")
-            
-            //creates new user.
-            Auth.auth().createUser(withEmail: e_mailEntrySignUp, password: password1XSignUp) { (authResult, error) in
-                if error != nil
-                {
-                    print("ERROR: \(error!)")
-                }
-                let loginViewController = self.storyboard?.instantiateViewController(withIdentifier: "logInVC")
-                self.present(loginViewController!, animated: true, completion: nil)
+            //will check to see if password is >= 8 digits first.
+            if (password1XSignUp == password2XSignUp)
+            {
+                //Then will check if they match.
+                print("TWO STRINGS MATCH: \(password1XSignUp) and \(password2XSignUp)")
                 
+                //creates new user.
+                Auth.auth().createUser(withEmail: e_mailEntrySignUp, password: password1XSignUp) { (authResult, error) in
+                    if error != nil
+                    {
+                        print("ERROR: \(error!)")
+                    }
+                    let loginViewController = self.storyboard?.instantiateViewController(withIdentifier: "logInVC")
+                    self.present(loginViewController!, animated: true, completion: nil)
+                }
+                
+            }else{
+                print("Two strings do not match: \(password1XSignUp) and \(password2XSignUp)")
+                showAlertPasswordDoesntMatch()
                 
             }
-            
-        }else{
-            print("TWO STRINGS DO NOT MATCH OR are not greater then 8 in length: \(password1XSignUp) and \(password2XSignUp)")
-            showAlertPasswordDoesntMatch()
-            
+        }else {
+            print("Password is two short.")
+            showAlertPasswordToShort()
         }
-        
-        
-        /*
-         * TODO:
-         * Check to see if passwords match, make sure passwords are at least 15 charaters long and contain a digit.
-         * If everything checks out, send to firebase to create account, and then return them to the login screen to login for the first time
-         * Else: Throw an error, asking them to try again.
-         */
-        
-        
-        
-        
     }
 }
