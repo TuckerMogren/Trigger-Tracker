@@ -12,8 +12,33 @@ class ViewLogInPageController: UIViewController
     
     //Class global vars for fields that gather data
     //First two are for LogIn
-    @IBOutlet weak var e_MailTextFieldLogInOutlet: UITextField!
+    @IBOutlet weak var eMailTextFieldLogInOutlet: UITextField!
     @IBOutlet weak var passwordTextFieldLogInOutlet: UITextField!
+    @IBOutlet weak var saveEMailSwitchOutlet: UISwitch!
+    
+    
+    /*
+     * Function Name: viewDidLoad()
+     * Called after the VC is loaded into memory.
+     * Tucker Mogren; 2/27/19
+     */
+    override func viewDidLoad() {
+        
+    }
+    
+    /*
+     * Function Name: saveEmailSwitchAction()
+     * Either saves or not email for future session.
+     * Tucker Mogren; 2/27/19
+     */
+    @IBAction func saveEmailSwitchAction(_ sender: Any)
+    {
+        
+        
+        
+        
+        
+    }
     
     /*
      * Function Name:showAlertIncorrectLogin()
@@ -39,7 +64,8 @@ class ViewLogInPageController: UIViewController
     
     @IBAction func logInButtonAction(_ sender: Any)
     {
-        let eMailTextEntryLogIn: String = e_MailTextFieldLogInOutlet.text!
+        let defaultValue = UserDefaults.standard
+        let eMailTextEntryLogIn: String = eMailTextFieldLogInOutlet.text!
         let passwordTextEntryLogIn: String = passwordTextFieldLogInOutlet.text!
         print("Email is: \(eMailTextEntryLogIn) and password is: \(passwordTextEntryLogIn).")
         
@@ -49,6 +75,13 @@ class ViewLogInPageController: UIViewController
             {
        
                 self.performSegue(withIdentifier: "accountLogInGoTo", sender: self)
+                if self.saveEMailSwitchOutlet.isOn
+                {
+                defaultValue.set(self.eMailTextFieldLogInOutlet.text, forKey: "eMail")
+                defaultValue.synchronize()
+                }else {
+                    self.eMailTextFieldLogInOutlet.text = ""
+                }
                 
             }else{
                 print("/n/n/n/nERROR: Log-in failed \(error!.localizedDescription).")
@@ -57,5 +90,15 @@ class ViewLogInPageController: UIViewController
             }
         }
     }
-    
+    /*
+     * Function Name: loadSavedEMailDefaults()
+     * Will be able to load the default email chosen to be saved.
+     * Tucker Mogren; 2/27/19
+     */
+    func loadSavedEMailDefaults()
+    {
+        let defaultValue = UserDefaults.standard
+        self.eMailTextFieldLogInOutlet.text = defaultValue.object(forKey: "eMail") as? String
+        
+    }
 }

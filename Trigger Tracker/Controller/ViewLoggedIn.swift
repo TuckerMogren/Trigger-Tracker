@@ -23,6 +23,9 @@ class ViewLoggedIn: UIViewController {
         customizeNavBar()
     }
     
+    
+    
+    
     /*
      * Function Name: sideMenus()
      * Shows the side bar controller.

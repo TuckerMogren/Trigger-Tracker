@@ -32,6 +32,11 @@ class ViewFoodTrigger: UIViewController, UINavigationControllerDelegate, UIImage
         customizeNavBar()
     }
     
+    
+    
+    
+    
+    
     /*
      * Function Name: showAlertCameraWillNotOpenSimulator()
      * Wil throw alert if the camera can not open because testing on xcode simulator. Will avoid crash.
@@ -125,8 +130,7 @@ class ViewFoodTrigger: UIViewController, UINavigationControllerDelegate, UIImage
         guard let imageData = imageUpload.jpegData(compressionQuality: 1) else {return};
         
         let userUID = Auth.auth().currentUser?.uid;
-        let date = NSDate.description();
-        let fileName: String = "UPLOAD: " + userUID! + "_" + date;
+        let fileName: String = userUID!;
         
         let uploadImageReference = imageReference.child(fileName)
         
@@ -153,13 +157,12 @@ class ViewFoodTrigger: UIViewController, UINavigationControllerDelegate, UIImage
     @IBAction func downloadPhotoButtonAction(_ sender: Any)
     {
         let userUID = Auth.auth().currentUser?.uid;
-        let date = NSDate.description();
-        let fileName: String = "DOWNLOAD: " + userUID! + "_" + date;
+        let fileName: String = userUID!;
         let downloadImageRef = imageReference.child(fileName);
         let downloadTask = downloadImageRef.getData(maxSize: 1024 * 1024 * 15) { (data, error) in
             if let data = data {
                 let image = UIImage(data: data)
-                self.imageViewUpload.image = image
+                self.imageViewDownload.image = image
             }
             print(error ?? "NO ERROR");
         }
