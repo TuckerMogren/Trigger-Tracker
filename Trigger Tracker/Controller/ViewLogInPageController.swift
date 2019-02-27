@@ -23,9 +23,11 @@ class ViewLogInPageController: UIViewController
      * Tucker Mogren; 2/27/19
      */
     override func viewDidLoad() {
+        //will set the switch to the result of the saved value of defaults.bool
         self.saveEMailSwitchOutlet.setOn(defaults.bool(forKey: "lastStateOfButton"), animated: true)
         if self.saveEMailSwitchOutlet.isOn
         {
+            //sets savedEMail equal to the stored value of the last email.
             let savedEMail = defaults.string(forKey: "lastStateOfEMailTextField") ?? "error"
             eMailTextFieldLogInOutlet.text = savedEMail
             
@@ -82,7 +84,7 @@ class ViewLogInPageController: UIViewController
         let passwordTextEntryLogIn: String = passwordTextFieldLogInOutlet.text!
         print("Email is: \(eMailTextEntryLogIn) and password is: \(passwordTextEntryLogIn).")
         
-        //will save the last state of the switch.
+        //will save the last state of the switch and email.
         preserveStateOfSwitchBetweenAppSessions();
         preserveStateOfEMailBetweenAppSessions()
         
