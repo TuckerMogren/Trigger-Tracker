@@ -15,7 +15,7 @@ class ViewLogInPageController: UIViewController
     @IBOutlet weak var eMailTextFieldLogInOutlet: UITextField!
     @IBOutlet weak var passwordTextFieldLogInOutlet: UITextField!
     @IBOutlet weak var saveEMailSwitchOutlet: UISwitch!
-    
+    let defaults = UserDefaults.standard
     
     /*
      * Function Name: viewDidLoad()
@@ -23,9 +23,36 @@ class ViewLogInPageController: UIViewController
      * Tucker Mogren; 2/27/19
      */
     override func viewDidLoad() {
-        
+        self.saveEMailSwitchOutlet.setOn(defaults.bool(forKey: "lastStateOfButton"), animated: true)
+        if self.saveEMailSwitchOutlet.isOn
+        {
+            let savedEMail = defaults.string(forKey: "lastStateOfEMailTextField") ?? "error"
+            eMailTextFieldLogInOutlet.text = savedEMail
+            
+        }
     }
     
+    /*
+     * Function Name: preserveStateOfSwitchBetweenAppSessions()
+     * Will be called to save the state of the switch between app sessions.
+     * Reference: https://medium.com/@nimjea/userdefaults-in-swift-4-d1a278a0ec79
+     * Tucker Mogren; 2/27/19
+     */
+    func preserveStateOfSwitchBetweenAppSessions()
+    {
+        defaults.set(saveEMailSwitchOutlet.isOn, forKey: "lastStateOfButton")
+    }
+    
+    /*
+     * Function Name: preserveStateOfEMailBetweenAppSessions()
+     * Will be called to save the email username between app sessions when switch is toggled.
+     * Reference: https://medium.com/@nimjea/userdefaults-in-swift-4-d1a278a0ec79
+     * Tucker Mogren; 2/27/19
+     */
+    func preserveStateOfEMailBetweenAppSessions()
+    {
+        defaults.set(eMailTextFieldLogInOutlet.text, forKey: "lastStateOfEMailTextField")
+    }
     
     /*
      * Function Name:showAlertIncorrectLogin()
@@ -55,6 +82,9 @@ class ViewLogInPageController: UIViewController
         let passwordTextEntryLogIn: String = passwordTextFieldLogInOutlet.text!
         print("Email is: \(eMailTextEntryLogIn) and password is: \(passwordTextEntryLogIn).")
         
+        //will save the last state of the switch.
+        preserveStateOfSwitchBetweenAppSessions();
+        preserveStateOfEMailBetweenAppSessions()
         
         Auth.auth().signIn(withEmail: eMailTextEntryLogIn, password: passwordTextEntryLogIn) { (user, error) in
             if (error == nil && user != nil)

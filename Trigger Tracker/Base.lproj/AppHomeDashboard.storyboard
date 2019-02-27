@@ -194,25 +194,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-Mail" minimumFontSize="20" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="5va-Gh-0b4">
-                                <rect key="frame" x="87.666666666666686" y="244" width="200" height="30"/>
+                                <rect key="frame" x="87.666666666666686" y="244" width="200" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="68g-iQ-ea5"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="J2n-xm-hni"/>
                                 </constraints>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" textContentType="email"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="okf-Y0-yIL">
-                                <rect key="frame" x="87.666666666666686" y="289" width="200" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="20" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="okf-Y0-yIL">
+                                <rect key="frame" x="87.666666666666686" y="299" width="200" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="M2c-H6-OlU"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="v8T-1Q-3li"/>
                                 </constraints>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3av-bC-M7e" customClass="CustomShapeButtonLogIn" customModule="Trigger_Tracker">
-                                <rect key="frame" x="87.333333333333329" y="371" width="200.33333333333337" height="45"/>
+                                <rect key="frame" x="87.333333333333329" y="391" width="200.33333333333337" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200.5" id="cCb-OT-loI"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="dCS-Yc-P6H"/>
@@ -226,15 +228,15 @@
                                 </connections>
                             </button>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NUN-Z2-Ld1">
-                                <rect key="frame" x="87.666666666666671" y="332" width="51.000000000000014" height="31"/>
+                                <rect key="frame" x="87.666666666666671" y="352" width="51.000000000000014" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="PRn-GC-OYe"/>
                                 </constraints>
                                 <color key="onTintColor" red="0.50196081400000003" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="thumbTintColor" red="0.1019607843" green="0.45882352939999999" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
                             </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Save E-Mail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RZr-Ij-L67">
-                                <rect key="frame" x="146.66666666666663" y="340" width="131.33333333333337" height="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Save E-Mail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RZr-Ij-L67">
+                                <rect key="frame" x="146.66666666666663" y="360" width="131.33333333333337" height="17"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="101" id="EP0-Jj-bXB"/>
                                 </constraints>
