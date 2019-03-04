@@ -10,7 +10,7 @@ import FirebaseStorage
 
 class ViewFoodTrigger: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
-    @IBOutlet weak var imageViewDownload: UIImageView!
+
     @IBOutlet weak var imageViewUpload: UIImageView!
     //menuButton: Allows the user to be brought back to the slidebar for navigation.
     @IBOutlet weak var menuButton: UIBarButtonItem!
@@ -31,12 +31,6 @@ class ViewFoodTrigger: UIViewController, UINavigationControllerDelegate, UIImage
         sideMenus()
         customizeNavBar()
     }
-    
-    
-    
-    
-    
-    
     /*
      * Function Name: showAlertCameraWillNotOpenSimulator()
      * Wil throw alert if the camera can not open because testing on xcode simulator. Will avoid crash.
@@ -144,33 +138,6 @@ class ViewFoodTrigger: UIViewController, UINavigationControllerDelegate, UIImage
             
         }
         uploadJob.resume()
-    }
-    
-    /*
-     * Function: downloadPhotoButtonAction
-     * Will allow the user to download photos from Firebase Storage.
-     * Tucker Mogren; 2/26/19
-     * NOTE: Function does not allow for photos to be viewed,
-     * will be reviewing firebase storage documentation.
-      * Also concerns about security.
-     */
-    @IBAction func downloadPhotoButtonAction(_ sender: Any)
-    {
-        let userUID = Auth.auth().currentUser?.uid;
-        let fileName: String = userUID!;
-        let downloadImageRef = imageReference.child(fileName);
-        let downloadTask = downloadImageRef.getData(maxSize: 1024 * 1024 * 15) { (data, error) in
-            if let data = data {
-                let image = UIImage(data: data)
-                self.imageViewDownload.image = image
-            }
-            print(error ?? "NO ERROR");
-        }
-        downloadTask.observe(.progress) { (snapshot) in
-            print(snapshot.progress ?? "NO MORE PROGRESS");
-        }
-        downloadTask.resume()
-        
     }
     
 }

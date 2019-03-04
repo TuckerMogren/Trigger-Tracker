@@ -151,7 +151,6 @@
         <!--View Food Trigger-->
         <scene sceneID="xca-P4-YZM">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="U5d-6U-elP" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="WMM-ZD-AH0" customClass="ViewFoodTrigger" customModule="Trigger_Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ZVX-ae-DTk"/>
@@ -220,6 +219,7 @@
                         <outlet property="uploadPhotoButton" destination="yrI-DV-B1z" id="FLU-KX-jEf"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U5d-6U-elP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2327" y="2384"/>
         </scene>
@@ -308,37 +308,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hp1-jK-OGI">
-                                <rect key="frame" x="0.0" y="88" width="375" height="350"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="350" id="hps-Xj-6yO"/>
-                                </constraints>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q3B-vR-99q" customClass="CustomShapeButtonLogFood" customModule="Trigger_Tracker" customModuleProvider="target">
-                                <rect key="frame" x="72.666666666666686" y="581" width="230" height="48"/>
-                                <color key="backgroundColor" red="0.1019607843" green="0.45882352939999999" blue="0.81960784310000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="230" id="5bX-qk-SEe"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
-                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Download Photo">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="downloadPhotoButtonAction:" destination="kbz-z2-EdX" eventType="touchUpInside" id="AwG-BO-XBO"/>
-                                </connections>
-                            </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="jJL-ER-nlV">
+                                <rect key="frame" x="0.0" y="96" width="375" height="433"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="jLC-Cn-AI0">
+                                    <size key="itemSize" width="150" height="150"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="BPp-R4-fs9">
+                                        <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LtW-DT-mYo">
+                                                    <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="Hp1-jK-OGI" secondAttribute="trailing" id="HbM-j7-g4z"/>
-                            <constraint firstItem="Hp1-jK-OGI" firstAttribute="leading" secondItem="iZf-ib-6Fe" secondAttribute="leading" id="Lml-Xa-Sb4"/>
-                            <constraint firstItem="Hp1-jK-OGI" firstAttribute="top" secondItem="5ai-w6-QdM" secondAttribute="bottom" id="kWI-G6-OIy"/>
-                            <constraint firstItem="iw6-HA-QxO" firstAttribute="top" secondItem="q3B-vR-99q" secondAttribute="bottom" constant="100" id="p59-Yx-9dD"/>
-                            <constraint firstItem="q3B-vR-99q" firstAttribute="centerX" secondItem="iZf-ib-6Fe" secondAttribute="centerX" id="tLd-tv-f3T"/>
-                            <constraint firstItem="Hp1-jK-OGI" firstAttribute="top" secondItem="5ai-w6-QdM" secondAttribute="bottom" id="zOe-O6-2mb"/>
-                        </constraints>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="j55-cT-iGV">
@@ -348,13 +346,12 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="imageViewDownload" destination="Hp1-jK-OGI" id="uBc-C0-jaE"/>
                         <outlet property="menuButton" destination="m91-Eb-nXc" id="2ea-Qg-7Zd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eV6-CR-CjK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1247" y="2384"/>
+            <point key="canvasLocation" x="-1247.2" y="2383.7438423645322"/>
         </scene>
         <!--View Settings-->
         <scene sceneID="h6c-GT-SvJ">
