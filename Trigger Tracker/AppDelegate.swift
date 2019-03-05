@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         FirebaseApp.configure()
         
+        let dataBaseInstance = Firestore.firestore() //creates instance of the firebase firestone noSQL database.
         return true
     }
 

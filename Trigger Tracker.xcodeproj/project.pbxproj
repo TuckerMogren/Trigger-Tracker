@@ -25,6 +25,7 @@
 		3FAC35C5220FDB11004261DB /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FAC35C2220FDB11004261DB /* SWRevealViewController.m */; };
 		3FAC35C8220FDB26004261DB /* SlideMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FAC35C7220FDB26004261DB /* SlideMenu.storyboard */; };
 		3FE029D82210C0D900AB2D87 /* CustomShapeButtonLogFood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE029D72210C0D900AB2D87 /* CustomShapeButtonLogFood.swift */; };
+		3FE42AFF222E4DCB005E3CA5 /* dataBaseCallsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE42AFE222E4DCB005E3CA5 /* dataBaseCallsTest.swift */; };
 		3FE72A0521FEDBD300FBB737 /* AppHomeDashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FE72A0121FEDBD300FBB737 /* AppHomeDashboard.storyboard */; };
 		577DBE6DE5E532043CAD1355 /* Pods_Trigger_Tracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13E32F5C3DFEBCF365E7F127 /* Pods_Trigger_Tracker.framework */; };
 /* End PBXBuildFile section */
@@ -51,6 +52,7 @@
 		3FAC35C6220FDB1B004261DB /* SideMenuTutorial-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SideMenuTutorial-Bridging-Header.h"; sourceTree = "<group>"; };
 		3FAC35C7220FDB26004261DB /* SlideMenu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SlideMenu.storyboard; sourceTree = "<group>"; };
 		3FE029D72210C0D900AB2D87 /* CustomShapeButtonLogFood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomShapeButtonLogFood.swift; sourceTree = "<group>"; };
+		3FE42AFE222E4DCB005E3CA5 /* dataBaseCallsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dataBaseCallsTest.swift; sourceTree = "<group>"; };
 		3FE72A0221FEDBD300FBB737 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/AppHomeDashboard.storyboard; sourceTree = "<group>"; };
 		3FE72A0921FEDBF000FBB737 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7CD01810414B60C3B2003188 /* Pods-Trigger Tracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Trigger Tracker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Trigger Tracker/Pods-Trigger Tracker.debug.xcconfig"; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 		3F77CFB222016A6700A75F21 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3FE42AFE222E4DCB005E3CA5 /* dataBaseCallsTest.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -176,6 +179,7 @@
 				3F6B873021FEDAE800E71A32 /* Frameworks */,
 				3F6B873121FEDAE800E71A32 /* Resources */,
 				B1B52E684800C86B5E839110 /* [CP] Embed Pods Frameworks */,
+				08B0BB2D52031E983D7E0735 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -236,6 +240,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		08B0BB2D52031E983D7E0735 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Trigger Tracker/Pods-Trigger Tracker-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseFirestore/gRPCCertificates-Firestore.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates-Firestore.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Trigger Tracker/Pods-Trigger Tracker-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		8BA2FDEC1ADE1FD28CD4EED7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -267,16 +293,26 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Trigger Tracker/Pods-Trigger Tracker-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -301,6 +337,7 @@
 				3FAC35C3220FDB11004261DB /* ViewLoggedIn.swift in Sources */,
 				3F799DA921FEE09A00E17922 /* CustomShapeButtonLogIn.swift in Sources */,
 				3F6B873721FEDAE800E71A32 /* AppDelegate.swift in Sources */,
+				3FE42AFF222E4DCB005E3CA5 /* dataBaseCallsTest.swift in Sources */,
 				3FAC35C4220FDB11004261DB /* ViewFoodTrigger.swift in Sources */,
 				3FAC35C5220FDB11004261DB /* SWRevealViewController.m in Sources */,
 				3F799DA621FEE09A00E17922 /* ViewSignUpPageController.swift in Sources */,
