@@ -35,8 +35,8 @@ class ViewSettings: UIViewController {
             revealViewController().rearViewRevealWidth = 275
             
         }
-        
     }
+    
     /*
      * Function: customizeNavBar()
      * Will allow for the top naviagtion bar to be customized

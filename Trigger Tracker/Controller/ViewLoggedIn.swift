@@ -11,7 +11,6 @@ class ViewLoggedIn: UIViewController {
     @IBOutlet weak var menuButton: UIBarButtonItem!
     @IBOutlet weak var logOutButton: UIBarButtonItem!
     
-    
     /*
      * Function Name: viewDidLoad()
      * When the view controller loads this code is executed.
@@ -43,6 +42,7 @@ class ViewLoggedIn: UIViewController {
         }
         
     }
+
     /*
      * Function: customizeNavBar()
      * Will allow for the top naviagtion bar to be customized
