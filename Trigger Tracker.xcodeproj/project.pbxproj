@@ -17,6 +17,7 @@
 		3F799DA821FEE09A00E17922 /* CustomShapeButtonWelcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F799DA021FEE09A00E17922 /* CustomShapeButtonWelcome.swift */; };
 		3F799DA921FEE09A00E17922 /* CustomShapeButtonLogIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F799DA121FEE09A00E17922 /* CustomShapeButtonLogIn.swift */; };
 		3F799DAB21FEE24700E17922 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F799DAA21FEE24700E17922 /* GoogleService-Info.plist */; };
+		3F8E80B722375FD70027E68F /* ViewPhotoGallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8E80B622375FD70027E68F /* ViewPhotoGallery.swift */; };
 		3FA37273220FEBC2008A3DC4 /* SideMenuTutorial-Bridging-Header.h in Sources */ = {isa = PBXBuildFile; fileRef = 3FAC35C6220FDB1B004261DB /* SideMenuTutorial-Bridging-Header.h */; };
 		3FA37274220FEBE0008A3DC4 /* SWRevealViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 3FAC35C0220FDB11004261DB /* SWRevealViewController.h */; };
 		3FAC35C3220FDB11004261DB /* ViewLoggedIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAC35BF220FDB11004261DB /* ViewLoggedIn.swift */; };
@@ -42,6 +43,7 @@
 		3F799DA021FEE09A00E17922 /* CustomShapeButtonWelcome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomShapeButtonWelcome.swift; sourceTree = "<group>"; };
 		3F799DA121FEE09A00E17922 /* CustomShapeButtonLogIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomShapeButtonLogIn.swift; sourceTree = "<group>"; };
 		3F799DAA21FEE24700E17922 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3F8E80B622375FD70027E68F /* ViewPhotoGallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPhotoGallery.swift; sourceTree = "<group>"; };
 		3FAC35BF220FDB11004261DB /* ViewLoggedIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewLoggedIn.swift; sourceTree = "<group>"; };
 		3FAC35C0220FDB11004261DB /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		3FAC35C1220FDB11004261DB /* ViewFoodTrigger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewFoodTrigger.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				3FAC35BF220FDB11004261DB /* ViewLoggedIn.swift */,
+				3F8E80B622375FD70027E68F /* ViewPhotoGallery.swift */,
 				3FAC35C1220FDB11004261DB /* ViewFoodTrigger.swift */,
 				3F794C86220FE93E00F09A69 /* ViewSettings.swift */,
 				3F799D9C21FEE09A00E17922 /* ViewWelcomeDashboard.swift */,
@@ -327,6 +330,7 @@
 				3FE029D82210C0D900AB2D87 /* CustomShapeButtonLogFood.swift in Sources */,
 				3F799DA721FEE09A00E17922 /* ViewLogInPageController.swift in Sources */,
 				3F794C87220FE93E00F09A69 /* ViewSettings.swift in Sources */,
+				3F8E80B722375FD70027E68F /* ViewPhotoGallery.swift in Sources */,
 				3FAC35C3220FDB11004261DB /* ViewLoggedIn.swift in Sources */,
 				3F799DA921FEE09A00E17922 /* CustomShapeButtonLogIn.swift in Sources */,
 				3F6B873721FEDAE800E71A32 /* AppDelegate.swift in Sources */,

@@ -43,6 +43,7 @@ class ViewLoggedIn: UIViewController {
         
     }
 
+
     /*
      * Function: customizeNavBar()
      * Will allow for the top naviagtion bar to be customized
