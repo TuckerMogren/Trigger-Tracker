@@ -45,6 +45,8 @@
 	</array>
 	<key>NSCameraUsageDescription</key>
 	<string>To log meals. </string>
+	<key>FirebasScreenReportingEnabled</key>
+	<false/>
 	<key>NSFaceIDUseageDescription</key>
 	<string>To allow biometric login.</string>
 </dict>

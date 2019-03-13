@@ -80,11 +80,11 @@
                                             <segue destination="tej-lF-5lJ" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="csa-hT-ySj"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellThree" rowHeight="90" id="r4A-TC-qfn">
-                                        <rect key="frame" x="0.0" y="160" width="375" height="90"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellThree" rowHeight="80" id="r4A-TC-qfn">
+                                        <rect key="frame" x="0.0" y="160" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="r4A-TC-qfn" id="Lnp-gt-BuW">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="89.666666666666671"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="r4A-TC-qfn" id="Lnp-gt-BuW">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="79.666666666666671"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food Viewer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cbD-26-9o9">
@@ -108,7 +108,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellFour" rowHeight="80" id="Vt4-RN-p4r">
-                                        <rect key="frame" x="0.0" y="250" width="375" height="80"/>
+                                        <rect key="frame" x="0.0" y="240" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Vt4-RN-p4r" id="iHl-mY-lcY">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="79.666666666666671"/>
@@ -146,7 +146,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xWp-gQ-OuB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1247" y="812"/>
+            <point key="canvasLocation" x="-1247.2" y="811.33004926108379"/>
         </scene>
         <!--View Food Trigger-->
         <scene sceneID="xca-P4-YZM">

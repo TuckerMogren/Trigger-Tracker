@@ -5,12 +5,13 @@
  * References:
  */
 import UIKit
-import Firebase
+import FirebaseFirestore
 import FirebaseAuth
 
 class ViewPhotoGallery: UIViewController {
     
-     @IBOutlet weak var menuButton: UIBarButtonItem!
+    @IBOutlet weak var menuButton: UIBarButtonItem!
+    let customSlideBarClassInstance = CustomSlideBar()
     
     
      let db = Firestore.firestore() //creates instance of the firebase firestone noSQL database.
@@ -53,15 +54,12 @@ class ViewPhotoGallery: UIViewController {
      * Tucker Mogren; 2/9/19
      */
     func customizeNavBar() {
-        
-        
         navigationController?.navigationBar.tintColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0)
         navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.1019607843, green: 0.4588235294, blue: 0.8196078431, alpha: 1)
         
         navigationController?.navigationBar.titleTextAttributes = convertToOptionalNSAttributedStringKeyDictionary([NSAttributedString.Key.foregroundColor.rawValue: UIColor.white])
         
     }
-    
     /*
      * Function Name: readDatabase
      * Function will display data in database for user
@@ -69,41 +67,21 @@ class ViewPhotoGallery: UIViewController {
      * Reference: https://firebase.google.com/docs/firestore/quickstart
      */
     private func readDatabase () {
-        db.collection("users").getDocuments() { (querySnapshot, err) in
-            if let err = err {
-                print("Error getting documents: \(err)")
-            } else {
-                for document in querySnapshot!.documents {
-                    print("\(document.documentID) => \(document.data())")
+        db.collection("users").whereField("user_ID", isEqualTo: (Auth.auth().currentUser?.uid)!).getDocuments { (Snapshot, error) in
+            if error != nil
+            {
+                print(error!)
+            }else{
+                for document in (Snapshot?.documents)! {
+                    if let firstName = document.data()["firstName"] as? String {
+                        print(firstName)
+                    }
                 }
             }
         }
-    }
-    /*
-     * Function Name: sendDataToDatabase
-     * Function will send specific static data to the database when called.
-     * Tucker Mogren; 3/11/19
-     * Reference: https://firebase.google.com/docs/firestore/quickstart
-     */
-    private func sendDataToDatabase (fName:String, lName:String){
         
-
-        var ref: DocumentReference? = nil
-        ref = db.collection("users").addDocument(data: [
-            "firstName":fName,
-            "lastName":lName,
-            "birthDate":"03122019",
-            "uid": Auth.auth().currentUser?.uid as Any
-        ]){ err in
-            if let err = err {
-                print("Error adding document: \(err)")
-            }else {
-                print("Document added with ID: \(ref!.documentID)")
-            }
-        }
         
     }
-    
     /*
      * Function Name: buttonPushToSendDatabaseAction
      * Will test send data to the database to make sure the actions of sending data to the database works and is set up properly.
@@ -111,15 +89,10 @@ class ViewPhotoGallery: UIViewController {
      */
     @IBAction func buttonPushToSendDatabaseAction(_ sender: Any) {
         print("Button has been pressed.")
-        sendDataToDatabase(fName: "James", lName: "Mogren")
-        //print("---------Displaying Data--------------")
-        readDatabase()
-        
-        
+        print("---------Displaying Data--------------")
+        //readDatabase()
     }
     
-
-
 }
 /*
  * FilePrivate Func: convertToOptionalNSAttributedStringKeyDictionary
@@ -131,3 +104,4 @@ fileprivate func convertToOptionalNSAttributedStringKeyDictionary(_ input: [Stri
     guard let input = input else { return nil }
     return Dictionary(uniqueKeysWithValues: input.map { key, value in (NSAttributedString.Key(rawValue: key), value)})
 }
+

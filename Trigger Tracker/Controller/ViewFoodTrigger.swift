@@ -7,6 +7,7 @@
 import UIKit
 import FirebaseAuth
 import FirebaseStorage
+import FirebaseFirestore
 
 class ViewFoodTrigger: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
@@ -102,6 +103,31 @@ class ViewFoodTrigger: UIViewController, UINavigationControllerDelegate, UIImage
     }
     
     /*
+     * Function Name: sendDataToDatabase
+     * Function will send specific static data to the database when called.
+     * Tucker Mogren; 3/11/19
+     * Reference: https://firebase.google.com/docs/firestore/quickstart
+     */
+    private func sendDataToDatabase (fName: String, lName: String){
+        
+        let db = Firestore.firestore()
+        
+        var ref: DocumentReference? = nil
+        ref = db.collection("users").addDocument(data: [
+            "firstName":fName,
+            "lastName":lName,
+            "birthDate": NSDate(), //expecting a timestamp now
+            "user_ID": Auth.auth().currentUser?.uid as Any
+        ]){ err in
+            if let err = err {
+                print("Error adding document: \(err)")
+            }else {
+                print("Document added with ID: \(ref!.documentID)")
+            }
+        }
+        
+    }
+    /*
      * Function: imagePickerController()
      * Executes after the photo is taken
      * Reference: https://appsandbiscuits.com/take-save-and-retrieve-a-photo-ios-13-4312f96793ff
@@ -114,40 +140,21 @@ class ViewFoodTrigger: UIViewController, UINavigationControllerDelegate, UIImage
     
     /*
      * Function Name: uploadPhotoButtonAction()
-     * Will upload the photo to Firebases Storage Servier
+     * Will upload the photo to Firebases Storage Server
      * Tucker Mogren; 2/24/19
      * Referenced: https://www.youtube.com/watch?v=MyeqhFGnJ_0
      */
     @IBAction func uploadPhotoButtonAction(_ sender: Any)
     {
-        guard let imageUpload = imageViewUpload.image else {return}
-        guard let imageData = imageUpload.jpegData(compressionQuality: 1) else {return};
-        
-        let userUID = Auth.auth().currentUser?.uid;
-        let fileName: String = userUID!;
-        
-        let uploadImageReference = imageReference.child(fileName)
-        
-        let uploadJob = uploadImageReference.putData(imageData, metadata: nil) { (metadata, error) in
-            print("Upload Task Finished")
-            print(metadata ?? "No Data.")
-            print(error ?? "No Error.")
-        }
-        uploadJob.observe(.progress) { (snapShot) in
-            print(snapShot.progress ?? "Completed.")
-            
-        }
-        uploadJob.resume()
+       print("Does nothing right now.")
+    
     }
-    
 }
-    
 /*
 * FilePrivate Func: convertToOptionalNSAttributedStringKeyDictionary
 * Helper function inserted by Swift 4.2 migrator.
 * Tucker Mogren; 2/9/19
 */
-
 fileprivate func convertToOptionalNSAttributedStringKeyDictionary(_ input: [String: Any]?) -> [NSAttributedString.Key: Any]? {
     guard let input = input else { return nil }
     return Dictionary(uniqueKeysWithValues: input.map { key, value in (NSAttributedString.Key(rawValue: key), value)})
