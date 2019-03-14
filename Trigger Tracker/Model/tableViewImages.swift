@@ -4,7 +4,6 @@
  * References: https://www.youtube.com/watch?v=rafJcqqyS1E&feature=youtu.be
  * Tucker Mogren; 2/9/19
  */
-import Foundation
 struct CellData {
     let image : UIImage?
     let notes : String?

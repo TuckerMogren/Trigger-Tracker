@@ -4,14 +4,20 @@ class CustomTableViewCell: UITableViewCell {
     var message : String?
     var mainImage : UIImage?
     
-    var messageView : UITextView = {
-        var textView = UITextView()
+    
+    //look into changing this to a label
+    var messageView : UILabel = {
+        var textView = UILabel()
         textView.translatesAutoresizingMaskIntoConstraints = false
+        textView.font = textView.font.withSize(24)
+        textView.numberOfLines = 10
+        
+        
         return textView
     }()
     var mainImageView: UIImageView = {
         var imageView = UIImageView()
-        imageView.translatesAutoresizingMaskIntoConstraints = false;
+        imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
     
@@ -22,15 +28,16 @@ class CustomTableViewCell: UITableViewCell {
         self.addSubview(messageView)
         
         mainImageView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
-        mainImageView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        mainImageView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-        mainImageView.widthAnchor.constraint(equalTo: self.widthAnchor).isActive = true
+        mainImageView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
+        mainImageView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true//issue with this constraint
+        mainImageView.bottomAnchor.constraint(equalTo: self.messageView.topAnchor).isActive = true
         
+        mainImageView.heightAnchor.constraint(equalToConstant: 200).isActive = true
         
         messageView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
-        messageView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+        messageView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
         messageView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-        messageView.widthAnchor.constraint(equalTo: self.widthAnchor).isActive = true
+        
         
     }
     

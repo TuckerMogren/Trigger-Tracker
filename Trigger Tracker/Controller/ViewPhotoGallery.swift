@@ -8,30 +8,27 @@ import UIKit
 import FirebaseFirestore
 import FirebaseAuth
 
-class ViewPhotoGallery: UITableViewController {
+class ViewPhotoGallery: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var data = [CellData]()
     
+    @IBOutlet weak var menuButtonOutlet: UIBarButtonItem!
+    @IBOutlet weak var tableView: UITableView!
+    //Ambigious reference error fixed with reference to: https://stackoverflow.com/questions/33724190/ambiguous-reference-to-member-tableview
     
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count;
     }
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Custom") as! CustomTableViewCell
         cell.mainImage = data[indexPath.row].image
         cell.message = data[indexPath.row].notes
+        cell.layoutSubviews()
         return cell
         
         
     }
-    
-    
-    
-    @IBOutlet weak var menuButton: UIBarButtonItem!
-    let customSlideBarClassInstance = CustomSlideBar()
-    
-    
      let db = Firestore.firestore() //creates instance of the firebase firestone noSQL database.
     //Will have to worry about firebase and timestamps
 
@@ -42,10 +39,12 @@ class ViewPhotoGallery: UITableViewController {
      */
     override func viewDidLoad() {
         super.viewDidLoad()
-        data = [CellData.init(image: #imageLiteral(resourceName: "Sam Regalia"), notes: "This is a test.")]
+        data = [CellData.init(image: #imageLiteral(resourceName: "Sam Regalia"), notes: "This is a test. My name is Tucker Mogren and I am trying to see what this text will do if it is long. Will it overrun, lets see!"),CellData.init(image: #imageLiteral(resourceName: "Sam Regalia"), notes: "This is a test. My name is Tucker Mogren and I am trying to see what this text will do if it is long. Will it overrun, lets see!"),CellData.init(image: #imageLiteral(resourceName: "Sam Regalia"), notes: "This is a test. My name is Tucker Mogren and I am trying to see what this text will do if it is long. Will it overrun, lets see!"),CellData.init(image: #imageLiteral(resourceName: "Sam Regalia"), notes: "This is a test. My name is Tucker Mogren and I am trying to see what this text will do if it is long. Will it overrun, lets see!"),CellData.init(image: #imageLiteral(resourceName: "Sam Regalia"), notes: "This is a test. My name is Tucker Mogren and I am trying to see what this text will do if it is long. Will it overrun, lets see!"),CellData.init(image: #imageLiteral(resourceName: "Sam Regalia"), notes: "This is a test. My name is Tucker Mogren and I am trying to see what this text will do if it is long. Will it overrun, lets see!")]
+        tableView.register(CustomTableViewCell.self, forCellReuseIdentifier: "Custom")
         
-        
-        //tableView.register(CustomTableViewCell.self, forCellReuseIdentifier: "Custom")
+        tableView.estimatedRowHeight = 350
+        tableView.rowHeight = UITableView.automaticDimension
+    
         sideMenus()
         customizeNavBar()
         // Do any additional setup after loading the view.
@@ -60,8 +59,8 @@ class ViewPhotoGallery: UITableViewController {
         
         if revealViewController() != nil {
             
-            menuButton.target = revealViewController()
-            menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
+            menuButtonOutlet.target = revealViewController()
+            menuButtonOutlet.action = #selector(SWRevealViewController.revealToggle(_:))
             revealViewController().rearViewRevealWidth = 275
             
         }
@@ -98,8 +97,6 @@ class ViewPhotoGallery: UITableViewController {
                 }
             }
         }
-        
-        
     }    
 }
 /*
