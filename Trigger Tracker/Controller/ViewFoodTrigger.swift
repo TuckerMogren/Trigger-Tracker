@@ -10,17 +10,17 @@ import FirebaseStorage
 import FirebaseFirestore
 
 class ViewFoodTrigger: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
-
-
+    
     @IBOutlet weak var imageViewUpload: UIImageView!
     //menuButton: Allows the user to be brought back to the slidebar for navigation.
     @IBOutlet weak var menuButton: UIBarButtonItem!
     var imagePickerController: UIImagePickerController!
+    @IBOutlet weak var uploadPhotoButton: CustomShapeButtonLogFood!
     
+    //Created a image reference in firebase storage for the image with path.
     var imageReference: StorageReference {
         return Storage.storage().reference().child("images")
     }
-    @IBOutlet weak var uploadPhotoButton: CustomShapeButtonLogFood!
     
     /*
      * Function Name: viewDidLoad()
@@ -91,42 +91,14 @@ class ViewFoodTrigger: UIViewController, UINavigationControllerDelegate, UIImage
         if(!UIImagePickerController.isSourceTypeAvailable(.camera))
         {
             showAlertCameraWillNotOpenSimulator()
-            
         }else{
             imagePickerController.sourceType = .camera
-            
-            
         }
 
         present(imagePickerController, animated: true, completion: nil)
         
     }
     
-    /*
-     * Function Name: sendDataToDatabase
-     * Function will send specific static data to the database when called.
-     * Tucker Mogren; 3/11/19
-     * Reference: https://firebase.google.com/docs/firestore/quickstart
-     */
-    private func sendDataToDatabase (fName: String, lName: String){
-        
-        let db = Firestore.firestore()
-        
-        var ref: DocumentReference? = nil
-        ref = db.collection("users").addDocument(data: [
-            "firstName":fName,
-            "lastName":lName,
-            "birthDate": NSDate(), //expecting a timestamp now
-            "user_ID": Auth.auth().currentUser?.uid as Any
-        ]){ err in
-            if let err = err {
-                print("Error adding document: \(err)")
-            }else {
-                print("Document added with ID: \(ref!.documentID)")
-            }
-        }
-        
-    }
     /*
      * Function: imagePickerController()
      * Executes after the photo is taken
@@ -146,8 +118,75 @@ class ViewFoodTrigger: UIViewController, UINavigationControllerDelegate, UIImage
      */
     @IBAction func uploadPhotoButtonAction(_ sender: Any)
     {
-       print("Does nothing right now.")
-    
+       print("Button Tapped")
+        guard let image = imageViewUpload.image else {return }
+        guard let imageData = image.jpegData(compressionQuality: 0.25) else {return}
+        
+        
+        let fileName = "\((Auth.auth().currentUser?.uid)!)" + " Date: " + "\(NSDate())"
+        
+        let uploadImageRef = imageReference.child(fileName)
+        
+
+        
+        let imageUpdate = uploadImageRef.putData(imageData, metadata: nil, completion:
+        
+            { (metadata, err)   in
+            
+            if err != nil {
+                print("ERROR: \(String(describing: err))")
+                return
+            }
+                uploadImageRef.downloadURL(completion: { (url, err) in
+                        if err != nil{
+                            print("ERROR: \(String(describing: err))")
+                        }else{
+                            print(url?.absoluteString as Any)
+                            
+                    self.sendDataToDatabase(email: (Auth.auth().currentUser?.email)!, fileName: fileName
+                                , downloadURL: url?.absoluteString as Any as! String, imageDate: Timestamp.init(date: NSDate() as Date))
+                }
+            })
+            
+        })
+        
+        imageUpdate.observe(.progress) { (snapshot) in
+            print(snapshot.progress ?? "Done uploading image.")
+        }
+
+        imageUpdate.resume()
+        
+    }
+    /*
+     * Function Name: sendDataToDatabase
+     * Function will send specific static data to the database when called.
+     * Tucker Mogren; 3/13/19
+     * Reference: https://firebase.google.com/docs/firestore/quickstart
+     */
+    private func sendDataToDatabase (email: String, fileName: String, downloadURL: String, imageDate: Timestamp ){
+        
+        
+        let db = Firestore.firestore()
+        
+        var ref: DocumentReference? = nil
+        ref = db.collection("photoInformation").addDocument(data: [
+            
+            
+            "eMail":email,
+            "user_ID": Auth.auth().currentUser?.uid as Any,
+            "imageFileName": fileName,
+            "imageDownloadID": downloadURL,
+            "imageTimeStamp": imageDate
+            
+            
+        ]){ err in
+            if let err = err {
+                print("Error adding document: \(err)")
+            }else {
+                print("Document added with ID: \(ref!.documentID)")
+            }
+        }
+        
     }
 }
 /*

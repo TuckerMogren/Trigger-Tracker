@@ -8,7 +8,25 @@ import UIKit
 import FirebaseFirestore
 import FirebaseAuth
 
-class ViewPhotoGallery: UIViewController {
+class ViewPhotoGallery: UITableViewController {
+    
+    var data = [CellData]()
+    
+    
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return data.count;
+    }
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Custom") as! CustomTableViewCell
+        cell.mainImage = data[indexPath.row].image
+        cell.message = data[indexPath.row].notes
+        return cell
+        
+        
+    }
+    
+    
     
     @IBOutlet weak var menuButton: UIBarButtonItem!
     let customSlideBarClassInstance = CustomSlideBar()
@@ -16,9 +34,7 @@ class ViewPhotoGallery: UIViewController {
     
      let db = Firestore.firestore() //creates instance of the firebase firestone noSQL database.
     //Will have to worry about firebase and timestamps
-    
-    
-    
+
     /*
      * Function Name: viewDidLoad()
      * When the view controller loads this code is executed.
@@ -26,7 +42,10 @@ class ViewPhotoGallery: UIViewController {
      */
     override func viewDidLoad() {
         super.viewDidLoad()
+        data = [CellData.init(image: #imageLiteral(resourceName: "Sam Regalia"), notes: "This is a test.")]
         
+        
+        //tableView.register(CustomTableViewCell.self, forCellReuseIdentifier: "Custom")
         sideMenus()
         customizeNavBar()
         // Do any additional setup after loading the view.
@@ -81,18 +100,7 @@ class ViewPhotoGallery: UIViewController {
         }
         
         
-    }
-    /*
-     * Function Name: buttonPushToSendDatabaseAction
-     * Will test send data to the database to make sure the actions of sending data to the database works and is set up properly.
-     * Tucker Mogren; 3/11/19
-     */
-    @IBAction func buttonPushToSendDatabaseAction(_ sender: Any) {
-        print("Button has been pressed.")
-        print("---------Displaying Data--------------")
-        //readDatabase()
-    }
-    
+    }    
 }
 /*
  * FilePrivate Func: convertToOptionalNSAttributedStringKeyDictionary
