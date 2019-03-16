@@ -13,7 +13,7 @@ class ViewPhotoGallery: UIViewController, UITableViewDataSource, UITableViewDele
     var data = [CellData]()
     
     @IBOutlet weak var menuButtonOutlet: UIBarButtonItem!
-    @IBOutlet weak var tableView: UITableView!
+
     //Ambigious reference error fixed with reference to: https://stackoverflow.com/questions/33724190/ambiguous-reference-to-member-tableview
     
     
@@ -21,10 +21,15 @@ class ViewPhotoGallery: UIViewController, UITableViewDataSource, UITableViewDele
         return data.count;
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Custom") as! CustomTableViewCell
-        cell.mainImage = data[indexPath.row].image
-        cell.message = data[indexPath.row].notes
-        cell.layoutSubviews()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellOne", for: indexPath) as! CustomTableViewCell
+        
+        cell.cellOneImageView.image = UIImage(named: data[indexPath.row].imageURL!)
+        cell.cellOneNotesLabelView.text = data[indexPath.row].userNotes
+        cell.cellOneDateLabelView.text = data[indexPath.row].photoDate
+        
+        
+        
+        
         return cell
         
         
@@ -39,12 +44,9 @@ class ViewPhotoGallery: UIViewController, UITableViewDataSource, UITableViewDele
      */
     override func viewDidLoad() {
         super.viewDidLoad()
-        data = [CellData.init(image: #imageLiteral(resourceName: "Sam Regalia"), notes: "This is a test. My name is Tucker Mogren and I am trying to see what this text will do if it is long. Will it overrun, lets see!"),CellData.init(image: #imageLiteral(resourceName: "Sam Regalia"), notes: "This is a test. My name is Tucker Mogren and I am trying to see what this text will do if it is long. Will it overrun, lets see!"),CellData.init(image: #imageLiteral(resourceName: "Sam Regalia"), notes: "This is a test. My name is Tucker Mogren and I am trying to see what this text will do if it is long. Will it overrun, lets see!"),CellData.init(image: #imageLiteral(resourceName: "Sam Regalia"), notes: "This is a test. My name is Tucker Mogren and I am trying to see what this text will do if it is long. Will it overrun, lets see!"),CellData.init(image: #imageLiteral(resourceName: "Sam Regalia"), notes: "This is a test. My name is Tucker Mogren and I am trying to see what this text will do if it is long. Will it overrun, lets see!"),CellData.init(image: #imageLiteral(resourceName: "Sam Regalia"), notes: "This is a test. My name is Tucker Mogren and I am trying to see what this text will do if it is long. Will it overrun, lets see!")]
-        tableView.register(CustomTableViewCell.self, forCellReuseIdentifier: "Custom")
+        data = [CellData.init(imageURL: "Sam Regalia", userNotes: "I ate a ham sandwich with Mayo, Mustard, and American Cheese on Rye bread with lays salt and vin chips." , photoDate: "03152019"), CellData.init(imageURL: "Sam Regalia", userNotes: "I ate a ham sandwich with Mayo, Mustard, and American Cheese on Rye bread with lays salt and vin chips." , photoDate: "03152019")]
         
-        tableView.estimatedRowHeight = 350
-        tableView.rowHeight = UITableView.automaticDimension
-    
+        
         sideMenus()
         customizeNavBar()
         // Do any additional setup after loading the view.

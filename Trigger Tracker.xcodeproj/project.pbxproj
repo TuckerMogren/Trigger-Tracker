@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F0B57AC223CA27100AB9D90 /* tableViewImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0B57AB223CA27100AB9D90 /* tableViewImages.swift */; };
 		3F3B3F2B220AA8F800BB8B40 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F3B3F2A220AA8F700BB8B40 /* Images.xcassets */; };
+		3F3D9C58223CA1B600D19C01 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3D9C57223CA1B600D19C01 /* CustomTableViewCell.swift */; };
 		3F6B873721FEDAE800E71A32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6B873621FEDAE800E71A32 /* AppDelegate.swift */; };
 		3F6B874121FEDAEA00E71A32 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F6B873F21FEDAEA00E71A32 /* LaunchScreen.storyboard */; };
 		3F794C87220FE93E00F09A69 /* ViewSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F794C86220FE93E00F09A69 /* ViewSettings.swift */; };
@@ -17,8 +19,6 @@
 		3F799DA821FEE09A00E17922 /* CustomShapeButtonWelcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F799DA021FEE09A00E17922 /* CustomShapeButtonWelcome.swift */; };
 		3F799DA921FEE09A00E17922 /* CustomShapeButtonLogIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F799DA121FEE09A00E17922 /* CustomShapeButtonLogIn.swift */; };
 		3F799DAB21FEE24700E17922 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F799DAA21FEE24700E17922 /* GoogleService-Info.plist */; };
-		3F7E8BBB2239FE400092FDD6 /* tableViewImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7E8BBA2239FE400092FDD6 /* tableViewImages.swift */; };
-		3F7E8BBD223A0FBC0092FDD6 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7E8BBC223A0FBC0092FDD6 /* CustomTableViewCell.swift */; };
 		3F8E80B722375FD70027E68F /* ViewPhotoGallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8E80B622375FD70027E68F /* ViewPhotoGallery.swift */; };
 		3F9811782238CC820052C1A8 /* CustomSlideBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9811772238CC820052C1A8 /* CustomSlideBar.swift */; };
 		3FA37273220FEBC2008A3DC4 /* SideMenuTutorial-Bridging-Header.h in Sources */ = {isa = PBXBuildFile; fileRef = 3FAC35C6220FDB1B004261DB /* SideMenuTutorial-Bridging-Header.h */; };
@@ -34,7 +34,9 @@
 
 /* Begin PBXFileReference section */
 		13E32F5C3DFEBCF365E7F127 /* Pods_Trigger_Tracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Trigger_Tracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F0B57AB223CA27100AB9D90 /* tableViewImages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tableViewImages.swift; sourceTree = "<group>"; };
 		3F3B3F2A220AA8F700BB8B40 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		3F3D9C57223CA1B600D19C01 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		3F6B873321FEDAE800E71A32 /* Trigger Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Trigger Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F6B873621FEDAE800E71A32 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F6B874021FEDAEA00E71A32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -46,8 +48,6 @@
 		3F799DA021FEE09A00E17922 /* CustomShapeButtonWelcome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomShapeButtonWelcome.swift; sourceTree = "<group>"; };
 		3F799DA121FEE09A00E17922 /* CustomShapeButtonLogIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomShapeButtonLogIn.swift; sourceTree = "<group>"; };
 		3F799DAA21FEE24700E17922 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
-		3F7E8BBA2239FE400092FDD6 /* tableViewImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tableViewImages.swift; sourceTree = "<group>"; };
-		3F7E8BBC223A0FBC0092FDD6 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		3F8E80B622375FD70027E68F /* ViewPhotoGallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPhotoGallery.swift; sourceTree = "<group>"; };
 		3F9811772238CC820052C1A8 /* CustomSlideBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSlideBar.swift; sourceTree = "<group>"; };
 		3FAC35BF220FDB11004261DB /* ViewLoggedIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewLoggedIn.swift; sourceTree = "<group>"; };
@@ -124,7 +124,7 @@
 		3F77CFB222016A6700A75F21 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				3F7E8BBA2239FE400092FDD6 /* tableViewImages.swift */,
+				3F0B57AB223CA27100AB9D90 /* tableViewImages.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -150,7 +150,7 @@
 				3F799DA121FEE09A00E17922 /* CustomShapeButtonLogIn.swift */,
 				3FE029D72210C0D900AB2D87 /* CustomShapeButtonLogFood.swift */,
 				3F9811772238CC820052C1A8 /* CustomSlideBar.swift */,
-				3F7E8BBC223A0FBC0092FDD6 /* CustomTableViewCell.swift */,
+				3F3D9C57223CA1B600D19C01 /* CustomTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -342,12 +342,12 @@
 				3F8E80B722375FD70027E68F /* ViewPhotoGallery.swift in Sources */,
 				3F9811782238CC820052C1A8 /* CustomSlideBar.swift in Sources */,
 				3FAC35C3220FDB11004261DB /* ViewLoggedIn.swift in Sources */,
-				3F7E8BBD223A0FBC0092FDD6 /* CustomTableViewCell.swift in Sources */,
-				3F7E8BBB2239FE400092FDD6 /* tableViewImages.swift in Sources */,
+				3F3D9C58223CA1B600D19C01 /* CustomTableViewCell.swift in Sources */,
 				3F799DA921FEE09A00E17922 /* CustomShapeButtonLogIn.swift in Sources */,
 				3F6B873721FEDAE800E71A32 /* AppDelegate.swift in Sources */,
 				3FAC35C4220FDB11004261DB /* ViewFoodTrigger.swift in Sources */,
 				3FAC35C5220FDB11004261DB /* SWRevealViewController.m in Sources */,
+				3F0B57AC223CA27100AB9D90 /* tableViewImages.swift in Sources */,
 				3F799DA621FEE09A00E17922 /* ViewSignUpPageController.swift in Sources */,
 				3F799DA821FEE09A00E17922 /* CustomShapeButtonWelcome.swift in Sources */,
 			);

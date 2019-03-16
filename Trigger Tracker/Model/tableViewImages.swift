@@ -5,6 +5,8 @@
  * Tucker Mogren; 2/9/19
  */
 struct CellData {
-    let image : UIImage?
-    let notes : String?
+    let imageURL : String?
+    let userNotes : String?
+    let photoDate : String?
+    
 }
