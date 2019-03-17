@@ -6,7 +6,6 @@
  */
 
 import UIKit
-import Firebase
 class ViewLogInPageController: UIViewController
 {
     
@@ -79,6 +78,8 @@ class ViewLogInPageController: UIViewController
      */
     @IBAction func logInButtonAction(_ sender: Any)
     {
+        let userAuth = (UIApplication.shared.delegate as! AppDelegate).fireBaseAuth
+        
         
         let eMailTextEntryLogIn: String = eMailTextFieldLogInOutlet.text!
         let passwordTextEntryLogIn: String = passwordTextFieldLogInOutlet.text!
@@ -88,7 +89,8 @@ class ViewLogInPageController: UIViewController
         preserveStateOfSwitchBetweenAppSessions();
         preserveStateOfEMailBetweenAppSessions()
         
-        Auth.auth().signIn(withEmail: eMailTextEntryLogIn, password: passwordTextEntryLogIn) { (user, error) in
+        
+        userAuth?.signIn(withEmail: eMailTextEntryLogIn, password: passwordTextEntryLogIn) { (user, error) in
             if (error == nil && user != nil)
             {
        

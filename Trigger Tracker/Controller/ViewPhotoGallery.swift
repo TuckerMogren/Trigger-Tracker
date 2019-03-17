@@ -5,36 +5,39 @@
  * References:
  */
 import UIKit
-import FirebaseFirestore
-import FirebaseAuth
 
 class ViewPhotoGallery: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    var data = [CellData]()
-    
+    var imageData : [tableViewImages] = [tableViewImages]()
     @IBOutlet weak var menuButtonOutlet: UIBarButtonItem!
 
     //Ambigious reference error fixed with reference to: https://stackoverflow.com/questions/33724190/ambiguous-reference-to-member-tableview
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.count;
+        return imageData.count;
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellOne", for: indexPath) as! CustomTableViewCell
         
-        cell.cellOneImageView.image = UIImage(named: data[indexPath.row].imageURL!)
-        cell.cellOneNotesLabelView.text = data[indexPath.row].userNotes
-        cell.cellOneDateLabelView.text = data[indexPath.row].photoDate
+        cell.cellOneDateLabelView.text = imageData[indexPath.row].photoDate.description
+        cell.cellOneNotesLabelView.text = imageData[indexPath.row].userNotes
         
-        
-        
+        if (imageData[indexPath.row].imageName.count > 0) {
+            let imageRef = (UIApplication.shared.delegate as! AppDelegate).fireBaseStorage?.reference().child("images").child(imageData[indexPath.row].imageName)
+            imageRef?.getData(maxSize: 1024 * 1024 * 10, completion: { (data, err) in
+                if err != nil {
+                    //do something if its not nil
+                }else{
+                    //do something if its nil
+                }
+            })
+        }
         
         return cell
-        
-        
+
     }
-     let db = Firestore.firestore() //creates instance of the firebase firestone noSQL database.
+    
     //Will have to worry about firebase and timestamps
 
     /*
@@ -44,9 +47,7 @@ class ViewPhotoGallery: UIViewController, UITableViewDataSource, UITableViewDele
      */
     override func viewDidLoad() {
         super.viewDidLoad()
-        data = [CellData.init(imageURL: "Sam Regalia", userNotes: "I ate a ham sandwich with Mayo, Mustard, and American Cheese on Rye bread with lays salt and vin chips." , photoDate: "03152019"), CellData.init(imageURL: "Sam Regalia", userNotes: "I ate a ham sandwich with Mayo, Mustard, and American Cheese on Rye bread with lays salt and vin chips." , photoDate: "03152019")]
-        
-        
+        imageData = [tableViewImages]()
         sideMenus()
         customizeNavBar()
         // Do any additional setup after loading the view.
@@ -87,7 +88,9 @@ class ViewPhotoGallery: UIViewController, UITableViewDataSource, UITableViewDele
      * Reference: https://firebase.google.com/docs/firestore/quickstart
      */
     private func readDatabase () {
-        db.collection("users").whereField("user_ID", isEqualTo: (Auth.auth().currentUser?.uid)!).getDocuments { (Snapshot, error) in
+        let db = (UIApplication.shared.delegate as! AppDelegate).fireBaseNoSQLDB
+        let userAuth = (UIApplication.shared.delegate as! AppDelegate).fireBaseAuth
+        db?.collection("users").whereField("user_ID", isEqualTo: (userAuth?.currentUser?.uid)!).getDocuments { (Snapshot, error) in
             if error != nil
             {
                 print(error!)
@@ -99,7 +102,7 @@ class ViewPhotoGallery: UIViewController, UITableViewDataSource, UITableViewDele
                 }
             }
         }
-    }    
+    }
 }
 /*
  * FilePrivate Func: convertToOptionalNSAttributedStringKeyDictionary

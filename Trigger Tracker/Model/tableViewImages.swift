@@ -4,9 +4,24 @@
  * References: https://www.youtube.com/watch?v=rafJcqqyS1E&feature=youtu.be
  * Tucker Mogren; 2/9/19
  */
-struct CellData {
-    let imageURL : String?
-    let userNotes : String?
-    let photoDate : String?
+
+import Foundation
+
+public class tableViewImages {
+
+    var key: String
+    var imageName: String
+    var userNotes: String
+    var photoDate: NSDate
     
+    init(dictionary: [String: AnyObject], key: String) {
+        self.key = key
+        self.imageName = dictionary["imageName"] as! String
+        self.userNotes = dictionary["notes"] as! String
+        self.photoDate = dictionary["date"] as! NSDate
+        
+    }
+        
+    
+
 }

@@ -5,10 +5,7 @@
  * Tucker Mogren; 2/9/19
  */
 import UIKit
-import FirebaseAuth
-import FirebaseStorage
-import FirebaseFirestore
-
+import Foundation
 class ViewFoodTrigger: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     @IBOutlet weak var imageViewUpload: UIImageView!
@@ -17,11 +14,16 @@ class ViewFoodTrigger: UIViewController, UINavigationControllerDelegate, UIImage
     var imagePickerController: UIImagePickerController!
     @IBOutlet weak var uploadPhotoButton: CustomShapeButtonLogFood!
     
+    let userAuth = (UIApplication.shared.delegate as! AppDelegate).fireBaseAuth
+    let fireBaseDocumentRef = (UIApplication.shared.delegate as! AppDelegate).fireBaseNoSQLDBDocumentRef
+    let db = (UIApplication.shared.delegate as! AppDelegate).fireBaseNoSQLDB
+    let imageReference = (UIApplication.shared.delegate as! AppDelegate).fireBaseStorage?.reference().child("images")
     //Created a image reference in firebase storage for the image with path.
-    var imageReference: StorageReference {
+    /* Commeted out becuase trying a new method that uses data from the appDelegate file
+    var imageReference:  {
         return Storage.storage().reference().child("images")
     }
-    
+    */
     /*
      * Function Name: viewDidLoad()
      * When the view controller loads this code is executed.
@@ -118,18 +120,18 @@ class ViewFoodTrigger: UIViewController, UINavigationControllerDelegate, UIImage
      */
     @IBAction func uploadPhotoButtonAction(_ sender: Any)
     {
-       print("Button Tapped")
+        
         guard let image = imageViewUpload.image else {return }
         guard let imageData = image.jpegData(compressionQuality: 0.25) else {return}
         
         
-        let fileName = "\((Auth.auth().currentUser?.uid)!)" + " Date: " + "\(NSDate())"
+        let fileName = "\((userAuth?.currentUser?.uid)!)" + " Date: " + "\(NSDate())"
         
-        let uploadImageRef = imageReference.child(fileName)
+        let uploadImageRef = imageReference?.child(fileName)
         
 
         
-        let imageUpdate = uploadImageRef.putData(imageData, metadata: nil, completion:
+        let imageUpdate = uploadImageRef?.putData(imageData, metadata: nil, completion:
         
             { (metadata, err)   in
             
@@ -137,24 +139,24 @@ class ViewFoodTrigger: UIViewController, UINavigationControllerDelegate, UIImage
                 print("ERROR: \(String(describing: err))")
                 return
             }
-                uploadImageRef.downloadURL(completion: { (url, err) in
+                uploadImageRef?.downloadURL(completion: { (url, err) in
                         if err != nil{
                             print("ERROR: \(String(describing: err))")
                         }else{
                             print(url?.absoluteString as Any)
                             
-                    self.sendDataToDatabase(email: (Auth.auth().currentUser?.email)!, fileName: fileName
-                                , downloadURL: url?.absoluteString as Any as! String, imageDate: Timestamp.init(date: NSDate() as Date))
+                    self.sendDataToDatabase(email: (self.userAuth?.currentUser?.email)!, fileName: fileName
+                        , downloadURL: url?.absoluteString as Any as! String, imageDate: NSDate()) //CVTimestamp vs Timestamp?
                 }
             })
             
         })
         
-        imageUpdate.observe(.progress) { (snapshot) in
+        imageUpdate?.observe(.progress) { (snapshot) in
             print(snapshot.progress ?? "Done uploading image.")
         }
 
-        imageUpdate.resume()
+        imageUpdate?.resume()
         
     }
     /*
@@ -163,17 +165,18 @@ class ViewFoodTrigger: UIViewController, UINavigationControllerDelegate, UIImage
      * Tucker Mogren; 3/13/19
      * Reference: https://firebase.google.com/docs/firestore/quickstart
      */
-    private func sendDataToDatabase (email: String, fileName: String, downloadURL: String, imageDate: Timestamp ){
+    private func sendDataToDatabase (email: String, fileName: String, downloadURL: String, imageDate: NSDate ){
         
         
-        let db = Firestore.firestore()
-        
-        var ref: DocumentReference? = nil
-        ref = db.collection("photoInformation").addDocument(data: [
+        var ref = fireBaseDocumentRef
+    
+
+
+        ref = db?.collection("photoInformation").addDocument(data: [
             
             
             "eMail":email,
-            "user_ID": Auth.auth().currentUser?.uid as Any,
+            "user_ID": userAuth?.currentUser?.uid as Any,
             "imageFileName": fileName,
             "imageDownloadID": downloadURL,
             "imageTimeStamp": imageDate

@@ -5,7 +5,6 @@
  * Tucker Mogren; 2/9/19
  */
 import UIKit
-import FirebaseAuth
 class ViewLoggedIn: UIViewController {
 
     @IBOutlet weak var menuButton: UIBarButtonItem!
@@ -58,9 +57,10 @@ class ViewLoggedIn: UIViewController {
      */
     @IBAction func logInButtonLogOutAction(_ sender: Any)
     {
-        let firebaseAuthLogOut = Auth.auth()
+        let userAuth = (UIApplication.shared.delegate as! AppDelegate).fireBaseAuth
+        
         do {
-            try firebaseAuthLogOut.signOut()
+            try userAuth?.signOut()
             
         }catch let signOutError as NSError {
             print("ERROR: Singout \(signOutError)")

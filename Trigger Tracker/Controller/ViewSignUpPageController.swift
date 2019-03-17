@@ -5,8 +5,6 @@
  */
 
 import UIKit
-import Firebase
-
 class ViewSignUpPageController: UIViewController {
     
     //Last three are for SignUp
@@ -54,6 +52,8 @@ class ViewSignUpPageController: UIViewController {
 
     @IBAction func createAccountButtonAction(_ sender: Any)
     {
+        let userAuth = (UIApplication.shared.delegate as! AppDelegate).fireBaseAuth
+        
         let e_mailEntrySignUp: String = e_MailTextFieldSignUpOutlet.text!
         let password1XSignUp: String = password1xTextFieldSignUpOutlet.text!
         let password2XSignUp: String = password2xTextFieldSignUpOutlet.text!
@@ -69,7 +69,7 @@ class ViewSignUpPageController: UIViewController {
                 print("TWO STRINGS MATCH: \(password1XSignUp) and \(password2XSignUp)")
                 
                 //creates new user.
-                Auth.auth().createUser(withEmail: e_mailEntrySignUp, password: password1XSignUp) { (authResult, error) in
+                userAuth?.createUser(withEmail: e_mailEntrySignUp, password: password1XSignUp) { (authResult, error) in
                     if error != nil
                     {
                         print("ERROR: \(error!)")
