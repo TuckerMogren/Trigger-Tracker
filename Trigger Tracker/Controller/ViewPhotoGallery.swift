@@ -81,28 +81,6 @@ class ViewPhotoGallery: UIViewController, UITableViewDataSource, UITableViewDele
         navigationController?.navigationBar.titleTextAttributes = convertToOptionalNSAttributedStringKeyDictionary([NSAttributedString.Key.foregroundColor.rawValue: UIColor.white])
         
     }
-    /*
-     * Function Name: readDatabase
-     * Function will display data in database for user
-     * Tucker Mogren; 3/12/19
-     * Reference: https://firebase.google.com/docs/firestore/quickstart
-     */
-    private func readDatabase () {
-        let db = (UIApplication.shared.delegate as! AppDelegate).fireBaseNoSQLDB
-        let userAuth = (UIApplication.shared.delegate as! AppDelegate).fireBaseAuth
-        db?.collection("users").whereField("user_ID", isEqualTo: (userAuth?.currentUser?.uid)!).getDocuments { (Snapshot, error) in
-            if error != nil
-            {
-                print(error!)
-            }else{
-                for document in (Snapshot?.documents)! {
-                    if let firstName = document.data()["firstName"] as? String {
-                        print(firstName)
-                    }
-                }
-            }
-        }
-    }
 }
 /*
  * FilePrivate Func: convertToOptionalNSAttributedStringKeyDictionary

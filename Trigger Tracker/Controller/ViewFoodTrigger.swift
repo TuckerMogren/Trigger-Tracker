@@ -122,7 +122,7 @@ class ViewFoodTrigger: UIViewController, UINavigationControllerDelegate, UIImage
     {
         
         guard let image = imageViewUpload.image else {return }
-        guard let imageData = image.jpegData(compressionQuality: 0.25) else {return}
+        guard let imageData = image.jpegData(compressionQuality: 0.10) else {return}
         
         
         let fileName = "\((userAuth?.currentUser?.uid)!)" + " Date: " + "\(NSDate())"
@@ -144,9 +144,8 @@ class ViewFoodTrigger: UIViewController, UINavigationControllerDelegate, UIImage
                             print("ERROR: \(String(describing: err))")
                         }else{
                             print(url?.absoluteString as Any)
-                            
-                    self.sendDataToDatabase(email: (self.userAuth?.currentUser?.email)!, fileName: fileName
-                        , downloadURL: url?.absoluteString as Any as! String, imageDate: NSDate()) //CVTimestamp vs Timestamp?
+                      
+                    self.sendDataToDatabase(userNotes: "TESTTESTTESTTESTTESTTESTTESTTES", imageName: fileName, imageDate: NSDate()) //CVTimestamp vs Timestamp?
                 }
             })
             
@@ -165,7 +164,7 @@ class ViewFoodTrigger: UIViewController, UINavigationControllerDelegate, UIImage
      * Tucker Mogren; 3/13/19
      * Reference: https://firebase.google.com/docs/firestore/quickstart
      */
-    private func sendDataToDatabase (email: String, fileName: String, downloadURL: String, imageDate: NSDate ){
+    private func sendDataToDatabase (userNotes: String, imageName: String, imageDate: NSDate ){
         
         
         var ref = fireBaseDocumentRef
@@ -175,11 +174,10 @@ class ViewFoodTrigger: UIViewController, UINavigationControllerDelegate, UIImage
         ref = db?.collection("photoInformation").addDocument(data: [
             
             
-            "eMail":email,
-            "user_ID": userAuth?.currentUser?.uid as Any,
-            "imageFileName": fileName,
-            "imageDownloadID": downloadURL,
-            "imageTimeStamp": imageDate
+            "userID" : userAuth?.currentUser?.uid as Any,
+            "userNotes": userNotes,
+            "imageName": imageName,
+            "imageDate": imageDate
             
             
         ]){ err in

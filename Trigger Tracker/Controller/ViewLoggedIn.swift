@@ -19,7 +19,39 @@ class ViewLoggedIn: UIViewController {
         super.viewDidLoad()
         sideMenus()
         customizeNavBar()
+        readDatabase()
     }
+    
+    /*
+     * Function Name: readDatabase
+     * Function will display data in database for user
+     * Tucker Mogren; 3/17/19
+     * Reference: https://firebase.google.com/docs/firestore/quickstart
+     */
+    func readDatabase () {
+        let db = (UIApplication.shared.delegate as! AppDelegate).fireBaseNoSQLDB
+        let userAuth = (UIApplication.shared.delegate as! AppDelegate).fireBaseAuth
+        var numberOfDocumentsInDataBase = 0
+        db?.collection("photoInformation").whereField("userID", isEqualTo: (userAuth?.currentUser?.uid)!).getDocuments { (Snapshot, error) in
+            if error != nil
+            {
+                print("ERROR: \(error!)")
+            }else{
+                for document in (Snapshot?.documents)! {
+                    numberOfDocumentsInDataBase = numberOfDocumentsInDataBase + 1
+                    if let firstName = document.data()["firstName"] as? String {
+                        print(firstName)
+                    }
+                    
+                    
+                }
+                print("There are: \(numberOfDocumentsInDataBase) items in the database.")
+            }
+        }
+    }
+    
+    
+    
     /*
      * Function Name: sideMenus()
      * Shows the side bar controller.
