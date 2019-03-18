@@ -10,6 +10,9 @@ class ViewLoggedIn: UIViewController {
     @IBOutlet weak var menuButton: UIBarButtonItem!
     @IBOutlet weak var logOutButton: UIBarButtonItem!
     
+    
+    var imageData : [tableViewImages] = [tableViewImages]()
+    
     /*
      * Function Name: viewDidLoad()
      * When the view controller loads this code is executed.
@@ -20,6 +23,9 @@ class ViewLoggedIn: UIViewController {
         sideMenus()
         customizeNavBar()
         readDatabase()
+        print("Values in the dict are.....")
+        testDictValues()
+        
     }
     
     /*
@@ -37,11 +43,33 @@ class ViewLoggedIn: UIViewController {
             {
                 print("ERROR: \(error!)")
             }else{
+                print("In the data!")
                 for document in (Snapshot?.documents)! {
                     numberOfDocumentsInDataBase = numberOfDocumentsInDataBase + 1
-                    if let firstName = document.data()["firstName"] as? String {
-                        print(firstName)
+                    if let imageName = document.data()["imageName"] as? String
+                    {
+                        print("The image name is: \(imageName)")
+                        self.imageData[numberOfDocumentsInDataBase].imageName = imageName
+                        //TODO: need to convert imageData from a dictionary back to a struct
                     }
+                    if let userNotes = document.data()["userNotes"] as? String
+                    {
+                        print("The user notes are: \(userNotes)")
+                        self.imageData[numberOfDocumentsInDataBase].userNotes = userNotes
+                    }
+                    if let imageDate = document.data()["imageDate"] as? NSDate
+                    {
+                        print("The image date is: \(imageDate)")
+                        self.imageData[numberOfDocumentsInDataBase].photoDate = imageDate
+                    }
+                    
+                    
+                    //fill dict. in this scope
+                    //TODO: check for duplicates and remove dutplicates before sending data to dict.
+                        //1. compare image names between the one in the database and all the ones in the current dict.
+                        //1a. if its there, goto the next one
+                        //1b. if its not there, add it
+                    //use string interpolation to display NSDate to the user in the table view
                     
                     
                 }
@@ -102,6 +130,15 @@ class ViewLoggedIn: UIViewController {
         self.present(newVC, animated: true, completion: nil)
         
     }
+    
+    
+    //test function to see what values are in the dict.
+    func testDictValues() {
+        imageData.forEach { print($0)
+        }
+    }
+    
+    
 }
 
 /*

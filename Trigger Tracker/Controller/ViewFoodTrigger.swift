@@ -17,13 +17,10 @@ class ViewFoodTrigger: UIViewController, UINavigationControllerDelegate, UIImage
     let userAuth = (UIApplication.shared.delegate as! AppDelegate).fireBaseAuth
     let fireBaseDocumentRef = (UIApplication.shared.delegate as! AppDelegate).fireBaseNoSQLDBDocumentRef
     let db = (UIApplication.shared.delegate as! AppDelegate).fireBaseNoSQLDB
-    let imageReference = (UIApplication.shared.delegate as! AppDelegate).fireBaseStorage?.reference().child("images")
     //Created a image reference in firebase storage for the image with path.
-    /* Commeted out becuase trying a new method that uses data from the appDelegate file
-    var imageReference:  {
-        return Storage.storage().reference().child("images")
-    }
-    */
+    let imageReference = (UIApplication.shared.delegate as! AppDelegate).fireBaseStorage?.reference().child("images")
+    
+
     /*
      * Function Name: viewDidLoad()
      * When the view controller loads this code is executed.
