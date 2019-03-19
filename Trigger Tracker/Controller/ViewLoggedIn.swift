@@ -10,8 +10,7 @@ class ViewLoggedIn: UIViewController {
     @IBOutlet weak var menuButton: UIBarButtonItem!
     @IBOutlet weak var logOutButton: UIBarButtonItem!
     
-    
-    var imageData : [tableViewImages] = [tableViewImages]()
+    var imageData = tableViewImages()
     
     /*
      * Function Name: viewDidLoad()
@@ -22,9 +21,6 @@ class ViewLoggedIn: UIViewController {
         super.viewDidLoad()
         sideMenus()
         customizeNavBar()
-        readDatabase()
-        print("Values in the dict are.....")
-        testDictValues()
         
     }
     
@@ -34,51 +30,51 @@ class ViewLoggedIn: UIViewController {
      * Tucker Mogren; 3/17/19
      * Reference: https://firebase.google.com/docs/firestore/quickstart
      */
+    
+    /*
     func readDatabase () {
         let db = (UIApplication.shared.delegate as! AppDelegate).fireBaseNoSQLDB
         let userAuth = (UIApplication.shared.delegate as! AppDelegate).fireBaseAuth
         var numberOfDocumentsInDataBase = 0
+        
+        
+    
         db?.collection("photoInformation").whereField("userID", isEqualTo: (userAuth?.currentUser?.uid)!).getDocuments { (Snapshot, error) in
+           
             if error != nil
             {
                 print("ERROR: \(error!)")
             }else{
-                print("In the data!")
                 for document in (Snapshot?.documents)! {
                     numberOfDocumentsInDataBase = numberOfDocumentsInDataBase + 1
-                    if let imageName = document.data()["imageName"] as? String
-                    {
-                        print("The image name is: \(imageName)")
-                        self.imageData[numberOfDocumentsInDataBase].imageName = imageName
-                        //TODO: need to convert imageData from a dictionary back to a struct
-                    }
-                    if let userNotes = document.data()["userNotes"] as? String
-                    {
-                        print("The user notes are: \(userNotes)")
-                        self.imageData[numberOfDocumentsInDataBase].userNotes = userNotes
-                    }
-                    if let imageDate = document.data()["imageDate"] as? NSDate
-                    {
-                        print("The image date is: \(imageDate)")
-                        self.imageData[numberOfDocumentsInDataBase].photoDate = imageDate
-                    }
+                    let pieceOfDataName = document.get("imageName")
+                    let pieceOfDataNotes = document.get("userNotes")
+                    let pieceOfDataDate = document.get("imageDate")
                     
-                    
-                    //fill dict. in this scope
-                    //TODO: check for duplicates and remove dutplicates before sending data to dict.
-                        //1. compare image names between the one in the database and all the ones in the current dict.
-                        //1a. if its there, goto the next one
-                        //1b. if its not there, add it
-                    //use string interpolation to display NSDate to the user in the table view
-                    
-                    
+                    self.imageData.imageName.append("\(pieceOfDataName!)")
+                    self.imageData.userNotes.append("\(pieceOfDataNotes!)")
+                    self.imageData.imageDate.append("\(pieceOfDataDate!)")
                 }
-                print("There are: \(numberOfDocumentsInDataBase) items in the database.")
+                
             }
         }
     }
     
     
+    
+    func testCallArray() {
+        for value in imageData.imageName {
+            print("The image name is: \(value)")
+        }
+        for value in imageData.imageDate {
+            print("The image date is: \(value)")
+        }
+        for value in imageData.userNotes {
+            print("The user notes is: \(value)")
+        }
+    }
+    
+    */
     
     /*
      * Function Name: sideMenus()
@@ -130,15 +126,7 @@ class ViewLoggedIn: UIViewController {
         self.present(newVC, animated: true, completion: nil)
         
     }
-    
-    
-    //test function to see what values are in the dict.
-    func testDictValues() {
-        imageData.forEach { print($0)
-        }
-    }
-    
-    
+
 }
 
 /*

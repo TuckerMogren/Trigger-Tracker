@@ -8,38 +8,37 @@ import UIKit
 
 class ViewPhotoGallery: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    var imageData : [tableViewImages] = [tableViewImages]()
+    var imageData = tableViewImages()
     @IBOutlet weak var menuButtonOutlet: UIBarButtonItem!
 
     //Ambigious reference error fixed with reference to: https://stackoverflow.com/questions/33724190/ambiguous-reference-to-member-tableview
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return imageData.count;
+        return imageData.imageName.count
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellOne", for: indexPath) as! CustomTableViewCell
+        //need to figure out how to get each element.
+        cell.cellOneDateLabelView.text = imageData.imageDate[indexPath.row]
+        cell.cellOneNotesLabelView.text = imageData.userNotes[indexPath.row]
+
         
-        cell.cellOneDateLabelView.text = imageData[indexPath.row].photoDate.description
-        cell.cellOneNotesLabelView.text = imageData[indexPath.row].userNotes
-        
-        if (imageData[indexPath.row].imageName.count > 0) {
-            let imageRef = (UIApplication.shared.delegate as! AppDelegate).fireBaseStorage?.reference().child("images").child(imageData[indexPath.row].imageName)
-            imageRef?.getData(maxSize: 1024 * 1024 * 10, completion: { (data, err) in
-                if err != nil {
-                    //do something if its not nil
-                }else{
-                    //do something if its nil
-                }
-            })
-        }
-        
+        //have all this code in the completion block in the read database method????
+        let imageRef = (UIApplication.shared.delegate as! AppDelegate).fireBaseStorage?.reference().child("images").child(imageData.imageName[indexPath.row])
+        imageRef?.getData(maxSize: 1024 * 1024 * 10, completion: { (data, err) in
+            if let err = err{
+                print("ERROR: \(err)")
+                    
+            }else{
+                cell.cellOneImageView.image = UIImage(data: data!)
+            }
+        })
         return cell
 
     }
     
-    //Will have to worry about firebase and timestamps
-
     /*
      * Function Name: viewDidLoad()
      * When the view controller loads this code is executed.
@@ -47,10 +46,8 @@ class ViewPhotoGallery: UIViewController, UITableViewDataSource, UITableViewDele
      */
     override func viewDidLoad() {
         super.viewDidLoad()
-        imageData = [tableViewImages]()
         sideMenus()
         customizeNavBar()
-        // Do any additional setup after loading the view.
     }
     
     /*
