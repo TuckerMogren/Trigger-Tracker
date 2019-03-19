@@ -15,22 +15,22 @@ class ViewPhotoGallery: UIViewController, UITableViewDataSource, UITableViewDele
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return imageData.imageName.count
+        return ((imageData.imageName.count) - 1)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellOne", for: indexPath) as! CustomTableViewCell
-        //need to figure out how to get each element.
-        cell.cellOneDateLabelView.text = imageData.imageDate[indexPath.row]
-        cell.cellOneNotesLabelView.text = imageData.userNotes[indexPath.row]
-
+        //subtracting indexPath.row - 1 in order to ignore the init blanks in tableViewImages
+        cell.cellOneDateLabelView.text = imageData.imageDate[indexPath.row - 1]
+        cell.cellOneNotesLabelView.text = imageData.userNotes[indexPath.row - 1]
+        
         
         //have all this code in the completion block in the read database method????
-        let imageRef = (UIApplication.shared.delegate as! AppDelegate).fireBaseStorage?.reference().child("images").child(imageData.imageName[indexPath.row])
+        let imageRef = (UIApplication.shared.delegate as! AppDelegate).fireBaseStorage?.reference().child("images").child(imageData.imageName[indexPath.row - 1])
         imageRef?.getData(maxSize: 1024 * 1024 * 10, completion: { (data, err) in
             if let err = err{
                 print("ERROR: \(err)")
-                    
+                
             }else{
                 cell.cellOneImageView.image = UIImage(data: data!)
             }

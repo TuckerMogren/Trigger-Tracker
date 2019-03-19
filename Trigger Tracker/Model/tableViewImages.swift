@@ -18,6 +18,8 @@ public class tableViewImages: NSObject {
     
     public override init() {
         
+    
+        //these will happen in the db completion block in the tableView(cellForRowAt)
         self.imageName.append("hiEun71BDqfaaLrHWG8FuPTc1u42 Date: 2019-03-18 00:58:34 +0000")
         self.userNotes.append("This is a photo of a red solo cup in front of a computer keyboard.")
         self.imageDate.append("3/17/19 at 8:58:36 PM UTC-4")
