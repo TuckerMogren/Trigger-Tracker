@@ -15,18 +15,18 @@ class ViewPhotoGallery: UIViewController, UITableViewDataSource, UITableViewDele
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return ((imageData.imageName.count) - 1)
+        return ((imageData.imageName.count))
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellOne", for: indexPath) as! CustomTableViewCell
         //subtracting indexPath.row - 1 in order to ignore the init blanks in tableViewImages
-        cell.cellOneDateLabelView.text = imageData.imageDate[indexPath.row - 1]
-        cell.cellOneNotesLabelView.text = imageData.userNotes[indexPath.row - 1]
+        cell.cellOneDateLabelView.text = imageData.imageDate[indexPath.row]
+        cell.cellOneNotesLabelView.text = imageData.userNotes[indexPath.row]
         
         
         //have all this code in the completion block in the read database method????
-        let imageRef = (UIApplication.shared.delegate as! AppDelegate).fireBaseStorage?.reference().child("images").child(imageData.imageName[indexPath.row - 1])
+        let imageRef = (UIApplication.shared.delegate as! AppDelegate).fireBaseStorage?.reference().child("images").child(imageData.imageName[indexPath.row])
         imageRef?.getData(maxSize: 1024 * 1024 * 10, completion: { (data, err) in
             if let err = err{
                 print("ERROR: \(err)")
@@ -73,7 +73,7 @@ class ViewPhotoGallery: UIViewController, UITableViewDataSource, UITableViewDele
      */
     func customizeNavBar() {
         navigationController?.navigationBar.tintColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0)
-        navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.1019607843, green: 0.4588235294, blue: 0.8196078431, alpha: 1)
+        navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.1960784314, green: 0.3215686275, blue: 1, alpha: 1)
         
         navigationController?.navigationBar.titleTextAttributes = convertToOptionalNSAttributedStringKeyDictionary([NSAttributedString.Key.foregroundColor.rawValue: UIColor.white])
         

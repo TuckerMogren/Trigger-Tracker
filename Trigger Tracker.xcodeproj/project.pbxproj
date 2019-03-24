@@ -16,8 +16,7 @@
 		3F799DA521FEE09A00E17922 /* ViewWelcomeDashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F799D9C21FEE09A00E17922 /* ViewWelcomeDashboard.swift */; };
 		3F799DA621FEE09A00E17922 /* ViewSignUpPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F799D9D21FEE09A00E17922 /* ViewSignUpPageController.swift */; };
 		3F799DA721FEE09A00E17922 /* ViewLogInPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F799D9E21FEE09A00E17922 /* ViewLogInPageController.swift */; };
-		3F799DA821FEE09A00E17922 /* CustomShapeButtonWelcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F799DA021FEE09A00E17922 /* CustomShapeButtonWelcome.swift */; };
-		3F799DA921FEE09A00E17922 /* CustomShapeButtonLogIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F799DA121FEE09A00E17922 /* CustomShapeButtonLogIn.swift */; };
+		3F799DA821FEE09A00E17922 /* CustomShapeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F799DA021FEE09A00E17922 /* CustomShapeButton.swift */; };
 		3F799DAB21FEE24700E17922 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F799DAA21FEE24700E17922 /* GoogleService-Info.plist */; };
 		3F8E80B722375FD70027E68F /* ViewPhotoGallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8E80B622375FD70027E68F /* ViewPhotoGallery.swift */; };
 		3F9811782238CC820052C1A8 /* CustomSlideBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9811772238CC820052C1A8 /* CustomSlideBar.swift */; };
@@ -27,7 +26,6 @@
 		3FAC35C4220FDB11004261DB /* ViewFoodTrigger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAC35C1220FDB11004261DB /* ViewFoodTrigger.swift */; };
 		3FAC35C5220FDB11004261DB /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FAC35C2220FDB11004261DB /* SWRevealViewController.m */; };
 		3FAC35C8220FDB26004261DB /* SlideMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FAC35C7220FDB26004261DB /* SlideMenu.storyboard */; };
-		3FE029D82210C0D900AB2D87 /* CustomShapeButtonLogFood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE029D72210C0D900AB2D87 /* CustomShapeButtonLogFood.swift */; };
 		3FE72A0521FEDBD300FBB737 /* AppHomeDashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FE72A0121FEDBD300FBB737 /* AppHomeDashboard.storyboard */; };
 		577DBE6DE5E532043CAD1355 /* Pods_Trigger_Tracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13E32F5C3DFEBCF365E7F127 /* Pods_Trigger_Tracker.framework */; };
 /* End PBXBuildFile section */
@@ -45,8 +43,7 @@
 		3F799D9C21FEE09A00E17922 /* ViewWelcomeDashboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewWelcomeDashboard.swift; sourceTree = "<group>"; };
 		3F799D9D21FEE09A00E17922 /* ViewSignUpPageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewSignUpPageController.swift; sourceTree = "<group>"; };
 		3F799D9E21FEE09A00E17922 /* ViewLogInPageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewLogInPageController.swift; sourceTree = "<group>"; };
-		3F799DA021FEE09A00E17922 /* CustomShapeButtonWelcome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomShapeButtonWelcome.swift; sourceTree = "<group>"; };
-		3F799DA121FEE09A00E17922 /* CustomShapeButtonLogIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomShapeButtonLogIn.swift; sourceTree = "<group>"; };
+		3F799DA021FEE09A00E17922 /* CustomShapeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomShapeButton.swift; sourceTree = "<group>"; };
 		3F799DAA21FEE24700E17922 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3F8E80B622375FD70027E68F /* ViewPhotoGallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPhotoGallery.swift; sourceTree = "<group>"; };
 		3F9811772238CC820052C1A8 /* CustomSlideBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSlideBar.swift; sourceTree = "<group>"; };
@@ -56,7 +53,6 @@
 		3FAC35C2220FDB11004261DB /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		3FAC35C6220FDB1B004261DB /* SideMenuTutorial-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SideMenuTutorial-Bridging-Header.h"; sourceTree = "<group>"; };
 		3FAC35C7220FDB26004261DB /* SlideMenu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SlideMenu.storyboard; sourceTree = "<group>"; };
-		3FE029D72210C0D900AB2D87 /* CustomShapeButtonLogFood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomShapeButtonLogFood.swift; sourceTree = "<group>"; };
 		3FE72A0221FEDBD300FBB737 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/AppHomeDashboard.storyboard; sourceTree = "<group>"; };
 		3FE72A0921FEDBF000FBB737 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7CD01810414B60C3B2003188 /* Pods-Trigger Tracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Trigger Tracker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Trigger Tracker/Pods-Trigger Tracker.debug.xcconfig"; sourceTree = "<group>"; };
@@ -146,9 +142,7 @@
 		3F799D9921FEE09A00E17922 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				3F799DA021FEE09A00E17922 /* CustomShapeButtonWelcome.swift */,
-				3F799DA121FEE09A00E17922 /* CustomShapeButtonLogIn.swift */,
-				3FE029D72210C0D900AB2D87 /* CustomShapeButtonLogFood.swift */,
+				3F799DA021FEE09A00E17922 /* CustomShapeButton.swift */,
 				3F9811772238CC820052C1A8 /* CustomSlideBar.swift */,
 				3F3D9C57223CA1B600D19C01 /* CustomTableViewCell.swift */,
 			);
@@ -336,20 +330,18 @@
 				3FA37274220FEBE0008A3DC4 /* SWRevealViewController.h in Sources */,
 				3FA37273220FEBC2008A3DC4 /* SideMenuTutorial-Bridging-Header.h in Sources */,
 				3F799DA521FEE09A00E17922 /* ViewWelcomeDashboard.swift in Sources */,
-				3FE029D82210C0D900AB2D87 /* CustomShapeButtonLogFood.swift in Sources */,
 				3F799DA721FEE09A00E17922 /* ViewLogInPageController.swift in Sources */,
 				3F794C87220FE93E00F09A69 /* ViewSettings.swift in Sources */,
 				3F8E80B722375FD70027E68F /* ViewPhotoGallery.swift in Sources */,
 				3F9811782238CC820052C1A8 /* CustomSlideBar.swift in Sources */,
 				3FAC35C3220FDB11004261DB /* ViewLoggedIn.swift in Sources */,
 				3F3D9C58223CA1B600D19C01 /* CustomTableViewCell.swift in Sources */,
-				3F799DA921FEE09A00E17922 /* CustomShapeButtonLogIn.swift in Sources */,
 				3F6B873721FEDAE800E71A32 /* AppDelegate.swift in Sources */,
 				3FAC35C4220FDB11004261DB /* ViewFoodTrigger.swift in Sources */,
 				3FAC35C5220FDB11004261DB /* SWRevealViewController.m in Sources */,
 				3F0B57AC223CA27100AB9D90 /* tableViewImages.swift in Sources */,
 				3F799DA621FEE09A00E17922 /* ViewSignUpPageController.swift in Sources */,
-				3F799DA821FEE09A00E17922 /* CustomShapeButtonWelcome.swift in Sources */,
+				3F799DA821FEE09A00E17922 /* CustomShapeButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -513,7 +505,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "Trigger Tracker/SlideMenuCode/SideMenuTutorial-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -536,7 +528,7 @@
 				SWIFT_ENABLE_BATCH_MODE = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "Trigger Tracker/SlideMenuCode/SideMenuTutorial-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yKf-eP-Rwt" customClass="CustomShapeButtonWelcome" customModule="Trigger_Tracker">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yKf-eP-Rwt" customClass="CustomShapeButton" customModule="Trigger_Tracker">
                                 <rect key="frame" x="38" y="623" width="299" height="45"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -29,7 +29,7 @@
                                     <action selector="logInButtonHomeScreenAction:" destination="IBM-1Z-Vgw" eventType="touchUpInside" id="tXP-pe-W4g"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sFV-lQ-5EB" customClass="CustomShapeButtonWelcome" customModule="Trigger_Tracker">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sFV-lQ-5EB" customClass="CustomShapeButton" customModule="Trigger_Tracker">
                                 <rect key="frame" x="38" y="683" width="299" height="45"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -50,7 +50,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A comprehensive app for migraine sufferers." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tEm-yX-h6w">
-                                <rect key="frame" x="62.000000000000014" y="117" width="251.33333333333337" height="15"/>
+                                <rect key="frame" x="62" y="117" width="251" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="15" id="Kpb-bl-P6P"/>
                                 </constraints>
@@ -58,29 +58,27 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Logo will go here" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EwY-VP-ioL">
-                                <rect key="frame" x="102.66666666666669" y="184" width="170" height="170"/>
-                                <color key="backgroundColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trigger_tracker" translatesAutoresizingMaskIntoConstraints="NO" id="Qxu-b1-VLd">
+                                <rect key="frame" x="73" y="167" width="240" height="350"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="170" id="1in-KP-c9g"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="170" id="sLf-hL-jV8"/>
+                                    <constraint firstAttribute="height" constant="350" id="4F8-MF-bRM"/>
+                                    <constraint firstAttribute="width" constant="240" id="JRY-W7-3QJ"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.1019607843" green="0.45882352939999999" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.19607843137254902" green="0.32156862745098036" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="EwY-VP-ioL" firstAttribute="top" secondItem="tEm-yX-h6w" secondAttribute="bottom" constant="52" id="32S-hX-gGa"/>
                             <constraint firstItem="yKf-eP-Rwt" firstAttribute="leading" secondItem="RrJ-1h-zpr" secondAttribute="leading" constant="38" id="5op-J8-5Y9"/>
+                            <constraint firstItem="Qxu-b1-VLd" firstAttribute="top" secondItem="tEm-yX-h6w" secondAttribute="bottom" constant="35" id="CIc-Fu-brs"/>
                             <constraint firstItem="tEm-yX-h6w" firstAttribute="centerX" secondItem="RrJ-1h-zpr" secondAttribute="centerX" id="FA3-tH-SIF"/>
                             <constraint firstItem="yKf-eP-Rwt" firstAttribute="centerX" secondItem="oLc-PS-BGr" secondAttribute="centerX" id="G85-CW-2Ng"/>
                             <constraint firstItem="2qN-Rg-RWC" firstAttribute="centerX" secondItem="RrJ-1h-zpr" secondAttribute="centerX" id="Hvz-zp-RHe"/>
-                            <constraint firstItem="EwY-VP-ioL" firstAttribute="centerX" secondItem="RrJ-1h-zpr" secondAttribute="centerX" id="JL3-6p-v7N"/>
+                            <constraint firstItem="Qxu-b1-VLd" firstAttribute="trailing" secondItem="tEm-yX-h6w" secondAttribute="trailing" id="ONM-p0-Hi4"/>
                             <constraint firstItem="2qN-Rg-RWC" firstAttribute="top" secondItem="RrJ-1h-zpr" secondAttribute="top" constant="20" id="YSd-Yy-Eyu"/>
+                            <constraint firstItem="Qxu-b1-VLd" firstAttribute="top" secondItem="oLc-PS-BGr" secondAttribute="top" constant="167" id="ZKB-0B-7l8"/>
                             <constraint firstItem="RrJ-1h-zpr" firstAttribute="bottom" secondItem="sFV-lQ-5EB" secondAttribute="bottom" constant="50" id="acK-0g-fnZ"/>
+                            <constraint firstItem="Qxu-b1-VLd" firstAttribute="leading" secondItem="RrJ-1h-zpr" secondAttribute="leading" constant="73" id="f6X-ea-aE2"/>
                             <constraint firstItem="tEm-yX-h6w" firstAttribute="top" secondItem="2qN-Rg-RWC" secondAttribute="bottom" constant="5" id="jDT-af-egC"/>
                             <constraint firstItem="sFV-lQ-5EB" firstAttribute="top" secondItem="yKf-eP-Rwt" secondAttribute="bottom" constant="15" id="kEp-W5-aEh"/>
                             <constraint firstItem="yKf-eP-Rwt" firstAttribute="trailing" secondItem="sFV-lQ-5EB" secondAttribute="trailing" id="mOY-kP-SOh"/>
@@ -96,7 +94,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pOE-UY-xwq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="756" y="552"/>
+            <point key="canvasLocation" x="756" y="551.97044334975374"/>
         </scene>
         <!--Sign-Up-->
         <scene sceneID="kUJ-dm-FYk">
@@ -144,10 +142,11 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XO4-7H-bja" customClass="CustomShapeButtonLogIn" customModule="Trigger_Tracker">
-                                <rect key="frame" x="87.666666666666686" y="445" width="200" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XO4-7H-bja" customClass="CustomShapeButton" customModule="Trigger_Tracker" customModuleProvider="target">
+                                <rect key="frame" x="87.666666666666686" y="445" width="200" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="2sF-IO-avx"/>
+                                    <constraint firstAttribute="height" constant="45" id="EDe-hg-gMt"/>
                                 </constraints>
                                 <state key="normal" title="Create Account">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -158,7 +157,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.1019607843" green="0.45882352939999999" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.19607843137254902" green="0.32156862745098036" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="slM-bi-TMI" firstAttribute="top" secondItem="N2G-hJ-9Kk" secondAttribute="bottom" constant="20" id="BJs-xt-cmV"/>
@@ -183,7 +182,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bAz-Kg-5lp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1761" y="984"/>
+            <point key="canvasLocation" x="1760.8" y="983.49753694581284"/>
         </scene>
         <!--Log-In-->
         <scene sceneID="tne-QT-ifu">
@@ -213,7 +212,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3av-bC-M7e" customClass="CustomShapeButtonLogIn" customModule="Trigger_Tracker">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3av-bC-M7e" customClass="CustomShapeButton" customModule="Trigger_Tracker" customModuleProvider="target">
                                 <rect key="frame" x="87.333333333333329" y="391" width="200.33333333333337" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200.5" id="cCb-OT-loI"/>
@@ -232,8 +231,8 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="PRn-GC-OYe"/>
                                 </constraints>
-                                <color key="onTintColor" red="0.50196081400000003" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="thumbTintColor" red="0.1019607843" green="0.45882352939999999" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="onTintColor" red="0.64313725490196072" green="0.047058823529411764" blue="0.90980392156862744" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="thumbTintColor" red="0.19607843137254902" green="0.32156862745098036" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Save E-Mail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RZr-Ij-L67">
                                 <rect key="frame" x="146.66666666666663" y="360" width="131.33333333333337" height="17"/>
@@ -256,7 +255,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.10196078431372549" green="0.45882352941176469" blue="0.81960784313725488" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.19607843137254902" green="0.32156862745098036" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="NUN-Z2-Ld1" firstAttribute="top" secondItem="okf-Y0-yIL" secondAttribute="bottom" constant="13" id="9tm-DQ-5Fv"/>
@@ -298,4 +297,7 @@
             <point key="canvasLocation" x="3849" y="552"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="trigger_tracker" width="1650" height="2250"/>
+    </resources>
 </document>
