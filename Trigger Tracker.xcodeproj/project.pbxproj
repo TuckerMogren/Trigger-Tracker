@@ -13,12 +13,12 @@
 		3F3D9C58223CA1B600D19C01 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3D9C57223CA1B600D19C01 /* CustomTableViewCell.swift */; };
 		3F6B873721FEDAE800E71A32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6B873621FEDAE800E71A32 /* AppDelegate.swift */; };
 		3F6B874121FEDAEA00E71A32 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F6B873F21FEDAEA00E71A32 /* LaunchScreen.storyboard */; };
+		3F6C6C8F22490D9600BA9D2B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F6C6C8E22490D9500BA9D2B /* GoogleService-Info.plist */; };
 		3F794C87220FE93E00F09A69 /* ViewSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F794C86220FE93E00F09A69 /* ViewSettings.swift */; };
 		3F799DA521FEE09A00E17922 /* ViewWelcomeDashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F799D9C21FEE09A00E17922 /* ViewWelcomeDashboard.swift */; };
 		3F799DA621FEE09A00E17922 /* ViewSignUpPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F799D9D21FEE09A00E17922 /* ViewSignUpPageController.swift */; };
 		3F799DA721FEE09A00E17922 /* ViewLogInPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F799D9E21FEE09A00E17922 /* ViewLogInPageController.swift */; };
 		3F799DA821FEE09A00E17922 /* CustomShapeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F799DA021FEE09A00E17922 /* CustomShapeButton.swift */; };
-		3F799DAB21FEE24700E17922 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F799DAA21FEE24700E17922 /* GoogleService-Info.plist */; };
 		3F8E80B722375FD70027E68F /* ViewPhotoGallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8E80B622375FD70027E68F /* ViewPhotoGallery.swift */; };
 		3F9811782238CC820052C1A8 /* CustomSlideBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9811772238CC820052C1A8 /* CustomSlideBar.swift */; };
 		3FA37273220FEBC2008A3DC4 /* SideMenuTutorial-Bridging-Header.h in Sources */ = {isa = PBXBuildFile; fileRef = 3FAC35C6220FDB1B004261DB /* SideMenuTutorial-Bridging-Header.h */; };
@@ -41,12 +41,12 @@
 		3F6B873621FEDAE800E71A32 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F6B874021FEDAEA00E71A32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3F6B874221FEDAEA00E71A32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F6C6C8E22490D9500BA9D2B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3F794C86220FE93E00F09A69 /* ViewSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewSettings.swift; sourceTree = "<group>"; };
 		3F799D9C21FEE09A00E17922 /* ViewWelcomeDashboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewWelcomeDashboard.swift; sourceTree = "<group>"; };
 		3F799D9D21FEE09A00E17922 /* ViewSignUpPageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewSignUpPageController.swift; sourceTree = "<group>"; };
 		3F799D9E21FEE09A00E17922 /* ViewLogInPageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewLogInPageController.swift; sourceTree = "<group>"; };
 		3F799DA021FEE09A00E17922 /* CustomShapeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomShapeButton.swift; sourceTree = "<group>"; };
-		3F799DAA21FEE24700E17922 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3F8E80B622375FD70027E68F /* ViewPhotoGallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPhotoGallery.swift; sourceTree = "<group>"; };
 		3F9811772238CC820052C1A8 /* CustomSlideBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSlideBar.swift; sourceTree = "<group>"; };
 		3FAC35BF220FDB11004261DB /* ViewLoggedIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewLoggedIn.swift; sourceTree = "<group>"; };
@@ -113,7 +113,7 @@
 				3FE72A0121FEDBD300FBB737 /* AppHomeDashboard.storyboard */,
 				3FAC35C7220FDB26004261DB /* SlideMenu.storyboard */,
 				3F6B874221FEDAEA00E71A32 /* Info.plist */,
-				3F799DAA21FEE24700E17922 /* GoogleService-Info.plist */,
+				3F6C6C8E22490D9500BA9D2B /* GoogleService-Info.plist */,
 			);
 			path = "Trigger Tracker";
 			sourceTree = "<group>";
@@ -234,8 +234,8 @@
 				3FAC35C8220FDB26004261DB /* SlideMenu.storyboard in Resources */,
 				3F1DC4C0224882FA00AD85C0 /* assets.xcassets in Resources */,
 				3F3B3F2B220AA8F800BB8B40 /* Images.xcassets in Resources */,
-				3F799DAB21FEE24700E17922 /* GoogleService-Info.plist in Resources */,
 				3FE72A0521FEDBD300FBB737 /* AppHomeDashboard.storyboard in Resources */,
+				3F6C6C8F22490D9600BA9D2B /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
