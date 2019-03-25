@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3F0B57AC223CA27100AB9D90 /* tableViewImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0B57AB223CA27100AB9D90 /* tableViewImages.swift */; };
+		3F1DC4C0224882FA00AD85C0 /* assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F1DC4BF224882FA00AD85C0 /* assets.xcassets */; };
 		3F3B3F2B220AA8F800BB8B40 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F3B3F2A220AA8F700BB8B40 /* Images.xcassets */; };
 		3F3D9C58223CA1B600D19C01 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3D9C57223CA1B600D19C01 /* CustomTableViewCell.swift */; };
 		3F6B873721FEDAE800E71A32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6B873621FEDAE800E71A32 /* AppDelegate.swift */; };
@@ -33,6 +34,7 @@
 /* Begin PBXFileReference section */
 		13E32F5C3DFEBCF365E7F127 /* Pods_Trigger_Tracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Trigger_Tracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F0B57AB223CA27100AB9D90 /* tableViewImages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tableViewImages.swift; sourceTree = "<group>"; };
+		3F1DC4BF224882FA00AD85C0 /* assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = assets.xcassets; sourceTree = "<group>"; };
 		3F3B3F2A220AA8F700BB8B40 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3F3D9C57223CA1B600D19C01 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		3F6B873321FEDAE800E71A32 /* Trigger Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Trigger Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -54,7 +56,6 @@
 		3FAC35C6220FDB1B004261DB /* SideMenuTutorial-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SideMenuTutorial-Bridging-Header.h"; sourceTree = "<group>"; };
 		3FAC35C7220FDB26004261DB /* SlideMenu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SlideMenu.storyboard; sourceTree = "<group>"; };
 		3FE72A0221FEDBD300FBB737 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/AppHomeDashboard.storyboard; sourceTree = "<group>"; };
-		3FE72A0921FEDBF000FBB737 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7CD01810414B60C3B2003188 /* Pods-Trigger Tracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Trigger Tracker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Trigger Tracker/Pods-Trigger Tracker.debug.xcconfig"; sourceTree = "<group>"; };
 		B8F2E662F9DFF48977B15D4F /* Pods-Trigger Tracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Trigger Tracker.release.xcconfig"; path = "Pods/Target Support Files/Pods-Trigger Tracker/Pods-Trigger Tracker.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -105,8 +106,8 @@
 				3F77CFB222016A6700A75F21 /* Model */,
 				3F799D9621FEE09A00E17922 /* Controller */,
 				3F799D9921FEE09A00E17922 /* View */,
-				3FE72A0921FEDBF000FBB737 /* Assets.xcassets */,
 				3F3B3F2A220AA8F700BB8B40 /* Images.xcassets */,
+				3F1DC4BF224882FA00AD85C0 /* assets.xcassets */,
 				3F6B873621FEDAE800E71A32 /* AppDelegate.swift */,
 				3F6B873F21FEDAEA00E71A32 /* LaunchScreen.storyboard */,
 				3FE72A0121FEDBD300FBB737 /* AppHomeDashboard.storyboard */,
@@ -231,6 +232,7 @@
 			files = (
 				3F6B874121FEDAEA00E71A32 /* LaunchScreen.storyboard in Resources */,
 				3FAC35C8220FDB26004261DB /* SlideMenu.storyboard in Resources */,
+				3F1DC4C0224882FA00AD85C0 /* assets.xcassets in Resources */,
 				3F3B3F2B220AA8F800BB8B40 /* Images.xcassets in Resources */,
 				3F799DAB21FEE24700E17922 /* GoogleService-Info.plist in Resources */,
 				3FE72A0521FEDBD300FBB737 /* AppHomeDashboard.storyboard in Resources */,
