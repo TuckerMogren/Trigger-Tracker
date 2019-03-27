@@ -30,6 +30,7 @@ class ViewFoodTrigger: UIViewController, UINavigationControllerDelegate, UIImage
         super.viewDidLoad()
         sideMenus()
         customizeNavBar()
+        self.uploadPhotoButton.isHidden = true
     }
     /*
      * Function Name: showAlertCameraWillNotOpenSimulator()
