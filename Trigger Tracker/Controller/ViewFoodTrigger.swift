@@ -97,6 +97,7 @@ class ViewFoodTrigger: UIViewController, UINavigationControllerDelegate, UIImage
 
         present(imagePickerController, animated: true, completion: nil)
         
+        self.uploadPhotoButton.isHidden = false 
     }
     
     /*
