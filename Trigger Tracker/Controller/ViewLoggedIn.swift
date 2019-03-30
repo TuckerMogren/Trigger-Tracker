@@ -31,14 +31,12 @@ class ViewLoggedIn: UIViewController {
      * Reference: https://firebase.google.com/docs/firestore/quickstart
      */
     
-    /*
+
     func readDatabase () {
         let db = (UIApplication.shared.delegate as! AppDelegate).fireBaseNoSQLDB
         let userAuth = (UIApplication.shared.delegate as! AppDelegate).fireBaseAuth
         var numberOfDocumentsInDataBase = 0
         
-        
-    
         db?.collection("photoInformation").whereField("userID", isEqualTo: (userAuth?.currentUser?.uid)!).getDocuments { (Snapshot, error) in
            
             if error != nil
@@ -59,22 +57,6 @@ class ViewLoggedIn: UIViewController {
             }
         }
     }
-    
-    
-    
-    func testCallArray() {
-        for value in imageData.imageName {
-            print("The image name is: \(value)")
-        }
-        for value in imageData.imageDate {
-            print("The image date is: \(value)")
-        }
-        for value in imageData.userNotes {
-            print("The user notes is: \(value)")
-        }
-    }
-    
-    */
     
     /*
      * Function Name: sideMenus()

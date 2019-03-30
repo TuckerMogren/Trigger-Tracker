@@ -126,7 +126,7 @@ class ViewFoodTrigger: UIViewController, UINavigationControllerDelegate, UIImage
         
         let fileName = "\((userAuth?.currentUser?.uid)!)" + " Date: " + "\(NSDate())"
         
-        let uploadImageRef = imageReference?.child(fileName)
+        let uploadImageRef = imageReference?.child((userAuth?.currentUser!.uid)!).child(fileName) // will need to add comments to explain whats going on here
         
 
         

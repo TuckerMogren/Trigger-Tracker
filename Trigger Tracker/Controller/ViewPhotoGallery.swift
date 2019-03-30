@@ -9,6 +9,8 @@ import UIKit
 class ViewPhotoGallery: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var imageData = tableViewImages()
+    let userAuth = (UIApplication.shared.delegate as! AppDelegate).fireBaseAuth
+    let db = (UIApplication.shared.delegate as! AppDelegate).fireBaseNoSQLDB
     @IBOutlet weak var menuButtonOutlet: UIBarButtonItem!
 
     //Ambigious reference error fixed with reference to: https://stackoverflow.com/questions/33724190/ambiguous-reference-to-member-tableview
@@ -20,21 +22,33 @@ class ViewPhotoGallery: UIViewController, UITableViewDataSource, UITableViewDele
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellOne", for: indexPath) as! CustomTableViewCell
-        //subtracting indexPath.row - 1 in order to ignore the init blanks in tableViewImages
-        cell.cellOneDateLabelView.text = imageData.imageDate[indexPath.row]
-        cell.cellOneNotesLabelView.text = imageData.userNotes[indexPath.row]
-        
-        
-        //have all this code in the completion block in the read database method????
-        let imageRef = (UIApplication.shared.delegate as! AppDelegate).fireBaseStorage?.reference().child("images").child(imageData.imageName[indexPath.row])
-        imageRef?.getData(maxSize: 1024 * 1024 * 10, completion: { (data, err) in
-            if let err = err{
-                print("ERROR: \(err)")
-                
+    
+        db?.collection("photoInformation").whereField("userID", isEqualTo: (userAuth?.currentUser?.uid)!).getDocuments { (Snapshot, error) in
+            
+            if error != nil
+            {
+                print("ERROR: \(error!)")
             }else{
-                cell.cellOneImageView.image = UIImage(data: data!)
+                for document in (Snapshot?.documents)! {
+                    let pieceOfDataName = document.get("imageName")
+                    let pieceOfDataNotes = document.get("userNotes")
+                    let pieceOfDataDate = document.get("imageDate")
+                    cell.cellOneDateLabelView.text = pieceOfDataDate as? String
+                    cell.cellOneNotesLabelView.text = pieceOfDataNotes as? String
+                    
+                    
+                    let imageRef = (UIApplication.shared.delegate as! AppDelegate).fireBaseStorage?.reference().child("images").child((self.userAuth?.currentUser!.uid)!).child((pieceOfDataName as? String)!)
+                    imageRef?.getData(maxSize: 1024 * 1024 * 10, completion: { (data, err) in
+                        if let err = err{
+                            print("ERROR: \(err)")
+                            
+                        }else{
+                            cell.cellOneImageView.image = UIImage(data: data!)
+                        }
+                    })
+                }
             }
-        })
+        }        
         return cell
 
     }
