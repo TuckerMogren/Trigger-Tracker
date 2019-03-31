@@ -20,9 +20,9 @@ public class tableViewImages: NSObject {
         
     
         //these will happen in the db completion block in the tableView(cellForRowAt)
-        self.imageName.append("")
-        self.userNotes.append("")
-        self.imageDate.append("")
+        self.imageName.append("hiEun71BDqfaaLrHWG8FuPTc1u42 Date: 2019-03-30 20:41:06 +0000")
+        self.userNotes.append("Test 3")
+        self.imageDate.append("Test 2")
         
     }
     

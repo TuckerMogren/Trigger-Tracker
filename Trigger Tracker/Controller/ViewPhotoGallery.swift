@@ -33,20 +33,19 @@ class ViewPhotoGallery: UIViewController, UITableViewDataSource, UITableViewDele
                     let pieceOfDataName = document.get("imageName")
                     let pieceOfDataNotes = document.get("userNotes")
                     let pieceOfDataDate = document.get("imageDate")
-                    cell.cellOneDateLabelView.text = pieceOfDataDate as? String
-                    cell.cellOneNotesLabelView.text = pieceOfDataNotes as? String
                     
+                    self.imageData.imageDate.append(pieceOfDataDate as! String)
+                    self.imageData.imageName.append(pieceOfDataName as! String)
+                    self.imageData.userNotes.append(pieceOfDataNotes as! String)
                     
-                    let imageRef = (UIApplication.shared.delegate as! AppDelegate).fireBaseStorage?.reference().child("images").child((self.userAuth?.currentUser!.uid)!).child((pieceOfDataName as? String)!)
-                    imageRef?.getData(maxSize: 1024 * 1024 * 10, completion: { (data, err) in
-                        if let err = err{
-                            print("ERROR: \(err)")
-                            
-                        }else{
-                            cell.cellOneImageView.image = UIImage(data: data!)
-                        }
-                    })
+
                 }
+                
+                cell.cellOneImageView.image = UIImage(named: self.imageData.imageName[indexPath.row])
+                cell.cellOneNotesLabelView.text = self.imageData.userNotes[indexPath.row]
+                cell.cellOneDateLabelView.text = self.imageData.imageDate[indexPath.row]
+                
+                
             }
         }        
         return cell
