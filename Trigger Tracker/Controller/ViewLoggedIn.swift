@@ -10,7 +10,6 @@ class ViewLoggedIn: UIViewController {
     @IBOutlet weak var menuButton: UIBarButtonItem!
     @IBOutlet weak var logOutButton: UIBarButtonItem!
     
-    var imageData = tableViewImages()
     
     /*
      * Function Name: viewDidLoad()
@@ -23,40 +22,7 @@ class ViewLoggedIn: UIViewController {
         customizeNavBar()
         
     }
-    
-    /*
-     * Function Name: readDatabase
-     * Function will display data in database for user
-     * Tucker Mogren; 3/17/19
-     * Reference: https://firebase.google.com/docs/firestore/quickstart
-     */
-    
 
-    func readDatabase () {
-        let db = (UIApplication.shared.delegate as! AppDelegate).fireBaseNoSQLDB
-        let userAuth = (UIApplication.shared.delegate as! AppDelegate).fireBaseAuth
-        var numberOfDocumentsInDataBase = 0
-        
-        db?.collection("photoInformation").whereField("userID", isEqualTo: (userAuth?.currentUser?.uid)!).getDocuments { (Snapshot, error) in
-           
-            if error != nil
-            {
-                print("ERROR: \(error!)")
-            }else{
-                for document in (Snapshot?.documents)! {
-                    numberOfDocumentsInDataBase = numberOfDocumentsInDataBase + 1
-                    let pieceOfDataName = document.get("imageName")
-                    let pieceOfDataNotes = document.get("userNotes")
-                    let pieceOfDataDate = document.get("imageDate")
-                    
-                    self.imageData.imageName.append("\(pieceOfDataName!)")
-                    self.imageData.userNotes.append("\(pieceOfDataNotes!)")
-                    self.imageData.imageDate.append("\(pieceOfDataDate!)")
-                }
-                
-            }
-        }
-    }
     
     /*
      * Function Name: sideMenus()

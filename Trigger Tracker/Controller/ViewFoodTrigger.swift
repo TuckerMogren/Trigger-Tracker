@@ -12,6 +12,9 @@ class ViewFoodTrigger: UIViewController, UINavigationControllerDelegate, UIImage
     //menuButton: Allows the user to be brought back to the slidebar for navigation.
     @IBOutlet weak var menuButton: UIBarButtonItem!
     var imagePickerController: UIImagePickerController!
+    
+    
+    
     @IBOutlet weak var uploadPhotoButton: CustomShapeButton!
     
     let userAuth = (UIApplication.shared.delegate as! AppDelegate).fireBaseAuth

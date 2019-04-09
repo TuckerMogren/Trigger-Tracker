@@ -392,6 +392,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="menuButtonOutlet" destination="m91-Eb-nXc" id="Ghs-HN-NE2"/>
+                        <outlet property="tableViewOutlet" destination="B7x-lk-wjv" id="JYw-L7-h8R"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eV6-CR-CjK" userLabel="First Responder" sceneMemberID="firstResponder"/>
