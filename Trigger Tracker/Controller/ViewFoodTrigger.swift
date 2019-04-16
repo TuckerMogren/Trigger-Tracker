@@ -154,8 +154,9 @@ class ViewFoodTrigger: UIViewController, UINavigationControllerDelegate, UIImage
         
         
         let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .medium
+        dateFormatter.dateStyle = .short
         dateFormatter.timeStyle = .short
+        //gets the date interval from the current time
         let date = Date(timeIntervalSinceNow: 0.0)
         let imageUpdate = uploadImageRef?.putData(imageData, metadata: nil, completion:
         
@@ -171,7 +172,7 @@ class ViewFoodTrigger: UIViewController, UINavigationControllerDelegate, UIImage
                         }else{
                             print(url?.absoluteString as Any)
                       
-                            self.sendDataToDatabase(userNotes: self.userTextTextFieldOutlet.text, imageName: fileName, imageDate: dateFormatter.string(from: date)) 
+                            self.sendDataToDatabase(userNotes: self.userTextTextFieldOutlet.text, imageName: fileName, imageDate: dateFormatter.string(from: date))
                 }
             })
             
