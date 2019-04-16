@@ -6,16 +6,17 @@
  */
 import UIKit
 import Foundation
-class ViewFoodTrigger: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+class ViewFoodTrigger: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextViewDelegate {
     
     @IBOutlet weak var imageViewUpload: UIImageView!
     //menuButton: Allows the user to be brought back to the slidebar for navigation.
     @IBOutlet weak var menuButton: UIBarButtonItem!
     var imagePickerController: UIImagePickerController!
-    
-    
-    
     @IBOutlet weak var uploadPhotoButton: CustomShapeButton!
+    @IBOutlet weak var userTextTextFieldOutlet: UITextView!
+    
+    
+    
     
     let userAuth = (UIApplication.shared.delegate as! AppDelegate).fireBaseAuth
     let fireBaseDocumentRef = (UIApplication.shared.delegate as! AppDelegate).fireBaseNoSQLDBDocumentRef
@@ -34,6 +35,9 @@ class ViewFoodTrigger: UIViewController, UINavigationControllerDelegate, UIImage
         sideMenus()
         customizeNavBar()
         self.uploadPhotoButton.isHidden = true
+        
+        userTextTextFieldOutlet.delegate = self
+        
     }
     /*
      * Function Name: showAlertCameraWillNotOpenSimulator()
@@ -49,6 +53,23 @@ class ViewFoodTrigger: UIViewController, UINavigationControllerDelegate, UIImage
         self.present(alert, animated: true, completion: nil)
     }
 
+    
+    /*
+     * Function Name: textFieldShouldReturn()
+     * Will allow the keyboard to be toggled away when the text view is done being editted
+     * Tucker Mogren; 4/15/19
+     * Reference: https://stackoverflow.com/questions/26600359/dismiss-keyboard-with-a-uitextview
+     */
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if(text == "\n")
+        {
+            userTextTextFieldOutlet.resignFirstResponder()
+            return false
+        }
+        return true
+    }
+    
     /*
      * Function Name: sideMenus()
      * Shows the side bar controller.
@@ -131,8 +152,11 @@ class ViewFoodTrigger: UIViewController, UINavigationControllerDelegate, UIImage
         
         let uploadImageRef = imageReference?.child((userAuth?.currentUser!.uid)!).child(fileName) // will need to add comments to explain whats going on here
         
-
         
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .short
+        let date = Date(timeIntervalSinceNow: 0.0)
         let imageUpdate = uploadImageRef?.putData(imageData, metadata: nil, completion:
         
             { (metadata, err)   in
@@ -147,7 +171,7 @@ class ViewFoodTrigger: UIViewController, UINavigationControllerDelegate, UIImage
                         }else{
                             print(url?.absoluteString as Any)
                       
-                    self.sendDataToDatabase(userNotes: "TESTTESTTESTTESTTESTTESTTESTTES", imageName: fileName, imageDate: NSDate()) //CVTimestamp vs Timestamp?
+                            self.sendDataToDatabase(userNotes: self.userTextTextFieldOutlet.text, imageName: fileName, imageDate: dateFormatter.string(from: date)) 
                 }
             })
             
@@ -166,7 +190,7 @@ class ViewFoodTrigger: UIViewController, UINavigationControllerDelegate, UIImage
      * Tucker Mogren; 3/13/19
      * Reference: https://firebase.google.com/docs/firestore/quickstart
      */
-    private func sendDataToDatabase (userNotes: String, imageName: String, imageDate: NSDate ){
+    private func sendDataToDatabase (userNotes: String, imageName: String, imageDate: String ){
         
         
         var ref = fireBaseDocumentRef
