@@ -60,6 +60,13 @@
 			<key>orderHint</key>
 			<integer>6</integer>
 		</dict>
+		<key>Pods-Trigger Tracker Watch Extension.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>13</integer>
+		</dict>
 		<key>Pods-Trigger Tracker.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -72,7 +79,7 @@
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>13</integer>
+			<integer>14</integer>
 		</dict>
 		<key>gRPC-C++.xcscheme</key>
 		<dict>
