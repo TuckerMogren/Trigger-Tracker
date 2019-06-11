@@ -1,10 +1,10 @@
-//
-//  InterfaceController.swift
-//  Trigger Tracker Watch Extension
-//
-//  Created by Tucker Mogren on 6/7/19.
-//  Copyright © 2019 TuckerMogren. All rights reserved.
-//
+/*
+ * Class Name: InterfaceController.swift
+ * Description:
+ * Developer: Tucker Mogren
+ * References: N/A
+ * Date: 06/11/2019
+ */
 
 import WatchKit
 import Foundation
@@ -12,6 +12,7 @@ import Foundation
 
 class InterfaceController: WKInterfaceController {
 
+    @IBOutlet weak var tableViewWatchOutlet: WKInterfaceTable!
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         

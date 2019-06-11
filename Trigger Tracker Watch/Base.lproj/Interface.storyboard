@@ -14,10 +14,20 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Trigger_Tracker_Watch" customModuleProvider="target">
                     <items>
-                        <label alignment="center" verticalAlignment="center" text="Hello, World!" textAlignment="center" id="ukK-YT-3lA">
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </label>
+                        <table alignment="left" id="GEN-ik-QXp">
+                            <items>
+                                <tableRow identifier="Cell1" id="zqD-xf-Kft">
+                                    <group key="rootItem" width="1" alignment="left" id="E8c-fi-YsS"/>
+                                </tableRow>
+                                <tableRow identifier="Row One" id="bTY-wo-FQq">
+                                    <group key="rootItem" width="1" alignment="left" id="2rv-Zl-ZqQ"/>
+                                </tableRow>
+                            </items>
+                        </table>
                     </items>
+                    <connections>
+                        <outlet property="tableViewWatchOutlet" destination="GEN-ik-QXp" id="6Kn-HP-hHG"/>
+                    </connections>
                 </controller>
             </objects>
         </scene>
