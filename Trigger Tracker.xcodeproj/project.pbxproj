@@ -10,6 +10,7 @@
 		3F0B57AC223CA27100AB9D90 /* tableViewImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0B57AB223CA27100AB9D90 /* tableViewImages.swift */; };
 		3F1DC4C0224882FA00AD85C0 /* assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F1DC4BF224882FA00AD85C0 /* assets.xcassets */; };
 		3F3B3F2B220AA8F800BB8B40 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F3B3F2A220AA8F700BB8B40 /* Images.xcassets */; };
+		3F3C7EA622B1E0DD0082A087 /* dataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3C7EA522B1E0DD0082A087 /* dataModel.swift */; };
 		3F3D9C58223CA1B600D19C01 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3D9C57223CA1B600D19C01 /* CustomTableViewCell.swift */; };
 		3F632FC322AB69A200D49BA1 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F632FC122AB69A200D49BA1 /* Interface.storyboard */; };
 		3F632FC522AB69A400D49BA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F632FC422AB69A400D49BA1 /* Assets.xcassets */; };
@@ -87,6 +88,7 @@
 		3F0B57AB223CA27100AB9D90 /* tableViewImages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tableViewImages.swift; sourceTree = "<group>"; };
 		3F1DC4BF224882FA00AD85C0 /* assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = assets.xcassets; sourceTree = "<group>"; };
 		3F3B3F2A220AA8F700BB8B40 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		3F3C7EA522B1E0DD0082A087 /* dataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dataModel.swift; sourceTree = "<group>"; };
 		3F3D9C57223CA1B600D19C01 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		3F632FBF22AB69A200D49BA1 /* Trigger Tracker Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Trigger Tracker Watch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F632FC222AB69A200D49BA1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
@@ -160,6 +162,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		3F3C7EA422B1E0CB0082A087 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3F3C7EA522B1E0DD0082A087 /* dataModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		3F632FC022AB69A200D49BA1 /* Trigger Tracker Watch */ = {
 			isa = PBXGroup;
 			children = (
@@ -173,6 +183,8 @@
 		3F632FCF22AB69A400D49BA1 /* Trigger Tracker Watch Extension */ = {
 			isa = PBXGroup;
 			children = (
+				3F3C7EA422B1E0CB0082A087 /* Model */,
+				3FEB1C7B22B11F990090B6BD /* View */,
 				3F632FD022AB69A400D49BA1 /* InterfaceController.swift */,
 				3F632FD222AB69A400D49BA1 /* ExtensionDelegate.swift */,
 				3F632FD422AB69A500D49BA1 /* Assets.xcassets */,
@@ -262,6 +274,13 @@
 				3FAC35C2220FDB11004261DB /* SWRevealViewController.m */,
 			);
 			path = SlideMenuCode;
+			sourceTree = "<group>";
+		};
+		3FEB1C7B22B11F990090B6BD /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		CAF176687D23C490790A5A5F /* Frameworks */ = {
@@ -521,6 +540,7 @@
 			files = (
 				3F632FD322AB69A400D49BA1 /* ExtensionDelegate.swift in Sources */,
 				3F632FD122AB69A400D49BA1 /* InterfaceController.swift in Sources */,
+				3F3C7EA622B1E0DD0082A087 /* dataModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

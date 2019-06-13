@@ -16,11 +16,18 @@
                     <items>
                         <table alignment="left" id="GEN-ik-QXp">
                             <items>
-                                <tableRow identifier="Cell1" id="zqD-xf-Kft">
-                                    <group key="rootItem" width="1" alignment="left" id="E8c-fi-YsS"/>
-                                </tableRow>
-                                <tableRow identifier="Row One" id="bTY-wo-FQq">
-                                    <group key="rootItem" width="1" alignment="left" id="2rv-Zl-ZqQ"/>
+                                <tableRow identifier="Cell1" id="zqD-xf-Kft" customClass="dataModel" customModule="Trigger_Tracker_Watch_Extension">
+                                    <group key="rootItem" width="1" height="50" alignment="left" contentMode="scaleAspectFill" animationDuration="3" id="E8c-fi-YsS">
+                                        <items>
+                                            <label alignment="center" verticalAlignment="center" text="Label" textAlignment="center" numberOfLines="5" id="ART-di-UZf">
+                                                <color key="textColor" red="0.19607843137254902" green="0.32156862745098036" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </label>
+                                        </items>
+                                        <color key="backgroundColor" red="0.52149242162704468" green="0.29998454451560974" blue="0.61873966455459595" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </group>
+                                    <connections>
+                                        <outlet property="tableViewLabelOutput" destination="ART-di-UZf" id="901-xh-b9R"/>
+                                    </connections>
                                 </tableRow>
                             </items>
                         </table>
