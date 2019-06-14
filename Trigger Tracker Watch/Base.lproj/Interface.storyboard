@@ -47,7 +47,7 @@
                         <label width="1" height="0.29999999999999999" alignment="left" verticalAlignment="bottom" text="Hi" textAlignment="left" numberOfLines="0" id="Rl7-lf-89j">
                             <variation key="device=watch42mm" verticalAlignment="bottom"/>
                         </label>
-                        <imageView height="0.69999999999999996" alignment="left" image="SpringsUNY160" id="tgx-aE-Yeq"/>
+                        <imageView height="0.69999999999999996" alignment="left" image="trigger_tracker_png_120px" id="tgx-aE-Yeq"/>
                     </items>
                     <connections>
                         <outlet property="tableDetailedViewOutlet" destination="Rl7-lf-89j" id="dvN-js-WXM"/>
