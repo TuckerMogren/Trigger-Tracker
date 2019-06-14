@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14490.70" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
-    <device id="watch38" orientation="portrait">
+    <device id="watch42" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -9,10 +9,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14490.21"/>
     </dependencies>
     <scenes>
-        <!--Interface Controller-->
+        <!--initialView-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Trigger_Tracker_Watch" customModuleProvider="target">
+                <controller identifier="initialView" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Trigger_Tracker_Watch" customModuleProvider="target">
                     <items>
                         <table alignment="left" id="GEN-ik-QXp">
                             <items>
@@ -37,6 +37,24 @@
                     </connections>
                 </controller>
             </objects>
+            <point key="canvasLocation" x="158" y="76"/>
+        </scene>
+        <!--detailedView-->
+        <scene sceneID="v06-qJ-9C7">
+            <objects>
+                <controller identifier="detailedView" id="Bms-92-gOh" customClass="tableViewDetailedView" customModule="Trigger_Tracker_Watch_Extension">
+                    <items>
+                        <label width="1" height="0.29999999999999999" alignment="left" verticalAlignment="bottom" text="Hi" textAlignment="left" numberOfLines="0" id="Rl7-lf-89j">
+                            <variation key="device=watch42mm" verticalAlignment="bottom"/>
+                        </label>
+                        <imageView height="0.69999999999999996" alignment="left" image="SpringsUNY160" id="tgx-aE-Yeq"/>
+                    </items>
+                    <connections>
+                        <outlet property="tableDetailedViewOutlet" destination="Rl7-lf-89j" id="dvN-js-WXM"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="429.79487179487182" y="74.538461538461547"/>
         </scene>
     </scenes>
 </document>

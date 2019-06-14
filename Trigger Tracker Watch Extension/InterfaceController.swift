@@ -45,9 +45,9 @@ class InterfaceController: WKInterfaceController {
         }
     }
     
-    /*
+    
     override func table(_ table: WKInterfaceTable, didSelectRowAt rowIndex: Int) {
-        pushController(withName: "dasdsf", context: dates[rowIndex])
+        pushController(withName: "detailedView", context: dates[rowIndex])
     }
- */
+ 
 }
