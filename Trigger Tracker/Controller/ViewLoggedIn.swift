@@ -69,10 +69,12 @@ class ViewLoggedIn: UIViewController {
         }catch let signOutError as NSError {
             print("ERROR: Singout \(signOutError)")
         }
-        let storyboard = UIStoryboard(name: "AppHomeDashboard", bundle: nil)
-        let newVC = storyboard.instantiateViewController(withIdentifier: "Welcome Screen")
-        self.present(newVC, animated: true, completion: nil)
         
+        if userAuth?.currentUser == nil {
+            let storyboard = UIStoryboard(name: "AppHomeDashboard", bundle: nil)
+            let newVC = storyboard.instantiateViewController(withIdentifier: "welcomeVC")
+            self.present(newVC, animated: true, completion: nil)
+        }
     }
 
 }

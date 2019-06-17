@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "trigger_tracker_png_120px.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "trigger_tracker_png_120px.png",
       "scale" : "2x"
     },
     {

@@ -47,14 +47,14 @@
                         <label width="1" height="0.29999999999999999" alignment="left" verticalAlignment="bottom" text="Hi" textAlignment="left" numberOfLines="0" id="Rl7-lf-89j">
                             <variation key="device=watch42mm" verticalAlignment="bottom"/>
                         </label>
-                        <imageView height="0.69999999999999996" alignment="left" image="trigger_tracker_png_120px" id="tgx-aE-Yeq"/>
+                        <imageView alignment="center" verticalAlignment="center" image="trigger_tracker_png_120px" contentMode="scaleAspectFit" id="tgx-aE-Yeq"/>
                     </items>
                     <connections>
                         <outlet property="tableDetailedViewOutlet" destination="Rl7-lf-89j" id="dvN-js-WXM"/>
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="429.79487179487182" y="74.538461538461547"/>
+            <point key="canvasLocation" x="429.79487179487182" y="87.615384615384627"/>
         </scene>
     </scenes>
 </document>

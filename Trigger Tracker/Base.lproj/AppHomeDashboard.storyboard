@@ -13,7 +13,7 @@
         <!--Welcome-->
         <scene sceneID="F2M-pr-KTm">
             <objects>
-                <viewController storyboardIdentifier="Welcome Screen" id="IBM-1Z-Vgw" customClass="ViewWelcomeDashboard" customModule="Trigger_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="welcomeVC" id="IBM-1Z-Vgw" customClass="ViewWelcomeDashboard" customModule="Trigger_Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oLc-PS-BGr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -288,6 +288,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="trigger_tracker_png_120px" width="500" height="500"/>
+        <image name="trigger_tracker_png_120px" width="250" height="250"/>
     </resources>
 </document>
