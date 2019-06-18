@@ -1,0 +1,947 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3F0B57AC223CA27100AB9D90 /* tableViewImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0B57AB223CA27100AB9D90 /* tableViewImages.swift */; };
+		3F1DC4C0224882FA00AD85C0 /* assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F1DC4BF224882FA00AD85C0 /* assets.xcassets */; };
+		3F3B3F2B220AA8F800BB8B40 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F3B3F2A220AA8F700BB8B40 /* Images.xcassets */; };
+		3F3B870822B32403001B4494 /* tableViewDetailedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3B870722B32403001B4494 /* tableViewDetailedView.swift */; };
+		3F3C7EA622B1E0DD0082A087 /* dataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3C7EA522B1E0DD0082A087 /* dataModel.swift */; };
+		3F3D9C58223CA1B600D19C01 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3D9C57223CA1B600D19C01 /* CustomTableViewCell.swift */; };
+		3F632FC322AB69A200D49BA1 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F632FC122AB69A200D49BA1 /* Interface.storyboard */; };
+		3F632FC522AB69A400D49BA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F632FC422AB69A400D49BA1 /* Assets.xcassets */; };
+		3F632FCC22AB69A400D49BA1 /* Trigger Tracker Watch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 3F632FCB22AB69A400D49BA1 /* Trigger Tracker Watch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		3F632FD122AB69A400D49BA1 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F632FD022AB69A400D49BA1 /* InterfaceController.swift */; };
+		3F632FD322AB69A400D49BA1 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F632FD222AB69A400D49BA1 /* ExtensionDelegate.swift */; };
+		3F632FD522AB69A500D49BA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F632FD422AB69A500D49BA1 /* Assets.xcassets */; };
+		3F632FD922AB69A500D49BA1 /* Trigger Tracker Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 3F632FBF22AB69A200D49BA1 /* Trigger Tracker Watch.app */; };
+		3F6B873721FEDAE800E71A32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6B873621FEDAE800E71A32 /* AppDelegate.swift */; };
+		3F6B874121FEDAEA00E71A32 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F6B873F21FEDAEA00E71A32 /* LaunchScreen.storyboard */; };
+		3F6C6C8F22490D9600BA9D2B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F6C6C8E22490D9500BA9D2B /* GoogleService-Info.plist */; };
+		3F794C87220FE93E00F09A69 /* ViewSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F794C86220FE93E00F09A69 /* ViewSettings.swift */; };
+		3F799DA521FEE09A00E17922 /* ViewWelcomeDashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F799D9C21FEE09A00E17922 /* ViewWelcomeDashboard.swift */; };
+		3F799DA621FEE09A00E17922 /* ViewSignUpPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F799D9D21FEE09A00E17922 /* ViewSignUpPageController.swift */; };
+		3F799DA721FEE09A00E17922 /* ViewLogInPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F799D9E21FEE09A00E17922 /* ViewLogInPageController.swift */; };
+		3F799DA821FEE09A00E17922 /* CustomShapeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F799DA021FEE09A00E17922 /* CustomShapeButton.swift */; };
+		3F8E80B722375FD70027E68F /* ViewPhotoGallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8E80B622375FD70027E68F /* ViewPhotoGallery.swift */; };
+		3F9811782238CC820052C1A8 /* CustomSlideBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9811772238CC820052C1A8 /* CustomSlideBar.swift */; };
+		3FA37273220FEBC2008A3DC4 /* SideMenuTutorial-Bridging-Header.h in Sources */ = {isa = PBXBuildFile; fileRef = 3FAC35C6220FDB1B004261DB /* SideMenuTutorial-Bridging-Header.h */; };
+		3FA37274220FEBE0008A3DC4 /* SWRevealViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 3FAC35C0220FDB11004261DB /* SWRevealViewController.h */; };
+		3FAC35C3220FDB11004261DB /* ViewLoggedIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAC35BF220FDB11004261DB /* ViewLoggedIn.swift */; };
+		3FAC35C4220FDB11004261DB /* ViewFoodTrigger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAC35C1220FDB11004261DB /* ViewFoodTrigger.swift */; };
+		3FAC35C5220FDB11004261DB /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FAC35C2220FDB11004261DB /* SWRevealViewController.m */; };
+		3FAC35C8220FDB26004261DB /* SlideMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FAC35C7220FDB26004261DB /* SlideMenu.storyboard */; };
+		3FE72A0521FEDBD300FBB737 /* AppHomeDashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FE72A0121FEDBD300FBB737 /* AppHomeDashboard.storyboard */; };
+		577DBE6DE5E532043CAD1355 /* Pods_Trigger_Tracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13E32F5C3DFEBCF365E7F127 /* Pods_Trigger_Tracker.framework */; };
+		8FF0838B5B4CA18560F844FE /* Pods_Trigger_Tracker_Watch_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 961AFADF9D14769B4A3BD39F /* Pods_Trigger_Tracker_Watch_Extension.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3F632FCD22AB69A400D49BA1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3F6B872B21FEDAE800E71A32 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3F632FCA22AB69A400D49BA1;
+			remoteInfo = "Trigger Tracker Watch Extension";
+		};
+		3F632FD722AB69A500D49BA1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3F6B872B21FEDAE800E71A32 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3F632FBE22AB69A200D49BA1;
+			remoteInfo = "Trigger Tracker Watch";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3F632FDF22AB69A500D49BA1 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				3F632FCC22AB69A400D49BA1 /* Trigger Tracker Watch Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F632FE122AB69A500D49BA1 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				3F632FD922AB69A500D49BA1 /* Trigger Tracker Watch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		13E32F5C3DFEBCF365E7F127 /* Pods_Trigger_Tracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Trigger_Tracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		383ED1D642E2080D7EF19FCD /* Pods-Trigger Tracker Watch Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Trigger Tracker Watch Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Trigger Tracker Watch Extension/Pods-Trigger Tracker Watch Extension.debug.xcconfig"; sourceTree = "<group>"; };
+		3F0B57AB223CA27100AB9D90 /* tableViewImages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tableViewImages.swift; sourceTree = "<group>"; };
+		3F1DC4BF224882FA00AD85C0 /* assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = assets.xcassets; sourceTree = "<group>"; };
+		3F3B3F2A220AA8F700BB8B40 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		3F3B870722B32403001B4494 /* tableViewDetailedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tableViewDetailedView.swift; sourceTree = "<group>"; };
+		3F3C7EA522B1E0DD0082A087 /* dataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dataModel.swift; sourceTree = "<group>"; };
+		3F3D9C57223CA1B600D19C01 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		3F632FBF22AB69A200D49BA1 /* Trigger Tracker Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Trigger Tracker Watch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F632FC222AB69A200D49BA1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		3F632FC422AB69A400D49BA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3F632FC622AB69A400D49BA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F632FCB22AB69A400D49BA1 /* Trigger Tracker Watch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Trigger Tracker Watch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F632FD022AB69A400D49BA1 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		3F632FD222AB69A400D49BA1 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		3F632FD422AB69A500D49BA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3F632FD622AB69A500D49BA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F6B873321FEDAE800E71A32 /* Trigger Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Trigger Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F6B873621FEDAE800E71A32 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3F6B874021FEDAEA00E71A32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3F6B874221FEDAEA00E71A32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F6C6C8E22490D9500BA9D2B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3F794C86220FE93E00F09A69 /* ViewSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewSettings.swift; sourceTree = "<group>"; };
+		3F799D9C21FEE09A00E17922 /* ViewWelcomeDashboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewWelcomeDashboard.swift; sourceTree = "<group>"; };
+		3F799D9D21FEE09A00E17922 /* ViewSignUpPageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewSignUpPageController.swift; sourceTree = "<group>"; };
+		3F799D9E21FEE09A00E17922 /* ViewLogInPageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewLogInPageController.swift; sourceTree = "<group>"; };
+		3F799DA021FEE09A00E17922 /* CustomShapeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomShapeButton.swift; sourceTree = "<group>"; };
+		3F7FF6DB22B7B78F00349B36 /* Trigger Tracker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Trigger Tracker.entitlements"; sourceTree = "<group>"; };
+		3F7FF6DC22B7B83700349B36 /* Trigger Tracker Watch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Trigger Tracker Watch Extension.entitlements"; sourceTree = "<group>"; };
+		3F8E80B622375FD70027E68F /* ViewPhotoGallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPhotoGallery.swift; sourceTree = "<group>"; };
+		3F9811772238CC820052C1A8 /* CustomSlideBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSlideBar.swift; sourceTree = "<group>"; };
+		3FAC35BF220FDB11004261DB /* ViewLoggedIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewLoggedIn.swift; sourceTree = "<group>"; };
+		3FAC35C0220FDB11004261DB /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		3FAC35C1220FDB11004261DB /* ViewFoodTrigger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewFoodTrigger.swift; sourceTree = "<group>"; };
+		3FAC35C2220FDB11004261DB /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		3FAC35C6220FDB1B004261DB /* SideMenuTutorial-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SideMenuTutorial-Bridging-Header.h"; sourceTree = "<group>"; };
+		3FAC35C7220FDB26004261DB /* SlideMenu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SlideMenu.storyboard; sourceTree = "<group>"; };
+		3FE72A0221FEDBD300FBB737 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/AppHomeDashboard.storyboard; sourceTree = "<group>"; };
+		7CD01810414B60C3B2003188 /* Pods-Trigger Tracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Trigger Tracker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Trigger Tracker/Pods-Trigger Tracker.debug.xcconfig"; sourceTree = "<group>"; };
+		961AFADF9D14769B4A3BD39F /* Pods_Trigger_Tracker_Watch_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Trigger_Tracker_Watch_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B8F2E662F9DFF48977B15D4F /* Pods-Trigger Tracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Trigger Tracker.release.xcconfig"; path = "Pods/Target Support Files/Pods-Trigger Tracker/Pods-Trigger Tracker.release.xcconfig"; sourceTree = "<group>"; };
+		EC3E1234E0C06CA820E472B6 /* Pods-Trigger Tracker Watch Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Trigger Tracker Watch Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-Trigger Tracker Watch Extension/Pods-Trigger Tracker Watch Extension.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3F632FC822AB69A400D49BA1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8FF0838B5B4CA18560F844FE /* Pods_Trigger_Tracker_Watch_Extension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F6B873021FEDAE800E71A32 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				577DBE6DE5E532043CAD1355 /* Pods_Trigger_Tracker.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C3EC6F467E58470CD57C0FBE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1D8B782E5D36AF5FBC1EF9F6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7CD01810414B60C3B2003188 /* Pods-Trigger Tracker.debug.xcconfig */,
+				B8F2E662F9DFF48977B15D4F /* Pods-Trigger Tracker.release.xcconfig */,
+				383ED1D642E2080D7EF19FCD /* Pods-Trigger Tracker Watch Extension.debug.xcconfig */,
+				EC3E1234E0C06CA820E472B6 /* Pods-Trigger Tracker Watch Extension.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		3F3B870622B322B4001B4494 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3F3B870722B32403001B4494 /* tableViewDetailedView.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3F3C7EA422B1E0CB0082A087 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3F3C7EA522B1E0DD0082A087 /* dataModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3F632FC022AB69A200D49BA1 /* Trigger Tracker Watch */ = {
+			isa = PBXGroup;
+			children = (
+				3F632FC122AB69A200D49BA1 /* Interface.storyboard */,
+				3F632FC422AB69A400D49BA1 /* Assets.xcassets */,
+				3F632FC622AB69A400D49BA1 /* Info.plist */,
+			);
+			path = "Trigger Tracker Watch";
+			sourceTree = "<group>";
+		};
+		3F632FCF22AB69A400D49BA1 /* Trigger Tracker Watch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				3F7FF6DC22B7B83700349B36 /* Trigger Tracker Watch Extension.entitlements */,
+				3F3B870622B322B4001B4494 /* Controller */,
+				3F3C7EA422B1E0CB0082A087 /* Model */,
+				3FEB1C7B22B11F990090B6BD /* View */,
+				3F632FD022AB69A400D49BA1 /* InterfaceController.swift */,
+				3F632FD222AB69A400D49BA1 /* ExtensionDelegate.swift */,
+				3F632FD422AB69A500D49BA1 /* Assets.xcassets */,
+				3F632FD622AB69A500D49BA1 /* Info.plist */,
+			);
+			path = "Trigger Tracker Watch Extension";
+			sourceTree = "<group>";
+		};
+		3F6B872A21FEDAE800E71A32 = {
+			isa = PBXGroup;
+			children = (
+				3F6B873521FEDAE800E71A32 /* Trigger Tracker */,
+				3F632FC022AB69A200D49BA1 /* Trigger Tracker Watch */,
+				3F632FCF22AB69A400D49BA1 /* Trigger Tracker Watch Extension */,
+				3F6B873421FEDAE800E71A32 /* Products */,
+				1D8B782E5D36AF5FBC1EF9F6 /* Pods */,
+				CAF176687D23C490790A5A5F /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		3F6B873421FEDAE800E71A32 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3F6B873321FEDAE800E71A32 /* Trigger Tracker.app */,
+				3F632FBF22AB69A200D49BA1 /* Trigger Tracker Watch.app */,
+				3F632FCB22AB69A400D49BA1 /* Trigger Tracker Watch Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3F6B873521FEDAE800E71A32 /* Trigger Tracker */ = {
+			isa = PBXGroup;
+			children = (
+				3F7FF6DB22B7B78F00349B36 /* Trigger Tracker.entitlements */,
+				3FAC35BE220FDB11004261DB /* SlideMenuCode */,
+				3F77CFB222016A6700A75F21 /* Model */,
+				3F799D9621FEE09A00E17922 /* Controller */,
+				3F799D9921FEE09A00E17922 /* View */,
+				3F3B3F2A220AA8F700BB8B40 /* Images.xcassets */,
+				3F1DC4BF224882FA00AD85C0 /* assets.xcassets */,
+				3F6B873621FEDAE800E71A32 /* AppDelegate.swift */,
+				3F6B873F21FEDAEA00E71A32 /* LaunchScreen.storyboard */,
+				3FE72A0121FEDBD300FBB737 /* AppHomeDashboard.storyboard */,
+				3FAC35C7220FDB26004261DB /* SlideMenu.storyboard */,
+				3F6B874221FEDAEA00E71A32 /* Info.plist */,
+				3F6C6C8E22490D9500BA9D2B /* GoogleService-Info.plist */,
+			);
+			path = "Trigger Tracker";
+			sourceTree = "<group>";
+		};
+		3F77CFB222016A6700A75F21 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3F0B57AB223CA27100AB9D90 /* tableViewImages.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3F799D9621FEE09A00E17922 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3FAC35BF220FDB11004261DB /* ViewLoggedIn.swift */,
+				3F8E80B622375FD70027E68F /* ViewPhotoGallery.swift */,
+				3FAC35C1220FDB11004261DB /* ViewFoodTrigger.swift */,
+				3F794C86220FE93E00F09A69 /* ViewSettings.swift */,
+				3F799D9C21FEE09A00E17922 /* ViewWelcomeDashboard.swift */,
+				3F799D9D21FEE09A00E17922 /* ViewSignUpPageController.swift */,
+				3F799D9E21FEE09A00E17922 /* ViewLogInPageController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3F799D9921FEE09A00E17922 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3F799DA021FEE09A00E17922 /* CustomShapeButton.swift */,
+				3F9811772238CC820052C1A8 /* CustomSlideBar.swift */,
+				3F3D9C57223CA1B600D19C01 /* CustomTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3FAC35BE220FDB11004261DB /* SlideMenuCode */ = {
+			isa = PBXGroup;
+			children = (
+				3FAC35C6220FDB1B004261DB /* SideMenuTutorial-Bridging-Header.h */,
+				3FAC35C0220FDB11004261DB /* SWRevealViewController.h */,
+				3FAC35C2220FDB11004261DB /* SWRevealViewController.m */,
+			);
+			path = SlideMenuCode;
+			sourceTree = "<group>";
+		};
+		3FEB1C7B22B11F990090B6BD /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CAF176687D23C490790A5A5F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				13E32F5C3DFEBCF365E7F127 /* Pods_Trigger_Tracker.framework */,
+				961AFADF9D14769B4A3BD39F /* Pods_Trigger_Tracker_Watch_Extension.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3F632FBE22AB69A200D49BA1 /* Trigger Tracker Watch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3F632FE022AB69A500D49BA1 /* Build configuration list for PBXNativeTarget "Trigger Tracker Watch" */;
+			buildPhases = (
+				3F632FBD22AB69A200D49BA1 /* Resources */,
+				3F632FDF22AB69A500D49BA1 /* Embed App Extensions */,
+				C3EC6F467E58470CD57C0FBE /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3F632FCE22AB69A400D49BA1 /* PBXTargetDependency */,
+			);
+			name = "Trigger Tracker Watch";
+			productName = "Trigger Tracker Watch";
+			productReference = 3F632FBF22AB69A200D49BA1 /* Trigger Tracker Watch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		3F632FCA22AB69A400D49BA1 /* Trigger Tracker Watch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3F632FDE22AB69A500D49BA1 /* Build configuration list for PBXNativeTarget "Trigger Tracker Watch Extension" */;
+			buildPhases = (
+				B2A38735194FDC19D881AAFE /* [CP] Check Pods Manifest.lock */,
+				3F632FC722AB69A400D49BA1 /* Sources */,
+				3F632FC822AB69A400D49BA1 /* Frameworks */,
+				3F632FC922AB69A400D49BA1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Trigger Tracker Watch Extension";
+			productName = "Trigger Tracker Watch Extension";
+			productReference = 3F632FCB22AB69A400D49BA1 /* Trigger Tracker Watch Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+		3F6B873221FEDAE800E71A32 /* Trigger Tracker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3F6B874521FEDAEA00E71A32 /* Build configuration list for PBXNativeTarget "Trigger Tracker" */;
+			buildPhases = (
+				8BA2FDEC1ADE1FD28CD4EED7 /* [CP] Check Pods Manifest.lock */,
+				3F6B872F21FEDAE800E71A32 /* Sources */,
+				3F6B873021FEDAE800E71A32 /* Frameworks */,
+				3F6B873121FEDAE800E71A32 /* Resources */,
+				B1B52E684800C86B5E839110 /* [CP] Embed Pods Frameworks */,
+				BD721E594ABC1E9D5C01DDDE /* [CP] Copy Pods Resources */,
+				3F632FE122AB69A500D49BA1 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3F632FD822AB69A500D49BA1 /* PBXTargetDependency */,
+			);
+			name = "Trigger Tracker";
+			productName = "Trigger Tracker";
+			productReference = 3F6B873321FEDAE800E71A32 /* Trigger Tracker.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3F6B872B21FEDAE800E71A32 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = TuckerMogren;
+				TargetAttributes = {
+					3F632FBE22AB69A200D49BA1 = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+					3F632FCA22AB69A400D49BA1 = {
+						CreatedOnToolsVersion = 10.2.1;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					3F6B873221FEDAE800E71A32 = {
+						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = 3F6B872E21FEDAE800E71A32 /* Build configuration list for PBXProject "Trigger Tracker" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3F6B872A21FEDAE800E71A32;
+			productRefGroup = 3F6B873421FEDAE800E71A32 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3F6B873221FEDAE800E71A32 /* Trigger Tracker */,
+				3F632FBE22AB69A200D49BA1 /* Trigger Tracker Watch */,
+				3F632FCA22AB69A400D49BA1 /* Trigger Tracker Watch Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3F632FBD22AB69A200D49BA1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F632FC522AB69A400D49BA1 /* Assets.xcassets in Resources */,
+				3F632FC322AB69A200D49BA1 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F632FC922AB69A400D49BA1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F632FD522AB69A500D49BA1 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F6B873121FEDAE800E71A32 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F6B874121FEDAEA00E71A32 /* LaunchScreen.storyboard in Resources */,
+				3FAC35C8220FDB26004261DB /* SlideMenu.storyboard in Resources */,
+				3F1DC4C0224882FA00AD85C0 /* assets.xcassets in Resources */,
+				3F3B3F2B220AA8F800BB8B40 /* Images.xcassets in Resources */,
+				3FE72A0521FEDBD300FBB737 /* AppHomeDashboard.storyboard in Resources */,
+				3F6C6C8F22490D9600BA9D2B /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8BA2FDEC1ADE1FD28CD4EED7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Trigger Tracker-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B1B52E684800C86B5E839110 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Trigger Tracker/Pods-Trigger Tracker-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Trigger Tracker/Pods-Trigger Tracker-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B2A38735194FDC19D881AAFE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Trigger Tracker Watch Extension-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BD721E594ABC1E9D5C01DDDE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Trigger Tracker/Pods-Trigger Tracker-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseFirestore/gRPCCertificates-Firestore.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates-Firestore.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Trigger Tracker/Pods-Trigger Tracker-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3F632FC722AB69A400D49BA1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F3B870822B32403001B4494 /* tableViewDetailedView.swift in Sources */,
+				3F632FD322AB69A400D49BA1 /* ExtensionDelegate.swift in Sources */,
+				3F632FD122AB69A400D49BA1 /* InterfaceController.swift in Sources */,
+				3F3C7EA622B1E0DD0082A087 /* dataModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F6B872F21FEDAE800E71A32 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3FA37274220FEBE0008A3DC4 /* SWRevealViewController.h in Sources */,
+				3FA37273220FEBC2008A3DC4 /* SideMenuTutorial-Bridging-Header.h in Sources */,
+				3F799DA521FEE09A00E17922 /* ViewWelcomeDashboard.swift in Sources */,
+				3F799DA721FEE09A00E17922 /* ViewLogInPageController.swift in Sources */,
+				3F794C87220FE93E00F09A69 /* ViewSettings.swift in Sources */,
+				3F8E80B722375FD70027E68F /* ViewPhotoGallery.swift in Sources */,
+				3F9811782238CC820052C1A8 /* CustomSlideBar.swift in Sources */,
+				3FAC35C3220FDB11004261DB /* ViewLoggedIn.swift in Sources */,
+				3F3D9C58223CA1B600D19C01 /* CustomTableViewCell.swift in Sources */,
+				3F6B873721FEDAE800E71A32 /* AppDelegate.swift in Sources */,
+				3FAC35C4220FDB11004261DB /* ViewFoodTrigger.swift in Sources */,
+				3FAC35C5220FDB11004261DB /* SWRevealViewController.m in Sources */,
+				3F0B57AC223CA27100AB9D90 /* tableViewImages.swift in Sources */,
+				3F799DA621FEE09A00E17922 /* ViewSignUpPageController.swift in Sources */,
+				3F799DA821FEE09A00E17922 /* CustomShapeButton.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3F632FCE22AB69A400D49BA1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3F632FCA22AB69A400D49BA1 /* Trigger Tracker Watch Extension */;
+			targetProxy = 3F632FCD22AB69A400D49BA1 /* PBXContainerItemProxy */;
+		};
+		3F632FD822AB69A500D49BA1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3F632FBE22AB69A200D49BA1 /* Trigger Tracker Watch */;
+			targetProxy = 3F632FD722AB69A500D49BA1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3F632FC122AB69A200D49BA1 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3F632FC222AB69A200D49BA1 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+		3F6B873F21FEDAEA00E71A32 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3F6B874021FEDAEA00E71A32 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		3FE72A0121FEDBD300FBB737 /* AppHomeDashboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3FE72A0221FEDBD300FBB737 /* Base */,
+			);
+			name = AppHomeDashboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3F632FDA22AB69A500D49BA1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BT934ECQA8;
+				HEADER_SEARCH_PATHS = "";
+				IBSC_MODULE = Trigger_Tracker_Watch_Extension;
+				INFOPLIST_FILE = "Trigger Tracker Watch/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.TJM.Trigger-Tracker.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 5.2;
+			};
+			name = Debug;
+		};
+		3F632FDB22AB69A500D49BA1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BT934ECQA8;
+				HEADER_SEARCH_PATHS = "";
+				IBSC_MODULE = Trigger_Tracker_Watch_Extension;
+				INFOPLIST_FILE = "Trigger Tracker Watch/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.TJM.Trigger-Tracker.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 5.2;
+			};
+			name = Release;
+		};
+		3F632FDC22AB69A500D49BA1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 383ED1D642E2080D7EF19FCD /* Pods-Trigger Tracker Watch Extension.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "Trigger Tracker Watch Extension/Trigger Tracker Watch Extension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BT934ECQA8;
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = "Trigger Tracker Watch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.TJM.Trigger-Tracker.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 5.2;
+			};
+			name = Debug;
+		};
+		3F632FDD22AB69A500D49BA1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EC3E1234E0C06CA820E472B6 /* Pods-Trigger Tracker Watch Extension.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "Trigger Tracker Watch Extension/Trigger Tracker Watch Extension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BT934ECQA8;
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = "Trigger Tracker Watch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.TJM.Trigger-Tracker.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 5.2;
+			};
+			name = Release;
+		};
+		3F6B874321FEDAEA00E71A32 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = "SideMenuTutorial-Bridging-Header.h\n";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Debug;
+		};
+		3F6B874421FEDAEA00E71A32 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OBJC_BRIDGING_HEADER = "SideMenuTutorial-Bridging-Header.h\n";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				USER_HEADER_SEARCH_PATHS = "";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3F6B874621FEDAEA00E71A32 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7CD01810414B60C3B2003188 /* Pods-Trigger Tracker.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "Trigger Tracker/Trigger Tracker.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BT934ECQA8;
+				INFOPLIST_FILE = "Trigger Tracker/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.TJM.Trigger-Tracker";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ENABLE_BATCH_MODE = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "Trigger Tracker/SlideMenuCode/SideMenuTutorial-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		3F6B874721FEDAEA00E71A32 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B8F2E662F9DFF48977B15D4F /* Pods-Trigger Tracker.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "Trigger Tracker/Trigger Tracker.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BT934ECQA8;
+				INFOPLIST_FILE = "Trigger Tracker/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.TJM.Trigger-Tracker";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ENABLE_BATCH_MODE = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "Trigger Tracker/SlideMenuCode/SideMenuTutorial-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3F632FDE22AB69A500D49BA1 /* Build configuration list for PBXNativeTarget "Trigger Tracker Watch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F632FDC22AB69A500D49BA1 /* Debug */,
+				3F632FDD22AB69A500D49BA1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3F632FE022AB69A500D49BA1 /* Build configuration list for PBXNativeTarget "Trigger Tracker Watch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F632FDA22AB69A500D49BA1 /* Debug */,
+				3F632FDB22AB69A500D49BA1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3F6B872E21FEDAE800E71A32 /* Build configuration list for PBXProject "Trigger Tracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F6B874321FEDAEA00E71A32 /* Debug */,
+				3F6B874421FEDAEA00E71A32 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3F6B874521FEDAEA00E71A32 /* Build configuration list for PBXNativeTarget "Trigger Tracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F6B874621FEDAEA00E71A32 /* Debug */,
+				3F6B874721FEDAEA00E71A32 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3F6B872B21FEDAE800E71A32 /* Project object */;
+}

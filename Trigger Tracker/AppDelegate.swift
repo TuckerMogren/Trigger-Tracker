@@ -39,10 +39,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidEnterBackground(_ application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        
+        
+        
+        //Will sign the user out or throw a console error if firebase is unable to log the user out
+        do {
+            try fireBaseAuth?.signOut()
+            //If the user is loged out successfully, the application will segue to the login screen.
+            if fireBaseAuth?.currentUser == nil {
+                print("Logged out, push log in view controller")
+                //BUG: Application will log the user out but not return to login screen, workong on fix
+                /*
+                let mainStoryBoard: UIStoryboard = UIStoryboard(name: "AppHomeDashboard", bundle: nil)
+                let loginView = mainStoryBoard.instantiateViewController(withIdentifier: "welcomeVC") as! ViewWelcomeDashboard
+                let rootController = self.window!.rootViewController as! UIViewController
+                rootController.performSegue(withIdentifier: "goToLogin", sender: Any.self)
+                */
+            }
+        }catch let signOutError as NSError {
+            print("ERROR: Unable to sign user out when the application is entering the background. Error at \(signOutError)")
+        }
+        
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+
+        
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {

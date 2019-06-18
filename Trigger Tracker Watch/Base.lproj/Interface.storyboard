@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14490.70" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch42" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14490.21"/>
+    </dependencies>
+    <scenes>
+        <!--initialView-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller identifier="initialView" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Trigger_Tracker_Watch" customModuleProvider="target">
+                    <items>
+                        <table alignment="left" id="GEN-ik-QXp">
+                            <items>
+                                <tableRow identifier="Cell1" id="zqD-xf-Kft" customClass="dataModel" customModule="Trigger_Tracker_Watch_Extension">
+                                    <group key="rootItem" width="1" height="50" alignment="left" contentMode="scaleAspectFill" animationDuration="3" id="E8c-fi-YsS">
+                                        <items>
+                                            <label alignment="center" verticalAlignment="center" text="Label" textAlignment="center" numberOfLines="5" id="ART-di-UZf">
+                                                <color key="textColor" red="0.19607843137254902" green="0.32156862745098036" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </label>
+                                        </items>
+                                        <color key="backgroundColor" red="0.52149242162704468" green="0.29998454451560974" blue="0.61873966455459595" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </group>
+                                    <connections>
+                                        <outlet property="tableViewLabelOutput" destination="ART-di-UZf" id="901-xh-b9R"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="tableViewWatchOutlet" destination="GEN-ik-QXp" id="6Kn-HP-hHG"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="158" y="76"/>
+        </scene>
+        <!--detailedView-->
+        <scene sceneID="v06-qJ-9C7">
+            <objects>
+                <controller identifier="detailedView" id="Bms-92-gOh" customClass="tableViewDetailedView" customModule="Trigger_Tracker_Watch_Extension">
+                    <items>
+                        <label width="1" height="0.29999999999999999" alignment="left" verticalAlignment="bottom" text="Hi" textAlignment="left" numberOfLines="0" id="Rl7-lf-89j">
+                            <variation key="device=watch42mm" verticalAlignment="bottom"/>
+                        </label>
+                        <imageView alignment="center" verticalAlignment="center" image="trigger_tracker_png_120px" contentMode="scaleAspectFit" id="tgx-aE-Yeq"/>
+                    </items>
+                    <connections>
+                        <outlet property="tableDetailedViewOutlet" destination="Rl7-lf-89j" id="dvN-js-WXM"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="429.79487179487182" y="87.615384615384627"/>
+        </scene>
+    </scenes>
+</document>
