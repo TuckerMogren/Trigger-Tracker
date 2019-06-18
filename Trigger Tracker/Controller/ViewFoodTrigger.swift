@@ -5,22 +5,26 @@
  * Tucker Mogren; 2/9/19
  */
 import UIKit
-import FirebaseAuth
-import FirebaseStorage
-
-class ViewFoodTrigger: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
-
-    @IBOutlet weak var imageViewDownload: UIImageView!
+import Foundation
+class ViewFoodTrigger: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextViewDelegate {
+    
     @IBOutlet weak var imageViewUpload: UIImageView!
     //menuButton: Allows the user to be brought back to the slidebar for navigation.
     @IBOutlet weak var menuButton: UIBarButtonItem!
     var imagePickerController: UIImagePickerController!
+    @IBOutlet weak var uploadPhotoButton: CustomShapeButton!
+    @IBOutlet weak var userTextTextFieldOutlet: UITextView!
     
-    var imageReference: StorageReference {
-        return Storage.storage().reference().child("images")
-    }
-    @IBOutlet weak var uploadPhotoButton: CustomShapeButtonLogFood!
     
+    
+    
+    let userAuth = (UIApplication.shared.delegate as! AppDelegate).fireBaseAuth
+    let fireBaseDocumentRef = (UIApplication.shared.delegate as! AppDelegate).fireBaseNoSQLDBDocumentRef
+    let db = (UIApplication.shared.delegate as! AppDelegate).fireBaseNoSQLDB
+    //Created a image reference in firebase storage for the image with path.
+    let imageReference = (UIApplication.shared.delegate as! AppDelegate).fireBaseStorage?.reference().child("images")
+    
+
     /*
      * Function Name: viewDidLoad()
      * When the view controller loads this code is executed.
@@ -30,8 +34,11 @@ class ViewFoodTrigger: UIViewController, UINavigationControllerDelegate, UIImage
         super.viewDidLoad()
         sideMenus()
         customizeNavBar()
+        self.uploadPhotoButton.isHidden = true
+        
+        userTextTextFieldOutlet.delegate = self
+        
     }
-    
     /*
      * Function Name: showAlertCameraWillNotOpenSimulator()
      * Wil throw alert if the camera can not open because testing on xcode simulator. Will avoid crash.
@@ -46,6 +53,23 @@ class ViewFoodTrigger: UIViewController, UINavigationControllerDelegate, UIImage
         self.present(alert, animated: true, completion: nil)
     }
 
+    
+    /*
+     * Function Name: textFieldShouldReturn()
+     * Will allow the keyboard to be toggled away when the text view is done being editted
+     * Tucker Mogren; 4/15/19
+     * Reference: https://stackoverflow.com/questions/26600359/dismiss-keyboard-with-a-uitextview
+     */
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if(text == "\n")
+        {
+            userTextTextFieldOutlet.resignFirstResponder()
+            return false
+        }
+        return true
+    }
+    
     /*
      * Function Name: sideMenus()
      * Shows the side bar controller.
@@ -71,7 +95,7 @@ class ViewFoodTrigger: UIViewController, UINavigationControllerDelegate, UIImage
         
         
         navigationController?.navigationBar.tintColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0)
-        navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.1019607843, green: 0.4588235294, blue: 0.8196078431, alpha: 1)
+        navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.1960784314, green: 0.3215686275, blue: 1, alpha: 1)
         
         navigationController?.navigationBar.titleTextAttributes = convertToOptionalNSAttributedStringKeyDictionary([NSAttributedString.Key.foregroundColor.rawValue: UIColor.white])
         
@@ -91,15 +115,13 @@ class ViewFoodTrigger: UIViewController, UINavigationControllerDelegate, UIImage
         if(!UIImagePickerController.isSourceTypeAvailable(.camera))
         {
             showAlertCameraWillNotOpenSimulator()
-            
         }else{
             imagePickerController.sourceType = .camera
-            
-            
         }
 
         present(imagePickerController, animated: true, completion: nil)
         
+        self.uploadPhotoButton.isHidden = false 
     }
     
     /*
@@ -115,69 +137,91 @@ class ViewFoodTrigger: UIViewController, UINavigationControllerDelegate, UIImage
     
     /*
      * Function Name: uploadPhotoButtonAction()
-     * Will upload the photo to Firebases Storage Servier
+     * Will upload the photo to Firebases Storage Server
      * Tucker Mogren; 2/24/19
      * Referenced: https://www.youtube.com/watch?v=MyeqhFGnJ_0
      */
     @IBAction func uploadPhotoButtonAction(_ sender: Any)
     {
-        guard let imageUpload = imageViewUpload.image else {return}
-        guard let imageData = imageUpload.jpegData(compressionQuality: 1) else {return};
         
-        let userUID = Auth.auth().currentUser?.uid;
-        let date = NSDate.description();
-        let fileName: String = "UPLOAD: " + userUID! + "_" + date;
+        guard let image = imageViewUpload.image else {return }
+        guard let imageData = image.jpegData(compressionQuality: 0.10) else {return}
         
-        let uploadImageReference = imageReference.child(fileName)
         
-        let uploadJob = uploadImageReference.putData(imageData, metadata: nil) { (metadata, error) in
-            print("Upload Task Finished")
-            print(metadata ?? "No Data.")
-            print(error ?? "No Error.")
-        }
-        uploadJob.observe(.progress) { (snapShot) in
-            print(snapShot.progress ?? "Completed.")
+        let fileName = "\((userAuth?.currentUser?.uid)!)" + " Date: " + "\(NSDate())"
+        
+        let uploadImageRef = imageReference?.child((userAuth?.currentUser!.uid)!).child(fileName) // will need to add comments to explain whats going on here
+        
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .short
+        dateFormatter.timeStyle = .short
+        //gets the date interval from the current time
+        let date = Date(timeIntervalSinceNow: 0.0)
+        let imageUpdate = uploadImageRef?.putData(imageData, metadata: nil, completion:
+        
+            { (metadata, err)   in
             
-        }
-        uploadJob.resume()
-    }
-    
-    /*
-     * Function: downloadPhotoButtonAction
-     * Will allow the user to download photos from Firebase Storage.
-     * Tucker Mogren; 2/26/19
-     * NOTE: Function does not allow for photos to be viewed,
-     * will be reviewing firebase storage documentation.
-      * Also concerns about security.
-     */
-    @IBAction func downloadPhotoButtonAction(_ sender: Any)
-    {
-        let userUID = Auth.auth().currentUser?.uid;
-        let date = NSDate.description();
-        let fileName: String = "DOWNLOAD: " + userUID! + "_" + date;
-        let downloadImageRef = imageReference.child(fileName);
-        let downloadTask = downloadImageRef.getData(maxSize: 1024 * 1024 * 15) { (data, error) in
-            if let data = data {
-                let image = UIImage(data: data)
-                self.imageViewUpload.image = image
+            if err != nil {
+                print("ERROR: \(String(describing: err))")
+                return
             }
-            print(error ?? "NO ERROR");
+                uploadImageRef?.downloadURL(completion: { (url, err) in
+                        if err != nil{
+                            print("ERROR: \(String(describing: err))")
+                        }else{
+                            print(url?.absoluteString as Any)
+                      
+                            self.sendDataToDatabase(userNotes: self.userTextTextFieldOutlet.text, imageName: fileName, imageDate: dateFormatter.string(from: date))
+                }
+            })
+            
+        })
+        
+        imageUpdate?.observe(.progress) { (snapshot) in
+            print(snapshot.progress ?? "Done uploading image.")
         }
-        downloadTask.observe(.progress) { (snapshot) in
-            print(snapshot.progress ?? "NO MORE PROGRESS");
-        }
-        downloadTask.resume()
+
+        imageUpdate?.resume()
         
     }
+    /*
+     * Function Name: sendDataToDatabase
+     * Function will send specific static data to the database when called.
+     * Tucker Mogren; 3/13/19
+     * Reference: https://firebase.google.com/docs/firestore/quickstart
+     */
+    private func sendDataToDatabase (userNotes: String, imageName: String, imageDate: String ){
+        
+        
+        var ref = fireBaseDocumentRef
     
+
+
+        ref = db?.collection("photoInformation").addDocument(data: [
+            
+            
+            "userID" : userAuth?.currentUser?.uid as Any,
+            "userNotes": userNotes,
+            "imageName": imageName,
+            "imageDate": imageDate
+            
+            
+        ]){ err in
+            if let err = err {
+                print("Error adding document: \(err)")
+            }else {
+                print("Document added with ID: \(ref!.documentID)")
+            }
+        }
+        
+    }
 }
-    
 /*
 * FilePrivate Func: convertToOptionalNSAttributedStringKeyDictionary
 * Helper function inserted by Swift 4.2 migrator.
 * Tucker Mogren; 2/9/19
 */
-
 fileprivate func convertToOptionalNSAttributedStringKeyDictionary(_ input: [String: Any]?) -> [NSAttributedString.Key: Any]? {
     guard let input = input else { return nil }
     return Dictionary(uniqueKeysWithValues: input.map { key, value in (NSAttributedString.Key(rawValue: key), value)})

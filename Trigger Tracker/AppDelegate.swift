@@ -13,12 +13,21 @@ import Firebase
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var fireBaseNoSQLDB: Firestore?
+    var fireBaseNoSQLDBDocumentRef: DocumentReference?
+    var fireBaseStorage: Storage?
+    var fireBaseAuth: Auth?
+    
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
-        
+        fireBaseStorage = Storage.storage()
+        fireBaseNoSQLDB = Firestore.firestore()
+        fireBaseNoSQLDBDocumentRef = nil
+        fireBaseAuth = Auth.auth()
+
         return true
     }
 

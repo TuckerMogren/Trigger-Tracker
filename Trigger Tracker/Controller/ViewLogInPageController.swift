@@ -6,14 +6,54 @@
  */
 
 import UIKit
-import Firebase
 class ViewLogInPageController: UIViewController
 {
     
     //Class global vars for fields that gather data
     //First two are for LogIn
-    @IBOutlet weak var e_MailTextFieldLogInOutlet: UITextField!
+    @IBOutlet weak var eMailTextFieldLogInOutlet: UITextField!
     @IBOutlet weak var passwordTextFieldLogInOutlet: UITextField!
+    @IBOutlet weak var saveEMailSwitchOutlet: UISwitch!
+    let defaults = UserDefaults.standard
+    
+    /*
+     * Function Name: viewDidLoad()
+     * Called after the VC is loaded into memory.
+     * Tucker Mogren; 2/27/19
+     */
+    override func viewDidLoad() {
+        //will set the switch to the result of the saved value of defaults.bool
+        self.saveEMailSwitchOutlet.setOn(defaults.bool(forKey: "lastStateOfButton"), animated: true)
+        if self.saveEMailSwitchOutlet.isOn
+        {
+            //sets savedEMail equal to the stored value of the last email.
+            let savedEMail = defaults.string(forKey: "lastStateOfEMailTextField") ?? "error"
+            eMailTextFieldLogInOutlet.text = savedEMail
+            
+        }
+    }
+    
+    /*
+     * Function Name: preserveStateOfSwitchBetweenAppSessions()
+     * Will be called to save the state of the switch between app sessions.
+     * Reference: https://medium.com/@nimjea/userdefaults-in-swift-4-d1a278a0ec79
+     * Tucker Mogren; 2/27/19
+     */
+    func preserveStateOfSwitchBetweenAppSessions()
+    {
+        defaults.set(saveEMailSwitchOutlet.isOn, forKey: "lastStateOfButton")
+    }
+    
+    /*
+     * Function Name: preserveStateOfEMailBetweenAppSessions()
+     * Will be called to save the email username between app sessions when switch is toggled.
+     * Reference: https://medium.com/@nimjea/userdefaults-in-swift-4-d1a278a0ec79
+     * Tucker Mogren; 2/27/19
+     */
+    func preserveStateOfEMailBetweenAppSessions()
+    {
+        defaults.set(eMailTextFieldLogInOutlet.text, forKey: "lastStateOfEMailTextField")
+    }
     
     /*
      * Function Name:showAlertIncorrectLogin()
@@ -36,15 +76,21 @@ class ViewLogInPageController: UIViewController
      * Tucker Mogren; 1/23/19
      * Referenced: https://firebase.google.com/docs/auth/ios/custom-auth
      */
-    
     @IBAction func logInButtonAction(_ sender: Any)
     {
-        let eMailTextEntryLogIn: String = e_MailTextFieldLogInOutlet.text!
+        let userAuth = (UIApplication.shared.delegate as! AppDelegate).fireBaseAuth
+        
+        
+        let eMailTextEntryLogIn: String = eMailTextFieldLogInOutlet.text!
         let passwordTextEntryLogIn: String = passwordTextFieldLogInOutlet.text!
         print("Email is: \(eMailTextEntryLogIn) and password is: \(passwordTextEntryLogIn).")
         
+        //will save the last state of the switch and email.
+        preserveStateOfSwitchBetweenAppSessions();
+        preserveStateOfEMailBetweenAppSessions()
         
-        Auth.auth().signIn(withEmail: eMailTextEntryLogIn, password: passwordTextEntryLogIn) { (user, error) in
+        
+        userAuth?.signIn(withEmail: eMailTextEntryLogIn, password: passwordTextEntryLogIn) { (user, error) in
             if (error == nil && user != nil)
             {
        
@@ -57,5 +103,5 @@ class ViewLogInPageController: UIViewController
             }
         }
     }
-    
+
 }

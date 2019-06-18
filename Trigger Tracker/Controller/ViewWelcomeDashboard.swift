@@ -6,12 +6,8 @@
  */
 
 import UIKit
-import Firebase
 
 class ViewWelcomeDashboard: UIViewController {
-
-    
-    
     /*
      * Function Name: viewDidLoad()
      * Called after the view controller is loaded into memory - Per apple documentation: https://developer.apple.com/documentation/uikit/uiviewcontroller/1621495-viewdidload
@@ -23,7 +19,6 @@ class ViewWelcomeDashboard: UIViewController {
         super.viewDidLoad()
 
     }
-    
     /*
      * Function: signInButtonHomeScreen()
      * Will move the user from the home screen to the sign in screen.
