@@ -12,6 +12,7 @@ target 'Trigger Tracker' do
   	shared_pods
 end
 
+
 target 'Trigger Tracker Watch Extension' do
 	#pods for Trigger Tracker - watch extenstion application
 	platform :watchos, '5.2'

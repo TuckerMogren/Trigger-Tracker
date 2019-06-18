@@ -9,6 +9,8 @@ import UIKit
 class ViewLogInPageController: UIViewController
 {
     
+    //need to add firebase reference
+
     //Class global vars for fields that gather data
     //First two are for LogIn
     @IBOutlet weak var eMailTextFieldLogInOutlet: UITextField!
@@ -95,6 +97,18 @@ class ViewLogInPageController: UIViewController
             {
        
                 self.performSegue(withIdentifier: "accountLogInGoTo", sender: self)
+                
+                
+                
+                
+                
+                let defaults = UserDefaults(suiteName: "group.TJM.SharedExtensionWatch")
+               // ref.observeAuthEventWithBlock
+                
+                
+                
+                
+                
                 
             }else{
                 print("/n/n/n/nERROR: Log-in failed \(error!.localizedDescription).")

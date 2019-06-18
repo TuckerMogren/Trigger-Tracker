@@ -111,6 +111,8 @@
 		3F799D9D21FEE09A00E17922 /* ViewSignUpPageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewSignUpPageController.swift; sourceTree = "<group>"; };
 		3F799D9E21FEE09A00E17922 /* ViewLogInPageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewLogInPageController.swift; sourceTree = "<group>"; };
 		3F799DA021FEE09A00E17922 /* CustomShapeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomShapeButton.swift; sourceTree = "<group>"; };
+		3F7FF6DB22B7B78F00349B36 /* Trigger Tracker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Trigger Tracker.entitlements"; sourceTree = "<group>"; };
+		3F7FF6DC22B7B83700349B36 /* Trigger Tracker Watch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Trigger Tracker Watch Extension.entitlements"; sourceTree = "<group>"; };
 		3F8E80B622375FD70027E68F /* ViewPhotoGallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPhotoGallery.swift; sourceTree = "<group>"; };
 		3F9811772238CC820052C1A8 /* CustomSlideBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSlideBar.swift; sourceTree = "<group>"; };
 		3FAC35BF220FDB11004261DB /* ViewLoggedIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewLoggedIn.swift; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 		3F632FCF22AB69A400D49BA1 /* Trigger Tracker Watch Extension */ = {
 			isa = PBXGroup;
 			children = (
+				3F7FF6DC22B7B83700349B36 /* Trigger Tracker Watch Extension.entitlements */,
 				3F3B870622B322B4001B4494 /* Controller */,
 				3F3C7EA422B1E0CB0082A087 /* Model */,
 				3FEB1C7B22B11F990090B6BD /* View */,
@@ -229,6 +232,7 @@
 		3F6B873521FEDAE800E71A32 /* Trigger Tracker */ = {
 			isa = PBXGroup;
 			children = (
+				3F7FF6DB22B7B78F00349B36 /* Trigger Tracker.entitlements */,
 				3FAC35BE220FDB11004261DB /* SlideMenuCode */,
 				3F77CFB222016A6700A75F21 /* Model */,
 				3F799D9621FEE09A00E17922 /* Controller */,
@@ -379,10 +383,20 @@
 					};
 					3F632FCA22AB69A400D49BA1 = {
 						CreatedOnToolsVersion = 10.2.1;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					3F6B873221FEDAE800E71A32 = {
 						CreatedOnToolsVersion = 10.1;
 						LastSwiftMigration = 1020;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -668,6 +682,7 @@
 			baseConfigurationReference = 383ED1D642E2080D7EF19FCD /* Pods-Trigger Tracker Watch Extension.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "Trigger Tracker Watch Extension/Trigger Tracker Watch Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BT934ECQA8;
 				HEADER_SEARCH_PATHS = "";
@@ -693,6 +708,7 @@
 			baseConfigurationReference = EC3E1234E0C06CA820E472B6 /* Pods-Trigger Tracker Watch Extension.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "Trigger Tracker Watch Extension/Trigger Tracker Watch Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BT934ECQA8;
 				HEADER_SEARCH_PATHS = "";
@@ -843,6 +859,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "Trigger Tracker/Trigger Tracker.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BT934ECQA8;
 				INFOPLIST_FILE = "Trigger Tracker/Info.plist";
@@ -867,6 +884,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "Trigger Tracker/Trigger Tracker.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BT934ECQA8;
 				INFOPLIST_FILE = "Trigger Tracker/Info.plist";
