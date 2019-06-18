@@ -95,21 +95,7 @@ class ViewLogInPageController: UIViewController
         userAuth?.signIn(withEmail: eMailTextEntryLogIn, password: passwordTextEntryLogIn) { (user, error) in
             if (error == nil && user != nil)
             {
-       
                 self.performSegue(withIdentifier: "accountLogInGoTo", sender: self)
-                
-                
-                
-                
-                
-                let defaults = UserDefaults(suiteName: "group.TJM.SharedExtensionWatch")
-               // ref.observeAuthEventWithBlock
-                
-                
-                
-                
-                
-                
             }else{
                 print("/n/n/n/nERROR: Log-in failed \(error!.localizedDescription).")
                 self.showAlertIncorrectLogin()
