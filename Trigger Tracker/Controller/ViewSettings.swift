@@ -9,6 +9,23 @@ import UIKit
 class ViewSettings: UIViewController {
 
     @IBOutlet weak var menuButton: UIBarButtonItem!
+    let defaults = UserDefaults.standard
+    @IBOutlet weak var settingsSwitchBackgroundLogOut: UISwitch!
+    
+    
+    
+    //TODO: Need to add an update buttom that will save all the states of all the "settings"
+    
+    /*
+     * Function Name: preserveStateOfSettingSwitchesBetweenSessions()
+     * Will keep the settings on the settins page the same in between app sessions.
+     * Tucker Mogren; 6/19/19
+     */
+    func preserveStateOfSettingSwitchesBetweenSessions()
+    {
+        defaults.set(settingsSwitchBackgroundLogOut.isOn, forKey: "lastStateOfButton")
+    }
+    
     
     /*
      * Function Name: viewDidLoad()
@@ -19,6 +36,7 @@ class ViewSettings: UIViewController {
         super.viewDidLoad()
         sideMenus()
         customizeNavBar()
+        self.settingsSwitchBackgroundLogOut.setOn(defaults.bool(forKey: "lastStateOfButton"), animated: true)
     }
     
     /*
