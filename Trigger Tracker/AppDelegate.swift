@@ -12,31 +12,22 @@ import Firebase
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    //Global Vars
     var window: UIWindow?
     var fireBaseNoSQLDB: Firestore?
     var fireBaseNoSQLDBDocumentRef: DocumentReference?
     var fireBaseStorage: Storage?
     var fireBaseAuth: Auth?
     
-
-
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        FirebaseApp.configure()
-        fireBaseStorage = Storage.storage()
-        fireBaseNoSQLDB = Firestore.firestore()
-        fireBaseNoSQLDBDocumentRef = nil
-        fireBaseAuth = Auth.auth()
+    /*
+     * Function Name: logOutAndReturnToLogInScreenWhenEnteringBackground()
+     * Will log the user out and return to login screen when entering background.
+     * Tucker Mogren; 6/18/19
+     * Referenced: https://stackoverflow.com/questions/27954126/how-return-to-the-app-login-screen-when-resuming-an-app-from-background
+     */
+    private func logOutAndReturnToLogInScreenWhenEnteringBackground()
+    {
     
-
-        return true
-    }
-
-    func applicationWillResignActive(_ application: UIApplication) {
-        // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-        // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
-        
-        //Will sign the user out or throw a console error if firebase is unable to log the user out
         do {
             try fireBaseAuth?.signOut()
             //If the user is loged out successfully, the application will segue to the login screen.
@@ -58,6 +49,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 }
             })
         }
+    }
+
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        // Override point for customization after application launch.
+        FirebaseApp.configure()
+        fireBaseStorage = Storage.storage()
+        fireBaseNoSQLDB = Firestore.firestore()
+        fireBaseNoSQLDBDocumentRef = nil
+        fireBaseAuth = Auth.auth()
+        return true
+    }
+
+    func applicationWillResignActive(_ application: UIApplication) {
+        // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
+        // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
+        //Will sign the user out or throw a console error if firebase is unable to log the user out
+        
+        logOutAndReturnToLogInScreenWhenEnteringBackground()
+
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
