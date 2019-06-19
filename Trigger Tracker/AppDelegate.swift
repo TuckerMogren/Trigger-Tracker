@@ -27,6 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         fireBaseNoSQLDB = Firestore.firestore()
         fireBaseNoSQLDBDocumentRef = nil
         fireBaseAuth = Auth.auth()
+    
 
         return true
     }
@@ -34,38 +35,43 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
-    }
-
-    func applicationDidEnterBackground(_ application: UIApplication) {
-        // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-        // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-        
-        
         
         //Will sign the user out or throw a console error if firebase is unable to log the user out
         do {
             try fireBaseAuth?.signOut()
             //If the user is loged out successfully, the application will segue to the login screen.
-            if fireBaseAuth?.currentUser == nil {
-                print("Logged out, push log in view controller")
-                //BUG: Application will log the user out but not return to login screen, workong on fix
-                /*
-                let mainStoryBoard: UIStoryboard = UIStoryboard(name: "AppHomeDashboard", bundle: nil)
-                let loginView = mainStoryBoard.instantiateViewController(withIdentifier: "welcomeVC") as! ViewWelcomeDashboard
-                let rootController = self.window!.rootViewController as! UIViewController
-                rootController.performSegue(withIdentifier: "goToLogin", sender: Any.self)
-                */
-            }
         }catch let signOutError as NSError {
             print("ERROR: Unable to sign user out when the application is entering the background. Error at \(signOutError)")
         }
+        
+        //Reference to below code https://stackoverflow.com/questions/27954126/how-return-to-the-app-login-screen-when-resuming-an-app-from-background
+        if fireBaseAuth?.currentUser == nil
+        {
+            let storyboard = UIStoryboard(name: "AppHomeDashboard", bundle: nil)
+            let rootViewController = storyboard.instantiateViewController(withIdentifier: "welcomeVC") as! ViewWelcomeDashboard
+            
+            
+            self.window?.rootViewController?.dismiss(animated: false, completion: {
+                if self.window != nil
+                {
+                    self.window!.rootViewController = rootViewController
+                }
+            })
+        }
+    }
+
+    func applicationDidEnterBackground(_ application: UIApplication) {
+        // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
+        // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits
+        
+        
         
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
 
-        
+    
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
