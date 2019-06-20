@@ -15,9 +15,9 @@ class ViewSettings: UIViewController {
     
     
     //TODO: need to make state of the variable avaialbe outside this class
-    public func getStateOfBackGroundSwitchButton(mySwitch: UISwitch) -> Bool
+    public func getStateOfBackGroundSwitchButton(sender: UISwitch!) -> Bool
     {
-        return mySwitch.isOn
+        return sender.isOn
     }
     /*
      * Function Name: settingsSwitchToggledUpdateUserDefaults(_ sender: Any)
@@ -48,14 +48,11 @@ class ViewSettings: UIViewController {
         sideMenus()
         customizeNavBar()
         self.settingsSwitchBackgroundLogOut.setOn(defaults.bool(forKey: "lastStateOfSettingsButton"), animated: true)
-        
-        
-        //for testing purposes
-        if getStateOfBackGroundSwitchButton(mySwitch: self.settingsSwitchBackgroundLogOut){
-            print("True")
-        }else{
-            print("False")
+        if defaults.bool(forKey: "lastStateOfSettingsButton")
+        {
+            print("The value of the user defaults key is: ")
         }
+        
         
     }
     

@@ -59,7 +59,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         fireBaseNoSQLDBDocumentRef = nil
         fireBaseAuth = Auth.auth()
         
-        
+
         return true
     }
     
@@ -68,9 +68,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
+        
+        
+        
+        
         //Will sign the user out or throw a console error if firebase is unable to log the user out
-
-        logOutAndReturnToLogInScreenWhenEnteringBackground()
+        let defaults = UserDefaults.standard
+        if defaults.bool(forKey: "lastStateOfSettingsButton")
+        {
+           logOutAndReturnToLogInScreenWhenEnteringBackground()
+        }
 
     }
     func applicationDidEnterBackground(_ application: UIApplication) {

@@ -29,7 +29,7 @@ class ViewPhotoGallery: UIViewController, UITableViewDataSource, UITableViewDele
         sideMenus()
         customizeNavBar()
         loadData()
-        
+
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
