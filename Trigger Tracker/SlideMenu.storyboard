@@ -354,7 +354,7 @@
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" shouldIndentWhileEditing="NO" reuseIdentifier="cellOne" rowHeight="280" id="oLV-Np-u8Q" customClass="CustomTableViewCell" customModule="Trigger_Tracker" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="280"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oLV-Np-u8Q" id="UFI-2F-obr">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oLV-Np-u8Q" id="UFI-2F-obr">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="279.66666666666669"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
@@ -394,7 +394,6 @@
                                                 </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="gPE-tM-dYb" firstAttribute="centerY" secondItem="UFI-2F-obr" secondAttribute="centerY" id="13v-5F-XPc"/>
                                                 <constraint firstItem="gPE-tM-dYb" firstAttribute="leading" secondItem="UFI-2F-obr" secondAttribute="leading" id="BTJ-6X-D2V"/>
                                                 <constraint firstItem="YAN-2Z-GpJ" firstAttribute="top" secondItem="UFI-2F-obr" secondAttribute="top" id="GRa-XY-rM2"/>
                                                 <constraint firstItem="hrT-Ni-yAe" firstAttribute="top" secondItem="gPE-tM-dYb" secondAttribute="bottom" id="QDD-BN-yrq"/>
@@ -459,19 +458,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kdg-sH-VcW">
-                                <rect key="frame" x="155.66666666666666" y="395.66666666666669" width="64" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="64" id="yfW-vx-6dO"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xc9-or-cEe">
                                 <rect key="frame" x="66" y="158" width="51" height="31"/>
                                 <color key="onTintColor" red="0.64313725490196072" green="0.047058823529411764" blue="0.90980392156862744" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="thumbTintColor" red="0.19607843137254902" green="0.32156862745098036" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="settingsSwitchToggledUpdateUserDefaults:" destination="cPc-p5-AAo" eventType="valueChanged" id="VOI-jW-ykQ"/>
+                                </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fxw-z0-7ku">
                                 <rect key="frame" x="136" y="153" width="0.0" height="0.0"/>
@@ -495,8 +488,6 @@
                             <constraint firstItem="XZS-1F-d0s" firstAttribute="top" secondItem="1Ec-5B-FW0" secondAttribute="bottom" constant="65" id="4sf-SL-rQp"/>
                             <constraint firstItem="Xc9-or-cEe" firstAttribute="top" secondItem="1Ec-5B-FW0" secondAttribute="bottom" constant="70" id="AsG-VO-PFM"/>
                             <constraint firstItem="XZS-1F-d0s" firstAttribute="top" secondItem="fxw-z0-7ku" secondAttribute="top" id="Kxb-qB-v7n"/>
-                            <constraint firstItem="kdg-sH-VcW" firstAttribute="centerY" secondItem="tn2-He-MSQ" secondAttribute="centerY" id="LDS-dQ-qHh"/>
-                            <constraint firstItem="kdg-sH-VcW" firstAttribute="centerX" secondItem="tn2-He-MSQ" secondAttribute="centerX" id="P0J-PW-i8Q"/>
                             <constraint firstItem="XZS-1F-d0s" firstAttribute="leading" secondItem="fxw-z0-7ku" secondAttribute="leading" id="b3E-iA-d0H"/>
                             <constraint firstItem="XZS-1F-d0s" firstAttribute="leading" secondItem="Xc9-or-cEe" secondAttribute="trailing" constant="21" id="l1F-Bn-sUT"/>
                             <constraint firstItem="XZS-1F-d0s" firstAttribute="centerY" secondItem="Xc9-or-cEe" secondAttribute="centerY" id="qyg-oM-1NE"/>

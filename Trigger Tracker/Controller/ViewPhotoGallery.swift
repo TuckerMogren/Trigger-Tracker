@@ -10,7 +10,7 @@ class ViewPhotoGallery: UIViewController, UITableViewDataSource, UITableViewDele
   
     let userAuth = (UIApplication.shared.delegate as! AppDelegate).fireBaseAuth
     let db = (UIApplication.shared.delegate as! AppDelegate).fireBaseNoSQLDB
-    
+
     @IBOutlet weak var tableViewOutlet: UITableView!
     
     var arrayOfData = [tableViewImages]()
@@ -29,7 +29,6 @@ class ViewPhotoGallery: UIViewController, UITableViewDataSource, UITableViewDele
         sideMenus()
         customizeNavBar()
         loadData()
-        //var data = tableViewImages(URL: "www.google.com", Notes: "This is a test", Date: "04042019")
         
     }
     

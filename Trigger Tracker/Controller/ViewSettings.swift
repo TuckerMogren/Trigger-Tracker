@@ -14,19 +14,30 @@ class ViewSettings: UIViewController {
     
     
     
-    //TODO: Need to add an update buttom that will save all the states of all the "settings"
+    //TODO: need to make state of the variable avaialbe outside this class
+    public func getStateOfBackGroundSwitchButton(mySwitch: UISwitch) -> Bool
+    {
+        return mySwitch.isOn
+    }
+    /*
+     * Function Name: settingsSwitchToggledUpdateUserDefaults(_ sender: Any)
+     * Will keep the settings on the settins page the same in between app sessions.
+     * Tucker Mogren; 6/19/19
+     */
+    @IBAction func settingsSwitchToggledUpdateUserDefaults(_ sender: Any)
+    {
+        preserveStateOfSettingSwitchesBetweenSessions()
+    }
     
     /*
      * Function Name: preserveStateOfSettingSwitchesBetweenSessions()
      * Will keep the settings on the settins page the same in between app sessions.
      * Tucker Mogren; 6/19/19
      */
-    func preserveStateOfSettingSwitchesBetweenSessions()
+    private func preserveStateOfSettingSwitchesBetweenSessions()
     {
-        defaults.set(settingsSwitchBackgroundLogOut.isOn, forKey: "lastStateOfButton")
+        defaults.set(settingsSwitchBackgroundLogOut.isOn, forKey: "lastStateOfSettingsButton")
     }
-    
-    
     /*
      * Function Name: viewDidLoad()
      * When the view controller loads this code is executed.
@@ -36,7 +47,16 @@ class ViewSettings: UIViewController {
         super.viewDidLoad()
         sideMenus()
         customizeNavBar()
-        self.settingsSwitchBackgroundLogOut.setOn(defaults.bool(forKey: "lastStateOfButton"), animated: true)
+        self.settingsSwitchBackgroundLogOut.setOn(defaults.bool(forKey: "lastStateOfSettingsButton"), animated: true)
+        
+        
+        //for testing purposes
+        if getStateOfBackGroundSwitchButton(mySwitch: self.settingsSwitchBackgroundLogOut){
+            print("True")
+        }else{
+            print("False")
+        }
+        
     }
     
     /*
@@ -44,7 +64,7 @@ class ViewSettings: UIViewController {
      * Shows the side bar controller.
      * Tucker Mogren; 2/9/19
      */
-    func sideMenus() {
+    private func sideMenus() {
         
         if revealViewController() != nil {
             
@@ -60,7 +80,7 @@ class ViewSettings: UIViewController {
      * Will allow for the top naviagtion bar to be customized
      * Tucker Mogren; 2/9/19
      */
-    func customizeNavBar() {
+    private func customizeNavBar() {
         
         
         navigationController?.navigationBar.tintColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0)
