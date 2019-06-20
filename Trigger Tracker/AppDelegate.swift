@@ -73,6 +73,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         //Will sign the user out or throw a console error if firebase is unable to log the user out
+        //Reference : https://learnappmaking.com/userdefaults-swift-setting-getting-data-how-to/
         let defaults = UserDefaults.standard
         if defaults.bool(forKey: "lastStateOfSettingsButton")
         {
