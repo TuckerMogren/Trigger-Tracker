@@ -117,11 +117,12 @@ class ViewFoodTrigger: UIViewController, UINavigationControllerDelegate, UIImage
             showAlertCameraWillNotOpenSimulator()
         }else{
             imagePickerController.sourceType = .camera
+            self.uploadPhotoButton.isHidden = false 
         }
 
         present(imagePickerController, animated: true, completion: nil)
         
-        self.uploadPhotoButton.isHidden = false 
+        
     }
     
     /*
