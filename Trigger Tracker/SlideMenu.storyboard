@@ -148,7 +148,7 @@
             </objects>
             <point key="canvasLocation" x="-1247.2" y="811.33004926108379"/>
         </scene>
-        <!--View Food Trigger-->
+        <!--Photo Logger-->
         <scene sceneID="xca-P4-YZM">
             <objects>
                 <viewController id="WMM-ZD-AH0" customClass="ViewFoodTrigger" customModule="Trigger_Tracker" customModuleProvider="target" sceneMemberID="viewController">
@@ -221,7 +221,7 @@
                             <constraint firstItem="D6q-2D-Nn5" firstAttribute="top" secondItem="yrI-DV-B1z" secondAttribute="bottom" constant="30" id="zek-45-vNS"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="rbl-vt-VdG">
+                    <navigationItem key="navigationItem" title="Photo Logger" id="rbl-vt-VdG">
                         <barButtonItem key="leftBarButtonItem" title="Menu" id="qcD-Lz-rPe">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         </barButtonItem>
@@ -298,7 +298,7 @@
         <!--Reveal View Controller-->
         <scene sceneID="pyM-hX-LOV">
             <objects>
-                <viewController id="ceh-hS-dK8" customClass="SWRevealViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="topVC" id="ceh-hS-dK8" customClass="SWRevealViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8bl-9E-LEE"/>
                         <viewControllerLayoutGuide type="bottom" id="zAr-FP-bXl"/>
@@ -335,7 +335,7 @@
             </objects>
             <point key="canvasLocation" x="-71" y="811"/>
         </scene>
-        <!--View Photo Gallery-->
+        <!--Photo Viewer-->
         <scene sceneID="6vk-oS-cDq">
             <objects>
                 <viewController id="kbz-z2-EdX" customClass="ViewPhotoGallery" customModule="Trigger_Tracker" customModuleProvider="target" sceneMemberID="viewController">
@@ -431,7 +431,7 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="j55-cT-iGV">
+                    <navigationItem key="navigationItem" title="Photo Viewer" id="j55-cT-iGV">
                         <barButtonItem key="leftBarButtonItem" title="Menu" id="m91-Eb-nXc">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         </barButtonItem>
@@ -446,10 +446,10 @@
             </objects>
             <point key="canvasLocation" x="-1247.2" y="2383.7438423645322"/>
         </scene>
-        <!--View Settings-->
+        <!--Settings-->
         <scene sceneID="h6c-GT-SvJ">
             <objects>
-                <viewController id="cPc-p5-AAo" customClass="ViewSettings" customModule="Trigger_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="settingsVC" id="cPc-p5-AAo" customClass="ViewSettings" customModule="Trigger_Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1Ec-5B-FW0"/>
                         <viewControllerLayoutGuide type="bottom" id="yGR-sQ-Ydl"/>
@@ -494,7 +494,7 @@
                                 </constraints>
                                 <state key="normal" title="Change Passowrd"/>
                                 <connections>
-                                    <segue destination="b2h-aY-IVc" kind="show" id="XAf-US-bcB"/>
+                                    <segue destination="xfP-hU-yPA" kind="show" id="b60-CZ-7dT"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -510,7 +510,7 @@
                             <constraint firstItem="yGR-sQ-Ydl" firstAttribute="top" secondItem="pt4-wW-a1k" secondAttribute="bottom" constant="100" id="uRN-ok-q6o"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="70c-1H-ZT4">
+                    <navigationItem key="navigationItem" title="Settings" id="70c-1H-ZT4">
                         <barButtonItem key="leftBarButtonItem" title="Menu" id="ji2-FL-bxm">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         </barButtonItem>
@@ -522,7 +522,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xTh-LQ-rOT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-72.463768115942031" y="2383.2589285714284"/>
+            <point key="canvasLocation" x="-71" y="2395"/>
         </scene>
         <!--Change Password-->
         <scene sceneID="sal-e5-Mpg">
@@ -536,23 +536,70 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hello, World!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5n4-V1-KYr">
-                                <rect key="frame" x="158" y="438" width="98" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Old Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WGq-a9-Oe6">
+                                <rect key="frame" x="132" y="168" width="150" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="7fL-Wj-hF6"/>
+                                    <constraint firstAttribute="height" constant="30" id="Wlm-Oy-reb"/>
+                                </constraints>
                                 <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zcv-vc-0M0">
+                                <rect key="frame" x="132" y="218" width="150" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="OU4-9R-U6m"/>
+                                    <constraint firstAttribute="height" constant="30" id="WFv-Sr-mfd"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c9L-42-a7Y">
+                                <rect key="frame" x="132" y="268" width="150" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="bQT-Uy-HSI"/>
+                                    <constraint firstAttribute="width" constant="150" id="rZp-gv-jK6"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eQB-HM-sci" customClass="CustomShapeButton" customModule="Trigger_Tracker" customModuleProvider="target">
+                                <rect key="frame" x="132" y="358" width="150" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="MUZ-Bi-wVx"/>
+                                    <constraint firstAttribute="width" constant="150" id="iFD-Iv-s4P"/>
+                                </constraints>
+                                <state key="normal" title="Update Password"/>
+                                <connections>
+                                    <action selector="updatePasswordButtonAction:" destination="xfP-hU-yPA" eventType="touchUpInside" id="hDC-sZ-eTM"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="WGq-a9-Oe6" firstAttribute="centerX" secondItem="D1d-2t-Rs5" secondAttribute="centerX" id="331-i6-r1u"/>
+                            <constraint firstItem="c9L-42-a7Y" firstAttribute="top" secondItem="zcv-vc-0M0" secondAttribute="bottom" constant="20" id="Adj-gB-2nE"/>
+                            <constraint firstItem="eQB-HM-sci" firstAttribute="centerX" secondItem="D1d-2t-Rs5" secondAttribute="centerX" id="YUm-wZ-9Uy"/>
+                            <constraint firstItem="zcv-vc-0M0" firstAttribute="top" secondItem="WGq-a9-Oe6" secondAttribute="bottom" constant="20" id="cxG-6m-wKv"/>
+                            <constraint firstItem="zcv-vc-0M0" firstAttribute="centerX" secondItem="D1d-2t-Rs5" secondAttribute="centerX" id="eIX-hh-evh"/>
+                            <constraint firstItem="WGq-a9-Oe6" firstAttribute="top" secondItem="7La-3K-wI1" secondAttribute="bottom" constant="80" id="kcV-kM-Ngf"/>
+                            <constraint firstItem="c9L-42-a7Y" firstAttribute="centerX" secondItem="D1d-2t-Rs5" secondAttribute="centerX" id="lFQ-Wa-TeZ"/>
+                            <constraint firstItem="eQB-HM-sci" firstAttribute="top" secondItem="c9L-42-a7Y" secondAttribute="bottom" constant="60" id="oa4-ZY-wtI"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Change Password" id="1yO-iU-dgg">
-                        <barButtonItem key="backBarButtonItem" title="Return" id="8V4-F1-Bnx"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Change Password" id="1yO-iU-dgg"/>
+                    <connections>
+                        <outlet property="newPassword1xTextFieldOutlet" destination="zcv-vc-0M0" id="T05-MZ-heD"/>
+                        <outlet property="newPassword2xTextFieldOutlet" destination="c9L-42-a7Y" id="r7K-wc-vHd"/>
+                        <outlet property="oldPasswordTextFieldOutlet" destination="WGq-a9-Oe6" id="3LH-XP-Snf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i3L-Sf-n9u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1776.8115942028987" y="2382.5892857142858"/>
+            <point key="canvasLocation" x="-71.014492753623188" y="3151.3392857142858"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="W1C-Es-8OC">
@@ -575,7 +622,7 @@
         <!--Navigation Controller-->
         <scene sceneID="3Pv-EH-O7P">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aVF-g9-OU4" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="settingsNavVC" automaticallyAdjustsScrollViewInsets="NO" id="aVF-g9-OU4" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ibg-Xx-9K1">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -608,24 +655,6 @@
             </objects>
             <point key="canvasLocation" x="-1246" y="1585"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="zag-Df-6vp">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="b2h-aY-IVc" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="tfB-r7-V2i">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="xfP-hU-yPA" kind="relationship" relationship="rootViewController" id="awH-z2-5tj"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ylS-bZ-fzo" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="866.66666666666674" y="2382.5892857142858"/>
-        </scene>
     </scenes>
     <resources>
         <image name="trigger_tracker_png_120px" width="250" height="250"/>
@@ -633,4 +662,5 @@
     <inferredMetricsTieBreakers>
         <segue reference="xLP-CH-Bwd"/>
     </inferredMetricsTieBreakers>
+    <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
 </document>

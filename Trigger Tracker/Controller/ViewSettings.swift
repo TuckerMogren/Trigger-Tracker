@@ -12,13 +12,7 @@ class ViewSettings: UIViewController {
     let defaults = UserDefaults.standard
     @IBOutlet weak var settingsSwitchBackgroundLogOut: UISwitch!
     
-    
-    
-    //TODO: need to make state of the variable avaialbe outside this class
-    public func getStateOfBackGroundSwitchButton(sender: UISwitch!) -> Bool
-    {
-        return sender.isOn
-    }
+
     /*
      * Function Name: settingsSwitchToggledUpdateUserDefaults(_ sender: Any)
      * Will keep the settings on the settins page the same in between app sessions.
@@ -48,12 +42,7 @@ class ViewSettings: UIViewController {
         sideMenus()
         customizeNavBar()
         self.settingsSwitchBackgroundLogOut.setOn(defaults.bool(forKey: "lastStateOfSettingsButton"), animated: true)
-        if defaults.bool(forKey: "lastStateOfSettingsButton")
-        {
-            print("The value of the user defaults key is: ")
-        }
-        
-        
+       
     }
     
     /*
