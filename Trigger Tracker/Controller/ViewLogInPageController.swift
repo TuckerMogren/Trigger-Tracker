@@ -16,6 +16,8 @@ class ViewLogInPageController: UIViewController
     @IBOutlet weak var eMailTextFieldLogInOutlet: UITextField!
     @IBOutlet weak var passwordTextFieldLogInOutlet: UITextField!
     @IBOutlet weak var saveEMailSwitchOutlet: UISwitch!
+    @IBOutlet weak var logInButtonOutlet: CustomShapeButton!
+    var loginCount = 0
     let defaults = UserDefaults.standard
     
     /*
@@ -64,9 +66,9 @@ class ViewLogInPageController: UIViewController
      * Referenced: https://stackoverflow.com/questions/24022479/how-would-i-create-a-uialertview-in-swift/33340757#33340757
      */
     
-    func showAlertIncorrectLogin()
+    func showAlertIncorrectLogin(passwordApts: Int )
     {
-        let alert = UIAlertController(title: "Invalid Login", message: "Username or password incorrect, Please try again.", preferredStyle: UIAlertController.Style.alert)
+        let alert = UIAlertController(title: "Invalid Login", message: "Username or password incorrect. You have \(3 - passwordApts) remaining.", preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "Try Again", style: UIAlertAction.Style.default, handler: nil))
         
         self.present(alert, animated: true, completion: nil)
@@ -91,21 +93,22 @@ class ViewLogInPageController: UIViewController
         preserveStateOfSwitchBetweenAppSessions();
         preserveStateOfEMailBetweenAppSessions()
         
-        var loginCount = 0
+        
         userAuth?.signIn(withEmail: eMailTextEntryLogIn, password: passwordTextEntryLogIn) { (user, error) in
             if (error == nil && user != nil)
             {
                 self.performSegue(withIdentifier: "accountLogInGoTo", sender: self)
             }else{
                 print("/n/n/n/nERROR: Log-in failed \(error!.localizedDescription).")
-                self.showAlertIncorrectLogin()
-                loginCount = loginCount + 1
-                print("Password has been entered \(loginCount) times.")
+                
+                self.loginCount = self.loginCount + 1
+                self.showAlertIncorrectLogin(passwordApts: self.loginCount)
+                print("Password has been entered \(self.loginCount) times.")
                 //Add login count and forgot password option after 5 incorrect password attepmts;
             }
         }
-        if loginCount == 5{
-            self.
+        if loginCount == 2{
+            self.logInButtonOutlet.isHidden = true
         }
     }
 

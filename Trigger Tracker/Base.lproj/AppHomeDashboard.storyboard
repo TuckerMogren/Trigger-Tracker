@@ -267,6 +267,7 @@
                     <navigationItem key="navigationItem" title="Log-In" id="s1F-QX-dgy"/>
                     <connections>
                         <outlet property="eMailTextFieldLogInOutlet" destination="5va-Gh-0b4" id="BMk-dv-Qe7"/>
+                        <outlet property="logInButtonOutlet" destination="3av-bC-M7e" id="N6v-yZ-68Y"/>
                         <outlet property="passwordTextFieldLogInOutlet" destination="okf-Y0-yIL" id="ju7-Kd-Eeg"/>
                         <outlet property="saveEMailSwitchOutlet" destination="NUN-Z2-Ld1" id="0Zr-nQ-btO"/>
                         <segue destination="Fe0-vb-34Y" kind="modal" identifier="accountLogInGoTo" id="gJ4-RH-CLZ"/>

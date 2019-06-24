@@ -486,8 +486,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-<<<<<<< Updated upstream
-=======
+
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pt4-wW-a1k" customClass="CustomShapeButton" customModule="Trigger_Tracker" customModuleProvider="target">
                                 <rect key="frame" x="82" y="712" width="250" height="50"/>
                                 <constraints>
@@ -524,7 +523,6 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xTh-LQ-rOT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-<<<<<<< Updated upstream
             <point key="canvasLocation" x="-71.200000000000003" y="2383.7438423645322"/>
 =======
             <point key="canvasLocation" x="-71" y="2393"/>
