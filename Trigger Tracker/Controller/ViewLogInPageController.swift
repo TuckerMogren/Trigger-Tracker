@@ -91,7 +91,7 @@ class ViewLogInPageController: UIViewController
         preserveStateOfSwitchBetweenAppSessions();
         preserveStateOfEMailBetweenAppSessions()
         
-        
+        var loginCount = 0
         userAuth?.signIn(withEmail: eMailTextEntryLogIn, password: passwordTextEntryLogIn) { (user, error) in
             if (error == nil && user != nil)
             {
@@ -99,8 +99,13 @@ class ViewLogInPageController: UIViewController
             }else{
                 print("/n/n/n/nERROR: Log-in failed \(error!.localizedDescription).")
                 self.showAlertIncorrectLogin()
+                loginCount = loginCount + 1
+                print("Password has been entered \(loginCount) times.")
                 //Add login count and forgot password option after 5 incorrect password attepmts;
             }
+        }
+        if loginCount == 5{
+            self.
         }
     }
 
