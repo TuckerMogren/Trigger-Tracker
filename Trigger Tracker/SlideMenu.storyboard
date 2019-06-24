@@ -494,7 +494,7 @@
                                 </constraints>
                                 <state key="normal" title="Change Passowrd"/>
                                 <connections>
-                                    <segue destination="xfP-hU-yPA" kind="show" id="b60-CZ-7dT"/>
+                                    <segue destination="xfP-hU-yPA" kind="show" identifier="goToChangePassword" id="b60-CZ-7dT"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -544,7 +544,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zcv-vc-0M0">
                                 <rect key="frame" x="132" y="218" width="150" height="30"/>
@@ -554,7 +554,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c9L-42-a7Y">
                                 <rect key="frame" x="132" y="268" width="150" height="30"/>
@@ -564,7 +564,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eQB-HM-sci" customClass="CustomShapeButton" customModule="Trigger_Tracker" customModuleProvider="target">
                                 <rect key="frame" x="132" y="358" width="150" height="40"/>
@@ -590,7 +590,7 @@
                             <constraint firstItem="eQB-HM-sci" firstAttribute="top" secondItem="c9L-42-a7Y" secondAttribute="bottom" constant="60" id="oa4-ZY-wtI"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Change Password" id="1yO-iU-dgg"/>
+                    <navigationItem key="navigationItem" title="Change Password" largeTitleDisplayMode="always" id="1yO-iU-dgg"/>
                     <connections>
                         <outlet property="newPassword1xTextFieldOutlet" destination="zcv-vc-0M0" id="T05-MZ-heD"/>
                         <outlet property="newPassword2xTextFieldOutlet" destination="c9L-42-a7Y" id="r7K-wc-vHd"/>

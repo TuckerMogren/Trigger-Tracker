@@ -11,6 +11,7 @@ class ViewChangePassword: UIViewController {
     @IBOutlet weak var oldPasswordTextFieldOutlet: UITextField!
     @IBOutlet weak var newPassword1xTextFieldOutlet: UITextField!
     @IBOutlet weak var newPassword2xTextFieldOutlet: UITextField!
+    
     let userAuth = (UIApplication.shared.delegate as! AppDelegate).fireBaseAuth
     
     override func viewDidLoad() {
@@ -18,6 +19,7 @@ class ViewChangePassword: UIViewController {
         // Do any additional setup after loading the view.
         
     }
+
     /*
      * Function Name: updatePasswordButtonAction(_ sender: Any)
      * Will update the users password when the button is presse
