@@ -87,23 +87,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         do {
             try fireBaseAuth?.signOut()
             //If the user is loged out successfully, the application will segue to the login screen.
+            if fireBaseAuth?.currentUser == nil
+            {
+                let storyboard = UIStoryboard(name: "AppHomeDashboard", bundle: nil)
+                let rootViewController = storyboard.instantiateViewController(withIdentifier: "welcomeVC") as! ViewWelcomeDashboard
+                
+                
+                self.window?.rootViewController?.dismiss(animated: false, completion: {
+                    if self.window != nil
+                    {
+                        self.window!.rootViewController = rootViewController
+                    }
+                })
+            }
         }catch let signOutError as NSError {
             print("ERROR: Unable to sign user out when the application is entering the background. Error at \(signOutError)")
         }
         
-        if fireBaseAuth?.currentUser == nil
-        {
-            let storyboard = UIStoryboard(name: "AppHomeDashboard", bundle: nil)
-            let rootViewController = storyboard.instantiateViewController(withIdentifier: "welcomeVC") as! ViewWelcomeDashboard
-            
-            
-            self.window?.rootViewController?.dismiss(animated: false, completion: {
-                if self.window != nil
-                {
-                    self.window!.rootViewController = rootViewController
-                }
-            })
-        }
+
     }
 
     

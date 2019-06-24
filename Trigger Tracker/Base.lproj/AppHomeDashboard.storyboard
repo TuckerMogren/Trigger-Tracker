@@ -87,7 +87,7 @@
                     <navigationItem key="navigationItem" title="Welcome" id="8A6-oF-SB3"/>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="modal" identifier="goToLogin" id="6UO-BW-hnH"/>
-                        <segue destination="rzK-JK-goY" kind="modal" identifier="gotoReg" id="lxt-8e-UxA"/>
+                        <segue destination="rzK-JK-goY" kind="modal" identifier="goToReg" id="lxt-8e-UxA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pOE-UY-xwq" userLabel="First Responder" sceneMemberID="firstResponder"/>
