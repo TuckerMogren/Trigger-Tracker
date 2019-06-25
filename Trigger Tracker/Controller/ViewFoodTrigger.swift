@@ -45,7 +45,7 @@ class ViewFoodTrigger: UIViewController, UINavigationControllerDelegate, UIImage
      * Tucker Mogren; 2/12/19
      * Referenced: https://stackoverflow.com/questions/24022479/how-would-i-create-a-uialertview-in-swift/33340757#33340757
      */
-    func showAlertCameraWillNotOpenSimulator()
+    private func showAlertCameraWillNotOpenSimulator()
     {
         let alert = UIAlertController(title: "Error: Using Simulator", message: "Camera will not open in the xcode simulator.", preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "Close", style: UIAlertAction.Style.default, handler: nil))
@@ -61,7 +61,7 @@ class ViewFoodTrigger: UIViewController, UINavigationControllerDelegate, UIImage
      * Reference: https://stackoverflow.com/questions/26600359/dismiss-keyboard-with-a-uitextview
      */
     
-    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+   func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         if(text == "\n")
         {
             userTextTextFieldOutlet.resignFirstResponder()
@@ -75,7 +75,7 @@ class ViewFoodTrigger: UIViewController, UINavigationControllerDelegate, UIImage
      * Shows the side bar controller.
      * Tucker Mogren; 2/9/19
      */
-    func sideMenus() {
+   private func sideMenus() {
         
         if revealViewController() != nil {
             
@@ -91,7 +91,7 @@ class ViewFoodTrigger: UIViewController, UINavigationControllerDelegate, UIImage
      * Will allow for the top naviagtion bar to be customized
      * Tucker Mogren; 2/9/19
      */
-    func customizeNavBar() {
+   private func customizeNavBar() {
         
         
         navigationController?.navigationBar.tintColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0)
@@ -131,7 +131,7 @@ class ViewFoodTrigger: UIViewController, UINavigationControllerDelegate, UIImage
      * Reference: https://appsandbiscuits.com/take-save-and-retrieve-a-photo-ios-13-4312f96793ff
      * Tucker Mogren; 2/10/19
      */
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+   func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         imagePickerController.dismiss(animated: true, completion: nil)
         imageViewUpload.image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
     }

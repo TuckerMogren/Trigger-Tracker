@@ -44,7 +44,7 @@ class ViewLogInPageController: UIViewController
      * Reference: https://medium.com/@nimjea/userdefaults-in-swift-4-d1a278a0ec79
      * Tucker Mogren; 2/27/19
      */
-    func preserveStateOfSwitchBetweenAppSessions()
+   private func preserveStateOfSwitchBetweenAppSessions()
     {
         defaults.set(saveEMailSwitchOutlet.isOn, forKey: "lastStateOfButton")
     }
@@ -55,7 +55,7 @@ class ViewLogInPageController: UIViewController
      * Reference: https://medium.com/@nimjea/userdefaults-in-swift-4-d1a278a0ec79
      * Tucker Mogren; 2/27/19
      */
-    func preserveStateOfEMailBetweenAppSessions()
+   private func preserveStateOfEMailBetweenAppSessions()
     {
         defaults.set(eMailTextFieldLogInOutlet.text, forKey: "lastStateOfEMailTextField")
     }
@@ -67,7 +67,7 @@ class ViewLogInPageController: UIViewController
      * Referenced: https://stackoverflow.com/questions/24022479/how-would-i-create-a-uialertview-in-swift/33340757#33340757
      */
     
-    func showAlertIncorrectLogin(passwordApts: Int )
+   private func showAlertIncorrectLogin(passwordApts: Int )
     {
         let maxPasswordAtps = 3
         let alert = UIAlertController(title: "Invalid Login", message: "Username or password incorrect. You have \(maxPasswordAtps - passwordApts) remaining.", preferredStyle: UIAlertController.Style.alert)

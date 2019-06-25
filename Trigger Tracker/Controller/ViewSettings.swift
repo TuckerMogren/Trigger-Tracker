@@ -13,12 +13,6 @@ class ViewSettings: UIViewController {
     @IBOutlet weak var settingsSwitchBackgroundLogOut: UISwitch!
     
     
-    
-    //TODO: need to make state of the variable avaialbe outside this class
-    public func getStateOfBackGroundSwitchButton(sender: UISwitch!) -> Bool
-    {
-        return sender.isOn
-    }
     /*
      * Function Name: settingsSwitchToggledUpdateUserDefaults(_ sender: Any)
      * Will keep the settings on the settins page the same in between app sessions.
