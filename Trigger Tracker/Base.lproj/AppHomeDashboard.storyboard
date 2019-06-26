@@ -245,25 +245,10 @@
                                     <constraint firstAttribute="width" secondItem="0xa-Lh-mIC" secondAttribute="height" multiplier="1:1" id="q5U-az-6El"/>
                                 </constraints>
                             </imageView>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6y3-aK-E0c" customClass="CustomShapeButton" customModule="Trigger_Tracker" customModuleProvider="target">
-                                <rect key="frame" x="87.333333333333329" y="371" width="200.33333333333337" height="45"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200.5" id="KMe-ox-HhH"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="oC1-YR-1Ze"/>
-                                </constraints>
-                                <state key="normal" title="Forgot Password">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="forgotPasswordBtnAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="w1O-Wb-PyR"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.19607843137254902" green="0.32156862745098036" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="6y3-aK-E0c" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8Xg-hQ-81D"/>
                             <constraint firstItem="NUN-Z2-Ld1" firstAttribute="top" secondItem="okf-Y0-yIL" secondAttribute="bottom" constant="13" id="9tm-DQ-5Fv"/>
                             <constraint firstItem="okf-Y0-yIL" firstAttribute="centerX" secondItem="C6G-em-dO1" secondAttribute="centerX" id="Alz-SG-eep"/>
                             <constraint firstItem="C6G-em-dO1" firstAttribute="trailing" secondItem="RZr-Ij-L67" secondAttribute="trailing" constant="97" id="HHs-or-TkO"/>
@@ -277,7 +262,6 @@
                             <constraint firstItem="5va-Gh-0b4" firstAttribute="top" secondItem="0xa-Lh-mIC" secondAttribute="bottom" constant="24" id="jbi-Mn-Ks1"/>
                             <constraint firstItem="RZr-Ij-L67" firstAttribute="top" secondItem="okf-Y0-yIL" secondAttribute="bottom" constant="21" id="lh1-lO-vGx"/>
                             <constraint firstItem="3av-bC-M7e" firstAttribute="centerX" secondItem="C6G-em-dO1" secondAttribute="centerX" id="q7T-QV-opb"/>
-                            <constraint firstItem="6y3-aK-E0c" firstAttribute="top" secondItem="3av-bC-M7e" secondAttribute="bottom" constant="-45" id="xhL-lZ-bgI"/>
                             <constraint firstItem="RZr-Ij-L67" firstAttribute="leading" secondItem="NUN-Z2-Ld1" secondAttribute="trailing" constant="10" id="zrG-hW-1QP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="C6G-em-dO1"/>
@@ -285,8 +269,6 @@
                     <navigationItem key="navigationItem" title="Log-In" id="s1F-QX-dgy"/>
                     <connections>
                         <outlet property="eMailTextFieldLogInOutlet" destination="5va-Gh-0b4" id="BMk-dv-Qe7"/>
-                        <outlet property="forgotPasswordBtnOutlet" destination="6y3-aK-E0c" id="kKW-De-3Bv"/>
-                        <outlet property="logInButtonOutlet" destination="3av-bC-M7e" id="N6v-yZ-68Y"/>
                         <outlet property="passwordTextFieldLogInOutlet" destination="okf-Y0-yIL" id="ju7-Kd-Eeg"/>
                         <outlet property="saveEMailSwitchOutlet" destination="NUN-Z2-Ld1" id="0Zr-nQ-btO"/>
                         <segue destination="Fe0-vb-34Y" kind="modal" identifier="accountLogInGoTo" id="gJ4-RH-CLZ"/>
@@ -295,7 +277,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3702" y="552"/>
-            <point key="canvasLocation" x="2773.5999999999999" y="551.97044334975374"/>
         </scene>
         <!--SlideMenu-->
         <scene sceneID="fkx-YP-Dpa">
