@@ -21,7 +21,7 @@ class ViewSignUpPageController: UIViewController {
      * Referenced: https://stackoverflow.com/questions/24022479/how-would-i-create-a-uialertview-in-swift/33340757#33340757
      */
 
-    func showAlertPasswordDoesntMatch()
+   private func showAlertPasswordDoesntMatch()
     {
         let alert = UIAlertController(title: "Invalid Login", message: "Passwords do not match, Please try again.", preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "Try Again", style: UIAlertAction.Style.default, handler: nil))
@@ -35,7 +35,7 @@ class ViewSignUpPageController: UIViewController {
      * Tucker Mogren; 2/26/19
      * Referenced: https://stackoverflow.com/questions/24022479/how-would-i-create-a-uialertview-in-swift/33340757#33340757
      */
-    func showAlertPasswordToShort()
+   private func showAlertPasswordToShort()
     {
         let alert = UIAlertController(title: "Invalid Login", message: "Password is less then 8 charaters, Please try again.", preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "Try Again", style: UIAlertAction.Style.default, handler: nil))
