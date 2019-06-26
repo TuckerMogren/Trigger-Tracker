@@ -250,14 +250,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trigger_tracker_png_120px" translatesAutoresizingMaskIntoConstraints="NO" id="ofU-Uo-f6m">
-                                <rect key="frame" x="82" y="138" width="250" height="250"/>
+                                <rect key="frame" x="199" y="138" width="16" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="250" id="S7e-lk-OZV"/>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="250" id="XRr-Ra-4kp"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Trigger Tracker!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zz3-V7-AIL">
-                                <rect key="frame" x="20" y="438" width="374" height="34.333333333333314"/>
+                                <rect key="frame" x="20" y="204" width="374" height="34.333333333333343"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="AD2-46-MNs"/>
                                 </constraints>
@@ -486,6 +486,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pt4-wW-a1k" customClass="CustomShapeButton" customModule="Trigger_Tracker" customModuleProvider="target">
                                 <rect key="frame" x="82" y="712" width="250" height="50"/>
                                 <constraints>
@@ -494,7 +495,7 @@
                                 </constraints>
                                 <state key="normal" title="Change Passowrd"/>
                                 <connections>
-                                    <segue destination="xfP-hU-yPA" kind="presentation" id="n2S-8q-Mou"/>
+                                    <segue destination="xfP-hU-yPA" kind="show" identifier="goToBtnChangePassword" id="b60-CZ-7dT"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -518,16 +519,18 @@
                     <connections>
                         <outlet property="menuButton" destination="ji2-FL-bxm" id="iZ6-bf-q6e"/>
                         <outlet property="settingsSwitchBackgroundLogOut" destination="Xc9-or-cEe" id="mLG-Fj-dnc"/>
+                        <segue destination="xfP-hU-yPA" kind="show" identifier="goToChangePassword" id="dwj-GN-b1o"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xTh-LQ-rOT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-71" y="2395"/>
+            <point key="canvasLocation" x="-71.200000000000003" y="2383.7438423645322"/>
+            <point key="canvasLocation" x="-71" y="2393"/>
         </scene>
-        <!--changePassword-->
+        <!--Change Password-->
         <scene sceneID="sal-e5-Mpg">
             <objects>
-                <viewController storyboardIdentifier="changePasswordVC" title="changePassword" id="xfP-hU-yPA" customClass="ViewChangePassword" customModule="Trigger_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="changePasswordVC" id="xfP-hU-yPA" customClass="ViewChangePassword" customModule="Trigger_Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7La-3K-wI1"/>
                         <viewControllerLayoutGuide type="bottom" id="yON-RG-fRQ"/>
@@ -537,7 +540,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Old Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WGq-a9-Oe6">
-                                <rect key="frame" x="132" y="124" width="150" height="30"/>
+                                <rect key="frame" x="132" y="168" width="150" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="7fL-Wj-hF6"/>
                                     <constraint firstAttribute="height" constant="30" id="Wlm-Oy-reb"/>
@@ -547,7 +550,7 @@
                                 <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zcv-vc-0M0">
-                                <rect key="frame" x="132" y="174" width="150" height="30"/>
+                                <rect key="frame" x="132" y="218" width="150" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="OU4-9R-U6m"/>
                                     <constraint firstAttribute="height" constant="30" id="WFv-Sr-mfd"/>
@@ -557,7 +560,7 @@
                                 <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c9L-42-a7Y">
-                                <rect key="frame" x="132" y="224" width="150" height="30"/>
+                                <rect key="frame" x="132" y="268" width="150" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="bQT-Uy-HSI"/>
                                     <constraint firstAttribute="width" constant="150" id="rZp-gv-jK6"/>
@@ -567,7 +570,7 @@
                                 <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eQB-HM-sci" customClass="CustomShapeButton" customModule="Trigger_Tracker" customModuleProvider="target">
-                                <rect key="frame" x="132" y="314" width="150" height="40"/>
+                                <rect key="frame" x="132" y="358" width="150" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="MUZ-Bi-wVx"/>
                                     <constraint firstAttribute="width" constant="150" id="iFD-Iv-s4P"/>
@@ -577,28 +580,22 @@
                                     <action selector="updatePasswordButtonAction:" destination="xfP-hU-yPA" eventType="touchUpInside" id="hDC-sZ-eTM"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wg1-bG-4bO">
-                                <rect key="frame" x="20" y="44" width="94" height="30"/>
-                                <state key="normal" title="Back to Menu"/>
-                                <connections>
-                                    <segue destination="ceh-hS-dK8" kind="show" id="JQr-Uf-qji"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="WGq-a9-Oe6" firstAttribute="centerX" secondItem="D1d-2t-Rs5" secondAttribute="centerX" id="331-i6-r1u"/>
                             <constraint firstItem="c9L-42-a7Y" firstAttribute="top" secondItem="zcv-vc-0M0" secondAttribute="bottom" constant="20" id="Adj-gB-2nE"/>
-                            <constraint firstItem="wg1-bG-4bO" firstAttribute="top" secondItem="7La-3K-wI1" secondAttribute="bottom" id="M1z-nD-bf5"/>
                             <constraint firstItem="eQB-HM-sci" firstAttribute="centerX" secondItem="D1d-2t-Rs5" secondAttribute="centerX" id="YUm-wZ-9Uy"/>
                             <constraint firstItem="zcv-vc-0M0" firstAttribute="top" secondItem="WGq-a9-Oe6" secondAttribute="bottom" constant="20" id="cxG-6m-wKv"/>
                             <constraint firstItem="zcv-vc-0M0" firstAttribute="centerX" secondItem="D1d-2t-Rs5" secondAttribute="centerX" id="eIX-hh-evh"/>
-                            <constraint firstItem="wg1-bG-4bO" firstAttribute="leading" secondItem="D1d-2t-Rs5" secondAttribute="leadingMargin" id="fpz-ii-7Oq"/>
                             <constraint firstItem="WGq-a9-Oe6" firstAttribute="top" secondItem="7La-3K-wI1" secondAttribute="bottom" constant="80" id="kcV-kM-Ngf"/>
                             <constraint firstItem="c9L-42-a7Y" firstAttribute="centerX" secondItem="D1d-2t-Rs5" secondAttribute="centerX" id="lFQ-Wa-TeZ"/>
                             <constraint firstItem="eQB-HM-sci" firstAttribute="top" secondItem="c9L-42-a7Y" secondAttribute="bottom" constant="60" id="oa4-ZY-wtI"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Change Password" largeTitleDisplayMode="always" id="1yO-iU-dgg">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="Ok8-gw-c5B"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="newPassword1xTextFieldOutlet" destination="zcv-vc-0M0" id="T05-MZ-heD"/>
                         <outlet property="newPassword2xTextFieldOutlet" destination="c9L-42-a7Y" id="r7K-wc-vHd"/>
@@ -668,6 +665,7 @@
         <image name="trigger_tracker_png_120px" width="250" height="250"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="EMh-oL-SRe"/>
+        <segue reference="dwj-GN-b1o"/>
+        <segue reference="xLP-CH-Bwd"/>
     </inferredMetricsTieBreakers>
 </document>

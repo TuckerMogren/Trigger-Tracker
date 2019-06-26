@@ -9,15 +9,18 @@ import UIKit
 class ViewLogInPageController: UIViewController
 {
     
-    //need to add firebase reference
 
     //Class global vars for fields that gather data
-    //First two are for LogIn
+
     @IBOutlet weak var eMailTextFieldLogInOutlet: UITextField!
     @IBOutlet weak var passwordTextFieldLogInOutlet: UITextField!
     @IBOutlet weak var saveEMailSwitchOutlet: UISwitch!
+    @IBOutlet weak var logInButtonOutlet: CustomShapeButton!
+    @IBOutlet weak var forgotPasswordBtnOutlet: CustomShapeButton!
+    let userAuth = (UIApplication.shared.delegate as! AppDelegate).fireBaseAuth
+    var loginCount = 0
     let defaults = UserDefaults.standard
-    
+
     /*
      * Function Name: viewDidLoad()
      * Called after the VC is loaded into memory.
@@ -41,7 +44,7 @@ class ViewLogInPageController: UIViewController
      * Reference: https://medium.com/@nimjea/userdefaults-in-swift-4-d1a278a0ec79
      * Tucker Mogren; 2/27/19
      */
-    func preserveStateOfSwitchBetweenAppSessions()
+   private func preserveStateOfSwitchBetweenAppSessions()
     {
         defaults.set(saveEMailSwitchOutlet.isOn, forKey: "lastStateOfButton")
     }
@@ -52,7 +55,7 @@ class ViewLogInPageController: UIViewController
      * Reference: https://medium.com/@nimjea/userdefaults-in-swift-4-d1a278a0ec79
      * Tucker Mogren; 2/27/19
      */
-    func preserveStateOfEMailBetweenAppSessions()
+   private func preserveStateOfEMailBetweenAppSessions()
     {
         defaults.set(eMailTextFieldLogInOutlet.text, forKey: "lastStateOfEMailTextField")
     }
@@ -64,14 +67,45 @@ class ViewLogInPageController: UIViewController
      * Referenced: https://stackoverflow.com/questions/24022479/how-would-i-create-a-uialertview-in-swift/33340757#33340757
      */
     
-    func showAlertIncorrectLogin()
+   private func showAlertIncorrectLogin(passwordApts: Int )
     {
-        let alert = UIAlertController(title: "Invalid Login", message: "Username or password incorrect, Please try again.", preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: "Try Again", style: UIAlertAction.Style.default, handler: nil))
-        
+        let maxPasswordAtps = 3
+        let alert = UIAlertController(title: "Invalid Login", message: "Username or password incorrect. You have \(maxPasswordAtps - passwordApts) remaining.", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "Try Again", style: UIAlertAction.Style.default, handler: { (UIAlertAction) in
+                if self.loginCount == maxPasswordAtps{
+                    self.logInButtonOutlet.isHidden = true
+                    self.forgotPasswordBtnOutlet.isHidden = false
+
+                }
+            }))
         self.present(alert, animated: true, completion: nil)
     }
     
+    /*
+     * Function Name: forgotPasswordBtnAction(_ sender: Any)
+     * Will send the user an email with instructions on how they can reset their password
+     * Tucker Mogren; 6/24/19
+     * Referenced: https://firebase.google.com/docs/auth/web/manage-users#send_a_password_reset_email
+     */
+    @IBAction func forgotPasswordBtnAction(_ sender: Any)
+    {
+        //will send the email in the apps language
+        userAuth?.useAppLanguage()
+        userAuth?.sendPasswordReset(withEmail: (self.eMailTextFieldLogInOutlet.text)!, completion: { (Error) in
+            if let err = Error {
+                print("ERROR: Could not send password reset email: \(err)")
+                let alertIf = UIAlertController(title: "Could not send email", message: "Password reset email could not be sent, try again later.", preferredStyle: UIAlertController.Style.alert)
+                alertIf.addAction(UIAlertAction(title: "Try Again.", style: UIAlertAction.Style.default, handler: nil))
+                self.present(alertIf, animated: true, completion: nil)
+            }else{
+                //alert user success
+                let alertElse = UIAlertController(title: "Email sent!", message: "Check your email inbox for instructions!", preferredStyle: UIAlertController.Style.alert)
+                alertElse.addAction(UIAlertAction(title: "Ok.", style: UIAlertAction.Style.default, handler: nil))
+                self.present(alertElse, animated: true, completion: nil)
+            }
+        })
+        
+    }
     /*
      * Function Name: logInButtonAction()
      * Will send users information to Firebase for Authenication.
@@ -80,28 +114,21 @@ class ViewLogInPageController: UIViewController
      */
     @IBAction func logInButtonAction(_ sender: Any)
     {
-        let userAuth = (UIApplication.shared.delegate as! AppDelegate).fireBaseAuth
-        
-        
+
         let eMailTextEntryLogIn: String = eMailTextFieldLogInOutlet.text!
         let passwordTextEntryLogIn: String = passwordTextFieldLogInOutlet.text!
-        print("Email is: \(eMailTextEntryLogIn) and password is: \(passwordTextEntryLogIn).")
-        
         //will save the last state of the switch and email.
-        preserveStateOfSwitchBetweenAppSessions();
+        preserveStateOfSwitchBetweenAppSessions()
         preserveStateOfEMailBetweenAppSessions()
-        
-        
         userAuth?.signIn(withEmail: eMailTextEntryLogIn, password: passwordTextEntryLogIn) { (user, error) in
             if (error == nil && user != nil)
             {
                 self.performSegue(withIdentifier: "accountLogInGoTo", sender: self)
             }else{
                 print("/n/n/n/nERROR: Log-in failed \(error!.localizedDescription).")
-                self.showAlertIncorrectLogin()
-                //Add login count and forgot password option after 5 incorrect password attepmts;
+                self.loginCount = self.loginCount + 1
+                self.showAlertIncorrectLogin(passwordApts: self.loginCount)
             }
         }
     }
-
 }
