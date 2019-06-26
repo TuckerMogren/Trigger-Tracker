@@ -29,7 +29,7 @@ class ViewLoggedIn: UIViewController {
      * Shows the side bar controller.
      * Tucker Mogren; 2/9/19
      */
-    func sideMenus() {
+   private func sideMenus() {
         
         if revealViewController() != nil {
             
@@ -48,7 +48,7 @@ class ViewLoggedIn: UIViewController {
      * Will allow for the top naviagtion bar to be customized
      * Tucker Mogren; 2/9/19
      */
-    func customizeNavBar() {
+    private func customizeNavBar() {
 
         navigationController?.navigationBar.tintColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0)
         navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.1960784314, green: 0.3215686275, blue: 1, alpha: 1)

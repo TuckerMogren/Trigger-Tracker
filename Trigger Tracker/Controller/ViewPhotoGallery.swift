@@ -56,8 +56,13 @@ class ViewPhotoGallery: UIViewController, UITableViewDataSource, UITableViewDele
 
     }
     
-
-    func loadData()
+    /*
+     * Function: loadData()
+     * Loads data from storage and database to be displayed to user
+     * Reference:
+     * Tucker Mogren; March/April 2019
+     */
+   private func loadData()
     {
         
         db?.collection("photoInformation").whereField("userID", isEqualTo: userAuth?.currentUser?.uid as Any).getDocuments(completion: { (snapshot, err) in
@@ -92,7 +97,7 @@ class ViewPhotoGallery: UIViewController, UITableViewDataSource, UITableViewDele
      * Shows the side bar controller.
      * Tucker Mogren; 2/9/19
      */
-    func sideMenus() {
+   private func sideMenus() {
         
         if revealViewController() != nil {
             
@@ -108,7 +113,7 @@ class ViewPhotoGallery: UIViewController, UITableViewDataSource, UITableViewDele
      * Will allow for the top naviagtion bar to be customized
      * Tucker Mogren; 2/9/19
      */
-    func customizeNavBar() {
+   private func customizeNavBar() {
         navigationController?.navigationBar.tintColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0)
         navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.1960784314, green: 0.3215686275, blue: 1, alpha: 1)
         
