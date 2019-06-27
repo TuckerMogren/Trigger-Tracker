@@ -4,6 +4,9 @@ def shared_pods
 	pod 'Firebase/Auth'
 	pod 'Firebase/Storage'
 	pod 'Firebase/Firestore'
+	#This next line will slience errors with protobuf
+	pod 'Protobuf', :inhibit_warnings => true
+	
 end
 
 target 'Trigger Tracker' do
