@@ -235,7 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				3F7FF6DB22B7B78F00349B36 /* Trigger Tracker.entitlements */,
-				3FAC35BE220FDB11004261DB /* SlideMenuCode */,
+				3FAFC5CD22C44F9F0063133E /* APIs and SDKs */,
 				3F77CFB222016A6700A75F21 /* Model */,
 				3F799D9621FEE09A00E17922 /* Controller */,
 				3F799D9921FEE09A00E17922 /* View */,
@@ -291,7 +291,16 @@
 				3FAC35C0220FDB11004261DB /* SWRevealViewController.h */,
 				3FAC35C2220FDB11004261DB /* SWRevealViewController.m */,
 			);
-			path = SlideMenuCode;
+			name = SlideMenuCode;
+			path = ../SlideMenuCode;
+			sourceTree = "<group>";
+		};
+		3FAFC5CD22C44F9F0063133E /* APIs and SDKs */ = {
+			isa = PBXGroup;
+			children = (
+				3FAC35BE220FDB11004261DB /* SlideMenuCode */,
+			);
+			path = "APIs and SDKs";
 			sourceTree = "<group>";
 		};
 		3FEB1C7B22B11F990090B6BD /* View */ = {

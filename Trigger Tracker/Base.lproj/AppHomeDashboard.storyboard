@@ -61,8 +61,8 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trigger_tracker_png_120px" translatesAutoresizingMaskIntoConstraints="NO" id="r25-yC-vXn">
                                 <rect key="frame" x="87.666666666666686" y="202" width="200" height="200"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="TAh-hg-ZT4"/>
-                                    <constraint firstAttribute="height" constant="200" id="mW3-vX-YmT"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="200" id="TAh-hg-ZT4"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="200" id="mW3-vX-YmT"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -276,6 +276,7 @@
                             <constraint firstItem="3av-bC-M7e" firstAttribute="top" secondItem="NUN-Z2-Ld1" secondAttribute="bottom" constant="8" id="h1h-Am-q4U"/>
                             <constraint firstItem="5va-Gh-0b4" firstAttribute="top" secondItem="0xa-Lh-mIC" secondAttribute="bottom" constant="24" id="jbi-Mn-Ks1"/>
                             <constraint firstItem="RZr-Ij-L67" firstAttribute="top" secondItem="okf-Y0-yIL" secondAttribute="bottom" constant="21" id="lh1-lO-vGx"/>
+                            <constraint firstItem="NUN-Z2-Ld1" firstAttribute="top" secondItem="okf-Y0-yIL" secondAttribute="bottom" constant="13" id="nYL-9a-6mC"/>
                             <constraint firstItem="3av-bC-M7e" firstAttribute="centerX" secondItem="C6G-em-dO1" secondAttribute="centerX" id="q7T-QV-opb"/>
                             <constraint firstItem="6y3-aK-E0c" firstAttribute="top" secondItem="3av-bC-M7e" secondAttribute="bottom" constant="-45" id="xhL-lZ-bgI"/>
                             <constraint firstItem="RZr-Ij-L67" firstAttribute="leading" secondItem="NUN-Z2-Ld1" secondAttribute="trailing" constant="10" id="zrG-hW-1QP"/>
