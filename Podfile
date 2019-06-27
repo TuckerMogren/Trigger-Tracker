@@ -3,7 +3,7 @@ def shared_pods
 	pod 'Firebase/Core'
 	pod 'Firebase/Auth'
 	pod 'Firebase/Storage'
-	pod 'Firebase/Firestore'
+	pod 'FirebaseFirestore', :inhibit_warnings => true
 	#This next line will slience errors with protobuf
 	pod 'Protobuf', :inhibit_warnings => true
 	

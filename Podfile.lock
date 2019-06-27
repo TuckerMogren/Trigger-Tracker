@@ -13,9 +13,6 @@ PODS:
     - FirebaseAnalytics (= 5.4.0)
   - Firebase/CoreOnly (5.15.0):
     - FirebaseCore (= 5.1.10)
-  - Firebase/Firestore (5.15.0):
-    - Firebase/CoreOnly
-    - FirebaseFirestore (= 0.16.1)
   - Firebase/Storage (5.15.0):
     - Firebase/CoreOnly
     - FirebaseStorage (= 3.0.3)
@@ -111,8 +108,8 @@ PODS:
 DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Core
-  - Firebase/Firestore
   - Firebase/Storage
+  - FirebaseFirestore
   - Protobuf
 
 SPEC REPOS:
@@ -154,6 +151,6 @@ SPEC CHECKSUMS:
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   Protobuf: 1eb9700044745f00181c136ef21b8ff3ad5a0fd5
 
-PODFILE CHECKSUM: 2ca92b629a21b0d34e4a74d2abfa4f737e15582c
+PODFILE CHECKSUM: 170229ab02068c7390e50ce892caa0c5db490401
 
 COCOAPODS: 1.5.3
