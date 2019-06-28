@@ -4,7 +4,8 @@ def shared_pods
 	pod 'Firebase/Auth'
 	pod 'Firebase/Storage'
 	pod 'FirebaseFirestore', :inhibit_warnings => true
-	#This next line will slience errors with protobuf
+	pod 'IQKeyboardManagerSwift', :inhibit_warnings => true	
+#This next line will slience errors with protobuf
 	pod 'Protobuf', :inhibit_warnings => true
 	
 end

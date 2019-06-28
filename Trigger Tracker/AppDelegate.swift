@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import IQKeyboardManagerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -29,6 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         fireBaseNoSQLDBDocumentRef = nil
         fireBaseAuth = Auth.auth()
         
+        IQKeyboardManager.shared.enable = true
 
         return true
     }
