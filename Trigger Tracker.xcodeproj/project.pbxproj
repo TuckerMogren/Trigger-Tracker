@@ -14,7 +14,6 @@
 		3F5253B722C45F24000F77BC /* SlideMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F52539622C45F24000F77BC /* SlideMenu.storyboard */; };
 		3F5253B822C45F24000F77BC /* assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F52539722C45F24000F77BC /* assets.xcassets */; };
 		3F5253B922C45F24000F77BC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F52539822C45F24000F77BC /* GoogleService-Info.plist */; };
-		3F5253BA22C45F24000F77BC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F52539A22C45F24000F77BC /* ViewController.swift */; };
 		3F5253BB22C45F24000F77BC /* ViewFoodTrigger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F52539B22C45F24000F77BC /* ViewFoodTrigger.swift */; };
 		3F5253BC22C45F24000F77BC /* ViewSignUpPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F52539C22C45F24000F77BC /* ViewSignUpPageController.swift */; };
 		3F5253BD22C45F24000F77BC /* ViewWelcomeDashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F52539D22C45F24000F77BC /* ViewWelcomeDashboard.swift */; };
@@ -94,7 +93,6 @@
 		3F52539622C45F24000F77BC /* SlideMenu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SlideMenu.storyboard; sourceTree = "<group>"; };
 		3F52539722C45F24000F77BC /* assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = assets.xcassets; sourceTree = "<group>"; };
 		3F52539822C45F24000F77BC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		3F52539A22C45F24000F77BC /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3F52539B22C45F24000F77BC /* ViewFoodTrigger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewFoodTrigger.swift; sourceTree = "<group>"; };
 		3F52539C22C45F24000F77BC /* ViewSignUpPageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewSignUpPageController.swift; sourceTree = "<group>"; };
 		3F52539D22C45F24000F77BC /* ViewWelcomeDashboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewWelcomeDashboard.swift; sourceTree = "<group>"; };
@@ -217,7 +215,6 @@
 		3F52539922C45F24000F77BC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				3F52539A22C45F24000F77BC /* ViewController.swift */,
 				3F52539B22C45F24000F77BC /* ViewFoodTrigger.swift */,
 				3F52539C22C45F24000F77BC /* ViewSignUpPageController.swift */,
 				3F52539D22C45F24000F77BC /* ViewWelcomeDashboard.swift */,
@@ -611,7 +608,6 @@
 				3F5253BE22C45F24000F77BC /* ViewSettings.swift in Sources */,
 				3F5253CA22C45F24000F77BC /* CustomShapeButton.swift in Sources */,
 				3F5253C022C45F24000F77BC /* ViewChangePassword.swift in Sources */,
-				3F5253BA22C45F24000F77BC /* ViewController.swift in Sources */,
 				3F5253C822C45F24000F77BC /* CustomSlideBar.swift in Sources */,
 				3F5253CB22C45F24000F77BC /* AppDelegate.swift in Sources */,
 				3F5253BB22C45F24000F77BC /* ViewFoodTrigger.swift in Sources */,
