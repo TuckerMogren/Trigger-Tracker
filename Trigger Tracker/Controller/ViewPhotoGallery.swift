@@ -27,6 +27,8 @@ class ViewPhotoGallery: UIViewController, UITableViewDataSource, UITableViewDele
         sideMenus()
         customizeNavBar()
         loadData()
+                
+        
 
     }
     
@@ -41,8 +43,10 @@ class ViewPhotoGallery: UIViewController, UITableViewDataSource, UITableViewDele
         cell.cellOneImageView.isHidden = true
         cell.cellOneProgressView.isHidden = false
         
-        cell.cellOneDateLabelView.text = arrayOfData[indexPath.row].photoDate
-        cell.cellOneNotesLabelView.text = arrayOfData[indexPath.row].userNotes
+        cell.cellOneDateLabelView.text = self.arrayOfData[indexPath.row].photoDate
+        cell.cellOneNotesLabelView.text = self.arrayOfData[indexPath.row].userNotes
+        
+
         
         let storageRef = (UIApplication.shared.delegate as! AppDelegate).fireBaseStorage?.reference()
         let imageRef = storageRef!.child("images").child((userAuth?.currentUser!.uid)!).child(arrayOfData[indexPath.row].photoURL)
@@ -53,8 +57,11 @@ class ViewPhotoGallery: UIViewController, UITableViewDataSource, UITableViewDele
                 cell.cellOneImageView.isHidden = false
                 cell.cellOneProgressView.isHidden = true
                 cell.cellOneImageView.image = UIImage(data: data!)
+                
+                
             }
         })
+
         imageDownloadAndDisplay.observe(.progress) { (snapshot) in
             let currentProgress = (100.00 * Float(snapshot.progress!.completedUnitCount) / Float(snapshot.progress!.totalUnitCount))
             cell.cellOneProgressView.setProgress(currentProgress, animated: true)
@@ -90,8 +97,9 @@ class ViewPhotoGallery: UIViewController, UITableViewDataSource, UITableViewDele
                         
 
                     }
-                    
+                    //self.tableViewOutlet.reloadData() moved from here to current location to fix a bug with loading photos being covered by a previous cell photo
                 }
+                
                 self.tableViewOutlet.reloadData()
             }
             
