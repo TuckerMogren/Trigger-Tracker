@@ -358,6 +358,12 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="279.66666666666669"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="PAw-Hb-qEP">
+                                                    <rect key="frame" x="132" y="119" width="150" height="2"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="150" id="rnD-RG-8Hg"/>
+                                                    </constraints>
+                                                </progressView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YAN-2Z-GpJ">
                                                     <rect key="frame" x="171.33333333333334" y="0.0" width="100.00000000000003" height="20"/>
                                                     <constraints>
@@ -385,21 +391,22 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gPE-tM-dYb">
+                                                <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gPE-tM-dYb">
                                                     <rect key="frame" x="0.0" y="20" width="414" height="200"/>
-                                                    <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="200" id="7ho-zr-c9R"/>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="PAw-Hb-qEP" firstAttribute="centerX" secondItem="gPE-tM-dYb" secondAttribute="centerX" id="88E-Jb-WhS"/>
                                                 <constraint firstItem="gPE-tM-dYb" firstAttribute="leading" secondItem="UFI-2F-obr" secondAttribute="leading" id="BTJ-6X-D2V"/>
                                                 <constraint firstItem="YAN-2Z-GpJ" firstAttribute="top" secondItem="UFI-2F-obr" secondAttribute="top" id="GRa-XY-rM2"/>
                                                 <constraint firstItem="hrT-Ni-yAe" firstAttribute="top" secondItem="gPE-tM-dYb" secondAttribute="bottom" id="QDD-BN-yrq"/>
                                                 <constraint firstItem="gPE-tM-dYb" firstAttribute="top" secondItem="UFI-2F-obr" secondAttribute="top" constant="20" id="Tjg-XV-Anl"/>
                                                 <constraint firstItem="gPE-tM-dYb" firstAttribute="leading" secondItem="UFI-2F-obr" secondAttribute="leading" id="ZqW-qf-p8S"/>
                                                 <constraint firstItem="YAN-2Z-GpJ" firstAttribute="leading" secondItem="dKF-Kh-IWn" secondAttribute="trailing" constant="2" id="ees-1p-kBv"/>
+                                                <constraint firstItem="PAw-Hb-qEP" firstAttribute="centerY" secondItem="gPE-tM-dYb" secondAttribute="centerY" id="j1s-Pz-zCA"/>
                                                 <constraint firstItem="gPE-tM-dYb" firstAttribute="top" secondItem="YAN-2Z-GpJ" secondAttribute="bottom" id="jQT-Uw-a0T"/>
                                                 <constraint firstAttribute="trailing" secondItem="gPE-tM-dYb" secondAttribute="trailing" id="oKG-qa-SaM"/>
                                                 <constraint firstItem="hrT-Ni-yAe" firstAttribute="leading" secondItem="UFI-2F-obr" secondAttribute="leading" constant="5" id="r4n-by-hW1"/>
@@ -408,17 +415,20 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="gPE-tM-dYb" firstAttribute="top" secondItem="oLV-Np-u8Q" secondAttribute="top" constant="20" id="bTC-9x-71v"/>
+                                        </constraints>
                                         <connections>
                                             <outlet property="cellOneDateLabelView" destination="YAN-2Z-GpJ" id="Kdd-Jo-3Ck"/>
                                             <outlet property="cellOneImageView" destination="gPE-tM-dYb" id="jlx-EA-laS"/>
                                             <outlet property="cellOneNotesLabelView" destination="hrT-Ni-yAe" id="3pg-pJ-POg"/>
+                                            <outlet property="cellOneProgressView" destination="PAw-Hb-qEP" id="Lf9-IN-U5X"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <sections/>
                                 <connections>
                                     <outlet property="dataSource" destination="kbz-z2-EdX" id="rTN-Xz-rhM"/>
-                                    <outlet property="delegate" destination="kbz-z2-EdX" id="pj2-C4-boZ"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -444,7 +454,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eV6-CR-CjK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1247.2" y="2383.7438423645322"/>
+            <point key="canvasLocation" x="-1247.8260869565217" y="2383.2589285714284"/>
         </scene>
         <!--Settings-->
         <scene sceneID="h6c-GT-SvJ">
