@@ -27,6 +27,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         fireBaseStorage = Storage.storage()
         fireBaseNoSQLDB = Firestore.firestore()
+/*
+        FIXED: warning message: 2019-07-07 22:29:00.599932-0400 Trigger Tracker[6436:224360] 5.15.0 - [Firebase/Firestore][I-FST000001] The behavior for system Date objects stored in Firestore is going to change AND YOUR APP MAY BREAK.
+        To hide this warning and ensure your app does not break, you need to add the following code to your app before calling any other Cloud Firestore methods:
+
+        let db = Firestore.firestore()
+        let settings = db.settings
+        settings.areTimestampsInSnapshotsEnabled = true
+        db.settings = settings
+
+        With this change, timestamps stored in Cloud Firestore will be read back as Firebase Timestamp objects instead of as system Date objects. So you will also need to update code expecting a Date to instead expect a Timestamp. For example:
+
+        // old:
+        let date: Date = documentSnapshot.get("created_at") as! Date
+        // new:
+        let timestamp: Timestamp = documentSnapshot.get("created_at") as! Timestamp
+        let date: Date = timestamp.dateValue()
+
+        Please audit all existing usages of Date when you enable the new behavior. In a future release, the behavior will be changed to the new behavior, so if you do not follow these steps, YOUR APP MAY BREAK.
+ */
+        let fireBaseFireStoreSetiings = fireBaseNoSQLDB?.settings
+        fireBaseFireStoreSetiings?.areTimestampsInSnapshotsEnabled = true
+        fireBaseNoSQLDB?.settings = fireBaseFireStoreSetiings!
+//--------------------------Fix above---------------------------------------------------------------------------//
         fireBaseNoSQLDBDocumentRef = nil
         fireBaseAuth = Auth.auth()
         

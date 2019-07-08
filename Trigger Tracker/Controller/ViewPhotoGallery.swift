@@ -27,8 +27,6 @@ class ViewPhotoGallery: UIViewController, UITableViewDataSource, UITableViewDele
         sideMenus()
         customizeNavBar()
         loadData()
-                
-        
 
     }
     
@@ -38,6 +36,7 @@ class ViewPhotoGallery: UIViewController, UITableViewDataSource, UITableViewDele
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellOne", for: indexPath) as! CustomTableViewCell
        
         cell.cellOneImageView.isHidden = true
