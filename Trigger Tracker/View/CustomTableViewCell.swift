@@ -5,9 +5,7 @@ class CustomTableViewCell: UITableViewCell {
     @IBOutlet weak var cellOneImageView: UIImageView!
     @IBOutlet weak var cellOneNotesLabelView: UILabel!
     @IBOutlet weak var cellOneDateLabelView: UILabel!
-    
-    
-    
+    @IBOutlet weak var cellOneProgressView: UIProgressView!
     
     
     override func awakeFromNib() {

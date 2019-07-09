@@ -11,11 +11,9 @@
 		3F3C7EA622B1E0DD0082A087 /* dataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3C7EA522B1E0DD0082A087 /* dataModel.swift */; };
 		3F5253B422C45F24000F77BC /* AppHomeDashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F52539322C45F24000F77BC /* AppHomeDashboard.storyboard */; };
 		3F5253B522C45F24000F77BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F52539422C45F24000F77BC /* LaunchScreen.storyboard */; };
-		3F5253B622C45F24000F77BC /* AppAuthDashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F52539522C45F24000F77BC /* AppAuthDashboard.storyboard */; };
 		3F5253B722C45F24000F77BC /* SlideMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F52539622C45F24000F77BC /* SlideMenu.storyboard */; };
 		3F5253B822C45F24000F77BC /* assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F52539722C45F24000F77BC /* assets.xcassets */; };
 		3F5253B922C45F24000F77BC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F52539822C45F24000F77BC /* GoogleService-Info.plist */; };
-		3F5253BA22C45F24000F77BC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F52539A22C45F24000F77BC /* ViewController.swift */; };
 		3F5253BB22C45F24000F77BC /* ViewFoodTrigger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F52539B22C45F24000F77BC /* ViewFoodTrigger.swift */; };
 		3F5253BC22C45F24000F77BC /* ViewSignUpPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F52539C22C45F24000F77BC /* ViewSignUpPageController.swift */; };
 		3F5253BD22C45F24000F77BC /* ViewWelcomeDashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F52539D22C45F24000F77BC /* ViewWelcomeDashboard.swift */; };
@@ -24,7 +22,6 @@
 		3F5253C022C45F24000F77BC /* ViewChangePassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5253A022C45F24000F77BC /* ViewChangePassword.swift */; };
 		3F5253C122C45F24000F77BC /* ViewLoggedIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5253A122C45F24000F77BC /* ViewLoggedIn.swift */; };
 		3F5253C222C45F24000F77BC /* ViewLogInPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5253A222C45F24000F77BC /* ViewLogInPageController.swift */; };
-		3F5253C322C45F24000F77BC /* ViewLoggedInDashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5253A322C45F24000F77BC /* ViewLoggedInDashboard.swift */; };
 		3F5253C422C45F24000F77BC /* tableViewImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5253A522C45F24000F77BC /* tableViewImages.swift */; };
 		3F5253C522C45F24000F77BC /* KeyboardLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5253A722C45F24000F77BC /* KeyboardLayoutConstraint.swift */; };
 		3F5253C622C45F24000F77BC /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F5253AA22C45F24000F77BC /* SWRevealViewController.m */; };
@@ -93,11 +90,9 @@
 		3F3C7EA522B1E0DD0082A087 /* dataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dataModel.swift; sourceTree = "<group>"; };
 		3F52539322C45F24000F77BC /* AppHomeDashboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AppHomeDashboard.storyboard; sourceTree = "<group>"; };
 		3F52539422C45F24000F77BC /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		3F52539522C45F24000F77BC /* AppAuthDashboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AppAuthDashboard.storyboard; sourceTree = "<group>"; };
 		3F52539622C45F24000F77BC /* SlideMenu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SlideMenu.storyboard; sourceTree = "<group>"; };
 		3F52539722C45F24000F77BC /* assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = assets.xcassets; sourceTree = "<group>"; };
 		3F52539822C45F24000F77BC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		3F52539A22C45F24000F77BC /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3F52539B22C45F24000F77BC /* ViewFoodTrigger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewFoodTrigger.swift; sourceTree = "<group>"; };
 		3F52539C22C45F24000F77BC /* ViewSignUpPageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewSignUpPageController.swift; sourceTree = "<group>"; };
 		3F52539D22C45F24000F77BC /* ViewWelcomeDashboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewWelcomeDashboard.swift; sourceTree = "<group>"; };
@@ -106,7 +101,6 @@
 		3F5253A022C45F24000F77BC /* ViewChangePassword.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewChangePassword.swift; sourceTree = "<group>"; };
 		3F5253A122C45F24000F77BC /* ViewLoggedIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewLoggedIn.swift; sourceTree = "<group>"; };
 		3F5253A222C45F24000F77BC /* ViewLogInPageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewLogInPageController.swift; sourceTree = "<group>"; };
-		3F5253A322C45F24000F77BC /* ViewLoggedInDashboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewLoggedInDashboard.swift; sourceTree = "<group>"; };
 		3F5253A522C45F24000F77BC /* tableViewImages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tableViewImages.swift; sourceTree = "<group>"; };
 		3F5253A722C45F24000F77BC /* KeyboardLayoutConstraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardLayoutConstraint.swift; sourceTree = "<group>"; };
 		3F5253A922C45F24000F77BC /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
@@ -213,7 +207,6 @@
 			children = (
 				3F52539322C45F24000F77BC /* AppHomeDashboard.storyboard */,
 				3F52539422C45F24000F77BC /* LaunchScreen.storyboard */,
-				3F52539522C45F24000F77BC /* AppAuthDashboard.storyboard */,
 				3F52539622C45F24000F77BC /* SlideMenu.storyboard */,
 			);
 			path = Storyboards;
@@ -222,7 +215,6 @@
 		3F52539922C45F24000F77BC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				3F52539A22C45F24000F77BC /* ViewController.swift */,
 				3F52539B22C45F24000F77BC /* ViewFoodTrigger.swift */,
 				3F52539C22C45F24000F77BC /* ViewSignUpPageController.swift */,
 				3F52539D22C45F24000F77BC /* ViewWelcomeDashboard.swift */,
@@ -231,7 +223,6 @@
 				3F5253A022C45F24000F77BC /* ViewChangePassword.swift */,
 				3F5253A122C45F24000F77BC /* ViewLoggedIn.swift */,
 				3F5253A222C45F24000F77BC /* ViewLogInPageController.swift */,
-				3F5253A322C45F24000F77BC /* ViewLoggedInDashboard.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -474,7 +465,6 @@
 				3F5253B422C45F24000F77BC /* AppHomeDashboard.storyboard in Resources */,
 				3F5253B722C45F24000F77BC /* SlideMenu.storyboard in Resources */,
 				3F5253C722C45F24000F77BC /* Images.xcassets in Resources */,
-				3F5253B622C45F24000F77BC /* AppAuthDashboard.storyboard in Resources */,
 				3F5253B822C45F24000F77BC /* assets.xcassets in Resources */,
 				3F5253B522C45F24000F77BC /* LaunchScreen.storyboard in Resources */,
 				3F5253B922C45F24000F77BC /* GoogleService-Info.plist in Resources */,
@@ -617,9 +607,7 @@
 				3F5253BC22C45F24000F77BC /* ViewSignUpPageController.swift in Sources */,
 				3F5253BE22C45F24000F77BC /* ViewSettings.swift in Sources */,
 				3F5253CA22C45F24000F77BC /* CustomShapeButton.swift in Sources */,
-				3F5253C322C45F24000F77BC /* ViewLoggedInDashboard.swift in Sources */,
 				3F5253C022C45F24000F77BC /* ViewChangePassword.swift in Sources */,
-				3F5253BA22C45F24000F77BC /* ViewController.swift in Sources */,
 				3F5253C822C45F24000F77BC /* CustomSlideBar.swift in Sources */,
 				3F5253CB22C45F24000F77BC /* AppDelegate.swift in Sources */,
 				3F5253BB22C45F24000F77BC /* ViewFoodTrigger.swift in Sources */,

@@ -10,11 +10,9 @@ class ViewPhotoGallery: UIViewController, UITableViewDataSource, UITableViewDele
   
     let userAuth = (UIApplication.shared.delegate as! AppDelegate).fireBaseAuth
     let db = (UIApplication.shared.delegate as! AppDelegate).fireBaseNoSQLDB
-
     @IBOutlet weak var tableViewOutlet: UITableView!
-    
-    var arrayOfData = [tableViewImages]()
     @IBOutlet weak var menuButtonOutlet: UIBarButtonItem!
+    var arrayOfData = [tableViewImages]()
     
     //Ambigious reference error fixed with reference to: https://stackoverflow.com/questions/33724190/ambiguous-reference-to-member-tableview
     
@@ -28,6 +26,8 @@ class ViewPhotoGallery: UIViewController, UITableViewDataSource, UITableViewDele
         super.viewDidLoad()
         sideMenus()
         customizeNavBar()
+
+        
         loadData()
 
     }
@@ -38,20 +38,35 @@ class ViewPhotoGallery: UIViewController, UITableViewDataSource, UITableViewDele
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellOne", for: indexPath) as! CustomTableViewCell
+       
+        cell.cellOneImageView.isHidden = true
+        cell.cellOneProgressView.isHidden = false
         
-        cell.cellOneDateLabelView.text = arrayOfData[indexPath.row].photoDate
-        cell.cellOneNotesLabelView.text = arrayOfData[indexPath.row].userNotes
+        cell.cellOneDateLabelView.text = self.arrayOfData[indexPath.row].photoDate
+        cell.cellOneNotesLabelView.text = self.arrayOfData[indexPath.row].userNotes
         
-        let imageRef = (UIApplication.shared.delegate as! AppDelegate).fireBaseStorage?.reference().child("images").child((userAuth?.currentUser!.uid)!).child(arrayOfData[indexPath.row].photoURL)
+
         
-        imageRef?.getData(maxSize: 1024 * 1024 * 1024, completion: { (data, err) in
+        let storageRef = (UIApplication.shared.delegate as! AppDelegate).fireBaseStorage?.reference()
+        let imageRef = storageRef!.child("images").child((userAuth?.currentUser!.uid)!).child(arrayOfData[indexPath.row].photoURL)
+        let imageDownloadAndDisplay = imageRef.getData(maxSize: 1 * 1024 * 1024, completion: { (data, err) in
             if let err = err {
                 print("ERROR: \(err).")
             }else {
+                cell.cellOneImageView.isHidden = false
+                cell.cellOneProgressView.isHidden = true
                 cell.cellOneImageView.image = UIImage(data: data!)
+                
+                
             }
         })
+
+        imageDownloadAndDisplay.observe(.progress) { (snapshot) in
+            let currentProgress = (100.00 * Float(snapshot.progress!.completedUnitCount) / Float(snapshot.progress!.totalUnitCount))
+            cell.cellOneProgressView.setProgress(currentProgress, animated: true)
+        }
         return cell
 
     }
@@ -62,7 +77,7 @@ class ViewPhotoGallery: UIViewController, UITableViewDataSource, UITableViewDele
      * Reference:
      * Tucker Mogren; March/April 2019
      */
-   private func loadData()
+   public func loadData()
     {
         
         db?.collection("photoInformation").whereField("userID", isEqualTo: userAuth?.currentUser?.uid as Any).getDocuments(completion: { (snapshot, err) in
@@ -81,13 +96,19 @@ class ViewPhotoGallery: UIViewController, UITableViewDataSource, UITableViewDele
                         
                         self.arrayOfData.append(newData)
                         
-                        
-                    }
-                    self.tableViewOutlet.reloadData()
-                }
-            }
-        })
 
+                    }
+                    //self.tableViewOutlet.reloadData() moved from here to current location to fix a bug with loading photos being covered by a previous cell photo
+                }
+                //test to see if it makes any different.
+                DispatchQueue.main.async(execute: {
+                    self.tableViewOutlet.reloadData()
+                })
+
+                //self.tableViewOutlet.reloadData()
+            }
+            
+        })
 
     }
     
