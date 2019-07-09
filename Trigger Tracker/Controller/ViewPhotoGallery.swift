@@ -26,6 +26,8 @@ class ViewPhotoGallery: UIViewController, UITableViewDataSource, UITableViewDele
         super.viewDidLoad()
         sideMenus()
         customizeNavBar()
+
+        
         loadData()
 
     }
@@ -98,8 +100,12 @@ class ViewPhotoGallery: UIViewController, UITableViewDataSource, UITableViewDele
                     }
                     //self.tableViewOutlet.reloadData() moved from here to current location to fix a bug with loading photos being covered by a previous cell photo
                 }
-                
-                self.tableViewOutlet.reloadData()
+                //test to see if it makes any different.
+                DispatchQueue.main.async(execute: {
+                    self.tableViewOutlet.reloadData()
+                })
+
+                //self.tableViewOutlet.reloadData()
             }
             
         })
