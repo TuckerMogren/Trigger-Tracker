@@ -49,17 +49,8 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A comprehensive app for migraine sufferers." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tEm-yX-h6w">
-                                <rect key="frame" x="62.000000000000014" y="117" width="251.33333333333337" height="15"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="15" id="Kpb-bl-P6P"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trigger_tracker_png_120px" translatesAutoresizingMaskIntoConstraints="NO" id="r25-yC-vXn">
-                                <rect key="frame" x="87.666666666666686" y="202" width="200" height="200"/>
+                                <rect key="frame" x="88" y="202" width="199" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="200" id="TAh-hg-ZT4"/>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="200" id="mW3-vX-YmT"/>
@@ -70,17 +61,16 @@
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="yKf-eP-Rwt" firstAttribute="leading" secondItem="RrJ-1h-zpr" secondAttribute="leading" constant="38" id="5op-J8-5Y9"/>
-                            <constraint firstItem="tEm-yX-h6w" firstAttribute="centerX" secondItem="RrJ-1h-zpr" secondAttribute="centerX" id="FA3-tH-SIF"/>
                             <constraint firstItem="yKf-eP-Rwt" firstAttribute="centerX" secondItem="oLc-PS-BGr" secondAttribute="centerX" id="G85-CW-2Ng"/>
                             <constraint firstItem="2qN-Rg-RWC" firstAttribute="centerX" secondItem="RrJ-1h-zpr" secondAttribute="centerX" id="Hvz-zp-RHe"/>
-                            <constraint firstItem="r25-yC-vXn" firstAttribute="centerX" secondItem="tEm-yX-h6w" secondAttribute="centerX" id="Xo2-Ex-90p"/>
                             <constraint firstItem="2qN-Rg-RWC" firstAttribute="top" secondItem="RrJ-1h-zpr" secondAttribute="top" constant="20" id="YSd-Yy-Eyu"/>
                             <constraint firstItem="RrJ-1h-zpr" firstAttribute="bottom" secondItem="sFV-lQ-5EB" secondAttribute="bottom" constant="50" id="acK-0g-fnZ"/>
-                            <constraint firstItem="r25-yC-vXn" firstAttribute="top" secondItem="tEm-yX-h6w" secondAttribute="bottom" constant="70" id="iWV-y4-bzE"/>
-                            <constraint firstItem="tEm-yX-h6w" firstAttribute="top" secondItem="2qN-Rg-RWC" secondAttribute="bottom" constant="5" id="jDT-af-egC"/>
                             <constraint firstItem="sFV-lQ-5EB" firstAttribute="top" secondItem="yKf-eP-Rwt" secondAttribute="bottom" constant="15" id="kEp-W5-aEh"/>
                             <constraint firstItem="yKf-eP-Rwt" firstAttribute="trailing" secondItem="sFV-lQ-5EB" secondAttribute="trailing" id="mOY-kP-SOh"/>
                             <constraint firstItem="yKf-eP-Rwt" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="sFV-lQ-5EB" secondAttribute="leading" id="tgF-pj-tDH"/>
+                            <constraint firstItem="r25-yC-vXn" firstAttribute="top" secondItem="2qN-Rg-RWC" secondAttribute="bottom" constant="90" id="tgY-V7-dJq"/>
+                            <constraint firstItem="r25-yC-vXn" firstAttribute="leading" secondItem="RrJ-1h-zpr" secondAttribute="leading" constant="88" id="txn-z9-G54"/>
+                            <constraint firstItem="r25-yC-vXn" firstAttribute="centerX" secondItem="2qN-Rg-RWC" secondAttribute="centerX" id="wbJ-7o-5TE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="RrJ-1h-zpr"/>
                     </view>
