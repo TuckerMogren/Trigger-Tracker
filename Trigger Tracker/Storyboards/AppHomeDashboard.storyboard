@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IBM-1Z-Vgw">
-    <device id="retina5_9" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IBM-1Z-Vgw">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -89,38 +87,35 @@
             <objects>
                 <viewController id="rzK-JK-goY" customClass="ViewSignUpPageController" customModule="Trigger_Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Usr-8g-v1o">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-Mail" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="N2G-hJ-9Kk">
-                                <rect key="frame" x="87.666666666666686" y="295" width="200" height="30"/>
+                                <rect key="frame" x="87.666666666666686" y="251" width="200" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="awn-ck-oSE"/>
                                 </constraints>
-                                <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="slM-bi-TMI">
-                                <rect key="frame" x="87.666666666666686" y="345" width="200" height="30"/>
+                                <rect key="frame" x="87.666666666666686" y="305" width="200" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="MEQ-Dk-ncj"/>
                                 </constraints>
-                                <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Re-type Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LcD-Jg-Tnp">
-                                <rect key="frame" x="87.666666666666686" y="395" width="200" height="30"/>
+                                <rect key="frame" x="87.666666666666686" y="359" width="200" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="dE6-Ns-iwE"/>
                                 </constraints>
-                                <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XO4-7H-bja" customClass="CustomShapeButton" customModule="Trigger_Tracker" customModuleProvider="target">
-                                <rect key="frame" x="87.666666666666686" y="445" width="200" height="45"/>
+                                <rect key="frame" x="87.666666666666686" y="413" width="200" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="2sF-IO-avx"/>
                                     <constraint firstAttribute="height" constant="45" id="EDe-hg-gMt"/>
@@ -134,7 +129,7 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trigger_tracker_png_120px" translatesAutoresizingMaskIntoConstraints="NO" id="Y57-CA-Fm8">
-                                <rect key="frame" x="113" y="89" width="149" height="149"/>
+                                <rect key="frame" x="113" y="45" width="149" height="149"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Y57-CA-Fm8" secondAttribute="height" multiplier="1:1" id="L15-yb-Vbf"/>
                                 </constraints>
@@ -175,31 +170,29 @@
             <objects>
                 <viewController storyboardIdentifier="logInVC" id="BYZ-38-t0r" customClass="ViewLogInPageController" customModule="Trigger_Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-Mail" minimumFontSize="20" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="5va-Gh-0b4">
-                                <rect key="frame" x="87.666666666666686" y="244" width="200" height="30"/>
+                                <rect key="frame" x="87.666666666666686" y="200" width="200" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="68g-iQ-ea5"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="J2n-xm-hni"/>
                                 </constraints>
-                                <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" textContentType="email"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="20" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="okf-Y0-yIL">
-                                <rect key="frame" x="87.666666666666686" y="289" width="200" height="30"/>
+                                <rect key="frame" x="87.666666666666686" y="249" width="200" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="M2c-H6-OlU"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="v8T-1Q-3li"/>
                                 </constraints>
-                                <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3av-bC-M7e" customClass="CustomShapeButton" customModule="Trigger_Tracker" customModuleProvider="target">
-                                <rect key="frame" x="87.333333333333329" y="371" width="200.33333333333337" height="45"/>
+                                <rect key="frame" x="87.333333333333329" y="335" width="200.33333333333337" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200.5" id="cCb-OT-loI"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="dCS-Yc-P6H"/>
@@ -213,7 +206,7 @@
                                 </connections>
                             </button>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NUN-Z2-Ld1">
-                                <rect key="frame" x="87.666666666666671" y="332" width="51.000000000000014" height="31"/>
+                                <rect key="frame" x="87.666666666666671" y="296" width="51.000000000000014" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="PRn-GC-OYe"/>
                                 </constraints>
@@ -221,7 +214,7 @@
                                 <color key="thumbTintColor" red="0.19607843137254902" green="0.32156862745098036" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Save E-Mail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RZr-Ij-L67">
-                                <rect key="frame" x="146.66666666666663" y="340" width="131.33333333333337" height="17"/>
+                                <rect key="frame" x="146.66666666666663" y="304" width="131.33333333333337" height="17"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="101" id="EP0-Jj-bXB"/>
                                 </constraints>
@@ -230,13 +223,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trigger_tracker_png_120px" translatesAutoresizingMaskIntoConstraints="NO" id="0xa-Lh-mIC">
-                                <rect key="frame" x="122" y="89" width="131" height="131"/>
+                                <rect key="frame" x="122" y="45" width="131" height="131"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="0xa-Lh-mIC" secondAttribute="height" multiplier="1:1" id="q5U-az-6El"/>
                                 </constraints>
                             </imageView>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6y3-aK-E0c" customClass="CustomShapeButton" customModule="Trigger_Tracker" customModuleProvider="target">
-                                <rect key="frame" x="87.333333333333329" y="371" width="200.33333333333337" height="45"/>
+                                <rect key="frame" x="87.333333333333329" y="335" width="200.33333333333337" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200.5" id="KMe-ox-HhH"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="oC1-YR-1Ze"/>
