@@ -98,7 +98,14 @@ class ViewPhotoGallery: UIViewController, UITableViewDataSource, UITableViewDele
                         
 
                     }
+<<<<<<< Updated upstream
                     //self.tableViewOutlet.reloadData() moved from here to current location to fix a bug with loading photos being covered by a previous cell photo
+=======
+                    DispatchQueue.main.async(execute: {
+                        self.tableViewOutlet.reloadData()
+                    })
+                    //self.tableViewOutlet.reloadData()
+>>>>>>> Stashed changes
                 }
                 //test to see if it makes any different.
                 DispatchQueue.main.async(execute: {
